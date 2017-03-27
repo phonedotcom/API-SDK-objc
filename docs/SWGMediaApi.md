@@ -4,14 +4,82 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountMedia**](SWGMediaApi.md#createaccountmedia) | **POST** /accounts/{account_id}/media | Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
-[**getAccountMedia**](SWGMediaApi.md#getaccountmedia) | **GET** /accounts/{account_id}/media/{recording_id} | Show details of an individual media recording (Greeting or Hold Music)
+[**createAccountMediaFiles**](SWGMediaApi.md#createaccountmediafiles) | **POST** /accounts/{account_id}/media/files | Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+[**createAccountMediaTts**](SWGMediaApi.md#createaccountmediatts) | **POST** /accounts/{account_id}/media/tts | Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+[**deleteAccountMedia**](SWGMediaApi.md#deleteaccountmedia) | **DELETE** /accounts/{account_id}/media/{media_id} | Delete an individual media record
+[**getAccountMedia**](SWGMediaApi.md#getaccountmedia) | **GET** /accounts/{account_id}/media/{media_id} | Show details of an individual media recording (Greeting or Hold Music)
 [**listAccountMedia**](SWGMediaApi.md#listaccountmedia) | **GET** /accounts/{account_id}/media | Get a list of media recordings for an account
+[**replaceAccountMediaTts**](SWGMediaApi.md#replaceaccountmediatts) | **PUT** /accounts/{account_id}/media/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
 
 
-# **createAccountMedia**
+# **createAccountMediaFiles**
 ```objc
--(NSURLSessionTask*) createAccountMediaWithAccountId: (NSNumber*) accountId
+-(NSURLSessionTask*) createAccountMediaFilesWithAccountId: (NSNumber*) accountId
+    json: (NSString*) json
+    file: (NSURL*) file
+        completionHandler: (void (^)(SWGMediaFull* output, NSError* error)) handler;
+```
+
+Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+
+See Account Media for more info on the properties.
+
+### Example 
+```objc
+SWGDefaultConfiguration *apiConfig = [SWGDefaultConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: apiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"Authorization"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
+
+
+NSNumber* accountId = @56; // Account ID
+NSString* json = @"json_example"; // Media extra parameters (optional)
+NSURL* file = [NSURL fileURLWithPath:@"/path/to/file.txt"]; // Media file (optional)
+
+SWGMediaApi*apiInstance = [[SWGMediaApi alloc] init];
+
+// Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+[apiInstance createAccountMediaFilesWithAccountId:accountId
+              json:json
+              file:file
+          completionHandler: ^(SWGMediaFull* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling SWGMediaApi->createAccountMediaFiles: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **NSNumber***| Account ID | 
+ **json** | **NSString***| Media extra parameters | [optional] 
+ **file** | **NSURL***| Media file | [optional] 
+
+### Return type
+
+[**SWGMediaFull***](SWGMediaFull.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **createAccountMediaTts**
+```objc
+-(NSURLSessionTask*) createAccountMediaTtsWithAccountId: (NSNumber*) accountId
     data: (SWGCreateMediaParams*) data
         completionHandler: (void (^)(SWGMediaFull* output, NSError* error)) handler;
 ```
@@ -36,14 +104,14 @@ SWGCreateMediaParams* data = [[SWGCreateMediaParams alloc] init]; // Media data 
 SWGMediaApi*apiInstance = [[SWGMediaApi alloc] init];
 
 // Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
-[apiInstance createAccountMediaWithAccountId:accountId
+[apiInstance createAccountMediaTtsWithAccountId:accountId
               data:data
           completionHandler: ^(SWGMediaFull* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGMediaApi->createAccountMedia: %@", error);
+                            NSLog(@"Error calling SWGMediaApi->createAccountMediaTts: %@", error);
                         }
                     }];
 ```
@@ -70,10 +138,71 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **deleteAccountMedia**
+```objc
+-(NSURLSessionTask*) deleteAccountMediaWithAccountId: (NSNumber*) accountId
+    mediaId: (NSNumber*) mediaId
+        completionHandler: (void (^)(SWGDeleteMedia* output, NSError* error)) handler;
+```
+
+Delete an individual media record
+
+See Account Media for more info on the properties.
+
+### Example 
+```objc
+SWGDefaultConfiguration *apiConfig = [SWGDefaultConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: apiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"Authorization"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
+
+
+NSNumber* accountId = @56; // Account ID
+NSNumber* mediaId = @56; // Media ID
+
+SWGMediaApi*apiInstance = [[SWGMediaApi alloc] init];
+
+// Delete an individual media record
+[apiInstance deleteAccountMediaWithAccountId:accountId
+              mediaId:mediaId
+          completionHandler: ^(SWGDeleteMedia* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling SWGMediaApi->deleteAccountMedia: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **NSNumber***| Account ID | 
+ **mediaId** | **NSNumber***| Media ID | 
+
+### Return type
+
+[**SWGDeleteMedia***](SWGDeleteMedia.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getAccountMedia**
 ```objc
 -(NSURLSessionTask*) getAccountMediaWithAccountId: (NSNumber*) accountId
-    recordingId: (NSNumber*) recordingId
+    mediaId: (NSNumber*) mediaId
         completionHandler: (void (^)(SWGMediaFull* output, NSError* error)) handler;
 ```
 
@@ -92,13 +221,13 @@ SWGDefaultConfiguration *apiConfig = [SWGDefaultConfiguration sharedConfig];
 
 
 NSNumber* accountId = @56; // Account ID
-NSNumber* recordingId = @56; // Recording ID
+NSNumber* mediaId = @56; // Media ID
 
 SWGMediaApi*apiInstance = [[SWGMediaApi alloc] init];
 
 // Show details of an individual media recording (Greeting or Hold Music)
 [apiInstance getAccountMediaWithAccountId:accountId
-              recordingId:recordingId
+              mediaId:mediaId
           completionHandler: ^(SWGMediaFull* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -114,7 +243,7 @@ SWGMediaApi*apiInstance = [[SWGMediaApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
- **recordingId** | **NSNumber***| Recording ID | 
+ **mediaId** | **NSNumber***| Media ID | 
 
 ### Return type
 
@@ -204,6 +333,71 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SWGListMedia***](SWGListMedia.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **replaceAccountMediaTts**
+```objc
+-(NSURLSessionTask*) replaceAccountMediaTtsWithAccountId: (NSNumber*) accountId
+    mediaId: (NSNumber*) mediaId
+    data: (SWGCreateMediaParams*) data
+        completionHandler: (void (^)(SWGMediaFull* output, NSError* error)) handler;
+```
+
+Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+
+See Account Media for more info on the properties.
+
+### Example 
+```objc
+SWGDefaultConfiguration *apiConfig = [SWGDefaultConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: apiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"Authorization"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
+
+
+NSNumber* accountId = @56; // Account ID
+NSNumber* mediaId = @56; // Media ID
+SWGCreateMediaParams* data = [[SWGCreateMediaParams alloc] init]; // Media data (optional)
+
+SWGMediaApi*apiInstance = [[SWGMediaApi alloc] init];
+
+// Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+[apiInstance replaceAccountMediaTtsWithAccountId:accountId
+              mediaId:mediaId
+              data:data
+          completionHandler: ^(SWGMediaFull* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling SWGMediaApi->replaceAccountMediaTts: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **NSNumber***| Account ID | 
+ **mediaId** | **NSNumber***| Media ID | 
+ **data** | [**SWGCreateMediaParams***](SWGCreateMediaParams*.md)| Media data | [optional] 
+
+### Return type
+
+[**SWGMediaFull***](SWGMediaFull.md)
 
 ### Authorization
 

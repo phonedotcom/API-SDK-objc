@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **total** | **NSNumber*** |  | [optional] 
 **offset** | **NSNumber*** |  | [optional] 
 **limit** | **NSNumber*** |  | [optional] 
-**items** | [**NSArray&lt;SWGPhoneNumberContact&gt;***](SWGPhoneNumberContact.md) | Array of Contact Phone Number Objects. See below for details. | [optional] 
+**items** | [**NSArray&lt;SWGPhoneNumberFull&gt;***](SWGPhoneNumberFull.md) | Array of Contact Phone Number Objects. See below for details. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

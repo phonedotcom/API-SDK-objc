@@ -15,7 +15,7 @@
 
 
 #import "SWGFilterIdNamePhoneNumberArray.h"
-#import "SWGPhoneNumberContact.h"
+#import "SWGPhoneNumberFull.h"
 #import "SWGSortIdNamePhoneNumber.h"
 
 
@@ -36,6 +36,6 @@
 @property(nonatomic) NSNumber* limit;
 /* Array of Contact Phone Number Objects. See below for details. [optional]
  */
-@property(nonatomic) NSArray<SWGPhoneNumberContact>* items;
+@property(nonatomic) NSArray<SWGPhoneNumberFull>* items;
 
 @end

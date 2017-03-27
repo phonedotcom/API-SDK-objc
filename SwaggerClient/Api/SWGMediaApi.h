@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SWGCreateMediaParams.h"
+#import "SWGDeleteMedia.h"
 #import "SWGListMedia.h"
 #import "SWGMediaFull.h"
 #import "SWGApi.h"
@@ -29,6 +30,25 @@ extern NSInteger kSWGMediaApiMissingParamErrorCode;
 /// See Account Media for more info on the properties.
 ///
 /// @param accountId Account ID
+/// @param json Media extra parameters (optional)
+/// @param file Media file (optional)
+/// 
+///  code:201 message:"Created",
+///  code:401 message:"Unauthorized access",
+///  code:403 message:"Forbidden",
+///  code:422 message:"Invalid Data"
+///
+/// @return SWGMediaFull*
+-(NSURLSessionTask*) createAccountMediaFilesWithAccountId: (NSNumber*) accountId
+    json: (NSString*) json
+    file: (NSURL*) file
+    completionHandler: (void (^)(SWGMediaFull* output, NSError* error)) handler;
+
+
+/// Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+/// See Account Media for more info on the properties.
+///
+/// @param accountId Account ID
 /// @param data Media data (optional)
 /// 
 ///  code:201 message:"Created",
@@ -37,16 +57,34 @@ extern NSInteger kSWGMediaApiMissingParamErrorCode;
 ///  code:422 message:"Invalid Data"
 ///
 /// @return SWGMediaFull*
--(NSURLSessionTask*) createAccountMediaWithAccountId: (NSNumber*) accountId
+-(NSURLSessionTask*) createAccountMediaTtsWithAccountId: (NSNumber*) accountId
     data: (SWGCreateMediaParams*) data
     completionHandler: (void (^)(SWGMediaFull* output, NSError* error)) handler;
+
+
+/// Delete an individual media record
+/// See Account Media for more info on the properties.
+///
+/// @param accountId Account ID
+/// @param mediaId Media ID
+/// 
+///  code:200 message:"OK",
+///  code:401 message:"Unauthorized access",
+///  code:403 message:"Forbidden",
+///  code:404 message:"Not Found",
+///  code:409 message:"Conflict"
+///
+/// @return SWGDeleteMedia*
+-(NSURLSessionTask*) deleteAccountMediaWithAccountId: (NSNumber*) accountId
+    mediaId: (NSNumber*) mediaId
+    completionHandler: (void (^)(SWGDeleteMedia* output, NSError* error)) handler;
 
 
 /// Show details of an individual media recording (Greeting or Hold Music)
 /// Get individual media recording
 ///
 /// @param accountId Account ID
-/// @param recordingId Recording ID
+/// @param mediaId Media ID
 /// 
 ///  code:200 message:"OK",
 ///  code:401 message:"Unauthorized access",
@@ -55,7 +93,7 @@ extern NSInteger kSWGMediaApiMissingParamErrorCode;
 ///
 /// @return SWGMediaFull*
 -(NSURLSessionTask*) getAccountMediaWithAccountId: (NSNumber*) accountId
-    recordingId: (NSNumber*) recordingId
+    mediaId: (NSNumber*) mediaId
     completionHandler: (void (^)(SWGMediaFull* output, NSError* error)) handler;
 
 
@@ -85,6 +123,26 @@ extern NSInteger kSWGMediaApiMissingParamErrorCode;
     offset: (NSNumber*) offset
     fields: (NSString*) fields
     completionHandler: (void (^)(SWGListMedia* output, NSError* error)) handler;
+
+
+/// Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+/// See Account Media for more info on the properties.
+///
+/// @param accountId Account ID
+/// @param mediaId Media ID
+/// @param data Media data (optional)
+/// 
+///  code:201 message:"Replaced",
+///  code:401 message:"Unauthorized access",
+///  code:403 message:"Forbidden",
+///  code:404 message:"Not Found",
+///  code:422 message:"Invalid Data"
+///
+/// @return SWGMediaFull*
+-(NSURLSessionTask*) replaceAccountMediaTtsWithAccountId: (NSNumber*) accountId
+    mediaId: (NSNumber*) mediaId
+    data: (SWGCreateMediaParams*) data
+    completionHandler: (void (^)(SWGMediaFull* output, NSError* error)) handler;
 
 
 

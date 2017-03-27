@@ -73,6 +73,7 @@ Import the following:
 #import <SwaggerClient/SWGCreateTrunkParams.h>
 #import <SwaggerClient/SWGDeleteContact.h>
 #import <SwaggerClient/SWGDeleteGroup.h>
+#import <SwaggerClient/SWGDeleteMedia.h>
 #import <SwaggerClient/SWGDeleteMenu.h>
 #import <SwaggerClient/SWGDeleteQueue.h>
 #import <SwaggerClient/SWGDeleteRoute.h>
@@ -257,9 +258,12 @@ Class | Method | HTTP request | Description
 *SWGGroupsApi* | [**getAccountExtensionContactGroup**](docs/SWGGroupsApi.md#getaccountextensioncontactgroup) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | 
 *SWGGroupsApi* | [**listAccountExtensionContactGroups**](docs/SWGGroupsApi.md#listaccountextensioncontactgroups) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups | Show a list of contact groups belonging to an extension
 *SWGGroupsApi* | [**replaceAccountExtensionContactGroup**](docs/SWGGroupsApi.md#replaceaccountextensioncontactgroup) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | 
-*SWGMediaApi* | [**createAccountMedia**](docs/SWGMediaApi.md#createaccountmedia) | **POST** /accounts/{account_id}/media | Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
-*SWGMediaApi* | [**getAccountMedia**](docs/SWGMediaApi.md#getaccountmedia) | **GET** /accounts/{account_id}/media/{recording_id} | Show details of an individual media recording (Greeting or Hold Music)
+*SWGMediaApi* | [**createAccountMediaFiles**](docs/SWGMediaApi.md#createaccountmediafiles) | **POST** /accounts/{account_id}/media/files | Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+*SWGMediaApi* | [**createAccountMediaTts**](docs/SWGMediaApi.md#createaccountmediatts) | **POST** /accounts/{account_id}/media/tts | Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+*SWGMediaApi* | [**deleteAccountMedia**](docs/SWGMediaApi.md#deleteaccountmedia) | **DELETE** /accounts/{account_id}/media/{media_id} | Delete an individual media record
+*SWGMediaApi* | [**getAccountMedia**](docs/SWGMediaApi.md#getaccountmedia) | **GET** /accounts/{account_id}/media/{media_id} | Show details of an individual media recording (Greeting or Hold Music)
 *SWGMediaApi* | [**listAccountMedia**](docs/SWGMediaApi.md#listaccountmedia) | **GET** /accounts/{account_id}/media | Get a list of media recordings for an account
+*SWGMediaApi* | [**replaceAccountMediaTts**](docs/SWGMediaApi.md#replaceaccountmediatts) | **PUT** /accounts/{account_id}/media/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
 *SWGMenusApi* | [**createAccountMenu**](docs/SWGMenusApi.md#createaccountmenu) | **POST** /accounts/{account_id}/menus | Create an individual menu
 *SWGMenusApi* | [**deleteAccountMenu**](docs/SWGMenusApi.md#deleteaccountmenu) | **DELETE** /accounts/{account_id}/menus/{menu_id} | Delete an individual menu
 *SWGMenusApi* | [**getAccountMenu**](docs/SWGMenusApi.md#getaccountmenu) | **GET** /accounts/{account_id}/menus/{menu_id} | Show details of an individual menu
@@ -328,6 +332,7 @@ Class | Method | HTTP request | Description
  - [SWGCreateTrunkParams](docs/SWGCreateTrunkParams.md)
  - [SWGDeleteContact](docs/SWGDeleteContact.md)
  - [SWGDeleteGroup](docs/SWGDeleteGroup.md)
+ - [SWGDeleteMedia](docs/SWGDeleteMedia.md)
  - [SWGDeleteMenu](docs/SWGDeleteMenu.md)
  - [SWGDeleteQueue](docs/SWGDeleteQueue.md)
  - [SWGDeleteRoute](docs/SWGDeleteRoute.md)
