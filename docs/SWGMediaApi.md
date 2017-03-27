@@ -9,7 +9,8 @@ Method | HTTP request | Description
 [**deleteAccountMedia**](SWGMediaApi.md#deleteaccountmedia) | **DELETE** /accounts/{account_id}/media/{media_id} | Delete an individual media record
 [**getAccountMedia**](SWGMediaApi.md#getaccountmedia) | **GET** /accounts/{account_id}/media/{media_id} | Show details of an individual media recording (Greeting or Hold Music)
 [**listAccountMedia**](SWGMediaApi.md#listaccountmedia) | **GET** /accounts/{account_id}/media | Get a list of media recordings for an account
-[**replaceAccountMediaTts**](SWGMediaApi.md#replaceaccountmediatts) | **PUT** /accounts/{account_id}/media/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+[**replaceAccountMediaFiles**](SWGMediaApi.md#replaceaccountmediafiles) | **PUT** /accounts/{account_id}/media/files/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+[**replaceAccountMediaTts**](SWGMediaApi.md#replaceaccountmediatts) | **PUT** /accounts/{account_id}/media/tts/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
 
 
 # **createAccountMediaFiles**
@@ -333,6 +334,75 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SWGListMedia***](SWGListMedia.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **replaceAccountMediaFiles**
+```objc
+-(NSURLSessionTask*) replaceAccountMediaFilesWithAccountId: (NSNumber*) accountId
+    mediaId: (NSNumber*) mediaId
+    json: (NSString*) json
+    file: (NSURL*) file
+        completionHandler: (void (^)(SWGMediaFull* output, NSError* error)) handler;
+```
+
+Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+
+See Account Media for more info on the properties.
+
+### Example 
+```objc
+SWGDefaultConfiguration *apiConfig = [SWGDefaultConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: apiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"Authorization"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
+
+
+NSNumber* accountId = @56; // Account ID
+NSNumber* mediaId = @56; // Media ID
+NSString* json = @"json_example"; // Media extra parameters (optional)
+NSURL* file = [NSURL fileURLWithPath:@"/path/to/file.txt"]; // Media file (optional)
+
+SWGMediaApi*apiInstance = [[SWGMediaApi alloc] init];
+
+// Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+[apiInstance replaceAccountMediaFilesWithAccountId:accountId
+              mediaId:mediaId
+              json:json
+              file:file
+          completionHandler: ^(SWGMediaFull* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling SWGMediaApi->replaceAccountMediaFiles: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **NSNumber***| Account ID | 
+ **mediaId** | **NSNumber***| Media ID | 
+ **json** | **NSString***| Media extra parameters | [optional] 
+ **file** | **NSURL***| Media file | [optional] 
+
+### Return type
+
+[**SWGMediaFull***](SWGMediaFull.md)
 
 ### Authorization
 

@@ -263,7 +263,8 @@ Class | Method | HTTP request | Description
 *SWGMediaApi* | [**deleteAccountMedia**](docs/SWGMediaApi.md#deleteaccountmedia) | **DELETE** /accounts/{account_id}/media/{media_id} | Delete an individual media record
 *SWGMediaApi* | [**getAccountMedia**](docs/SWGMediaApi.md#getaccountmedia) | **GET** /accounts/{account_id}/media/{media_id} | Show details of an individual media recording (Greeting or Hold Music)
 *SWGMediaApi* | [**listAccountMedia**](docs/SWGMediaApi.md#listaccountmedia) | **GET** /accounts/{account_id}/media | Get a list of media recordings for an account
-*SWGMediaApi* | [**replaceAccountMediaTts**](docs/SWGMediaApi.md#replaceaccountmediatts) | **PUT** /accounts/{account_id}/media/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+*SWGMediaApi* | [**replaceAccountMediaFiles**](docs/SWGMediaApi.md#replaceaccountmediafiles) | **PUT** /accounts/{account_id}/media/files/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+*SWGMediaApi* | [**replaceAccountMediaTts**](docs/SWGMediaApi.md#replaceaccountmediatts) | **PUT** /accounts/{account_id}/media/tts/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
 *SWGMenusApi* | [**createAccountMenu**](docs/SWGMenusApi.md#createaccountmenu) | **POST** /accounts/{account_id}/menus | Create an individual menu
 *SWGMenusApi* | [**deleteAccountMenu**](docs/SWGMenusApi.md#deleteaccountmenu) | **DELETE** /accounts/{account_id}/menus/{menu_id} | Delete an individual menu
 *SWGMenusApi* | [**getAccountMenu**](docs/SWGMenusApi.md#getaccountmenu) | **GET** /accounts/{account_id}/menus/{menu_id} | Show details of an individual menu

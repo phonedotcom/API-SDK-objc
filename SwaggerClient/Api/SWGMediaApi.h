@@ -130,6 +130,28 @@ extern NSInteger kSWGMediaApiMissingParamErrorCode;
 ///
 /// @param accountId Account ID
 /// @param mediaId Media ID
+/// @param json Media extra parameters (optional)
+/// @param file Media file (optional)
+/// 
+///  code:201 message:"Replaced",
+///  code:401 message:"Unauthorized access",
+///  code:403 message:"Forbidden",
+///  code:404 message:"Not Found",
+///  code:422 message:"Invalid Data"
+///
+/// @return SWGMediaFull*
+-(NSURLSessionTask*) replaceAccountMediaFilesWithAccountId: (NSNumber*) accountId
+    mediaId: (NSNumber*) mediaId
+    json: (NSString*) json
+    file: (NSURL*) file
+    completionHandler: (void (^)(SWGMediaFull* output, NSError* error)) handler;
+
+
+/// Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+/// See Account Media for more info on the properties.
+///
+/// @param accountId Account ID
+/// @param mediaId Media ID
 /// @param data Media data (optional)
 /// 
 ///  code:201 message:"Replaced",
