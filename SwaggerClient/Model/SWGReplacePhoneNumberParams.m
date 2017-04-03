@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"route": @"route", @"name": @"name", @"blockIncoming": @"block_incoming", @"blockAnonymous": @"block_anonymous", @"callerIdName": @"caller_id[name]", @"callerIdType": @"caller_id[type]", @"smsForwardingType": @"sms_forwarding[type]", @"smsForwardingApplication": @"sms_forwarding[application]", @"smsForwardingExtension": @"sms_forwarding[extension]", @"poolItem": @"pool_item", @"callNotificationsEmails": @"call_notifications[emails]", @"callNotificationsSms": @"call_notifications[sms]" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"route": @"route", @"name": @"name", @"blockIncoming": @"block_incoming", @"blockAnonymous": @"block_anonymous", @"callerId": @"caller_id", @"smsForwarding": @"sms_forwarding", @"poolItem": @"pool_item", @"callNotifications": @"call_notifications" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"route", @"name", @"blockIncoming", @"blockAnonymous", @"callerIdName", @"callerIdType", @"smsForwardingType", @"smsForwardingApplication", @"smsForwardingExtension", @"poolItem", @"callNotificationsEmails", @"callNotificationsSms"];
+  NSArray *optionalProperties = @[@"route", @"name", @"blockIncoming", @"blockAnonymous", @"callerId", @"smsForwarding", @"poolItem", @"callNotifications"];
   return [optionalProperties containsObject:propertyName];
 }
 

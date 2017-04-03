@@ -14,6 +14,9 @@
 */
 
 
+#import "SWGCallNotifications.h"
+#import "SWGCallerIdPhoneNumber.h"
+#import "SWGSmsForwardingParams.h"
 
 
 @protocol SWGReplacePhoneNumberParams
@@ -33,29 +36,17 @@
 /* Block anonymous calls [optional]
  */
 @property(nonatomic) NSNumber* blockAnonymous;
-/* Caller ID name [optional]
+/* Caller ID object [optional]
  */
-@property(nonatomic) NSString* callerIdName;
-/* Caller ID type [optional]
+@property(nonatomic) SWGCallerIdPhoneNumber* callerId;
+/* SMS Forwarding Object, or NULL [optional]
  */
-@property(nonatomic) NSString* callerIdType;
-/* 'application' or 'extension' [optional]
- */
-@property(nonatomic) NSString* smsForwardingType;
-/* Application lookup object [optional]
- */
-@property(nonatomic) NSObject* smsForwardingApplication;
-/* Extension lookup object [optional]
- */
-@property(nonatomic) NSObject* smsForwardingExtension;
+@property(nonatomic) SWGSmsForwardingParams* smsForwarding;
 /* Pool lookup object [optional]
  */
 @property(nonatomic) NSObject* poolItem;
-/* Call notifications for emails. Can be a single email or an array of emails [optional]
+/* Call Notifications object [optional]
  */
-@property(nonatomic) NSArray<NSString*>* callNotificationsEmails;
-/* Call notification for SMS [optional]
- */
-@property(nonatomic) NSString* callNotificationsSms;
+@property(nonatomic) SWGCallNotifications* callNotifications;
 
 @end

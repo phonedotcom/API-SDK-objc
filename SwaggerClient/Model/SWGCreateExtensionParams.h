@@ -14,6 +14,8 @@
 */
 
 
+#import "SWGCallNotifications.h"
+#import "SWGVoicemail.h"
 
 
 @protocol SWGCreateExtensionParams
@@ -21,6 +23,12 @@
 
 @interface SWGCreateExtensionParams : SWGObject
 
+/* Voicemail object [optional]
+ */
+@property(nonatomic) SWGVoicemail* voicemail;
+/* Call Notifications object [optional]
+ */
+@property(nonatomic) SWGCallNotifications* callNotifications;
 /* Caller ID [optional]
  */
 @property(nonatomic) NSString* callerId;
@@ -48,47 +56,14 @@
 /* Recording lookup object [optional]
  */
 @property(nonatomic) NSObject* nameGreeting;
-/* Recording lookup object [optional]
- */
-@property(nonatomic) NSObject* voicemailGreetingAlternate;
 /* Local area code [optional]
  */
 @property(nonatomic) NSNumber* localAreaCode;
-/* Enable the \"leave a message\" prompt for voicemail [optional]
- */
-@property(nonatomic) NSNumber* voicemailGreetingEnableLeaveMessagePrompt;
-/* Voicemail enabled [optional]
- */
-@property(nonatomic) NSNumber* voicemailEnabled;
 /* Enable outgoing calls [optional]
  */
 @property(nonatomic) NSNumber* enableOutboundCalls;
 /* Enable Call Waiting [optional]
  */
 @property(nonatomic) NSNumber* enableCallWaiting;
-/* Voicemail password [optional]
- */
-@property(nonatomic) NSNumber* voicemailPassword;
-/* Voicemail greeting type [optional]
- */
-@property(nonatomic) NSString* voicemailGreetingType;
-/* Recording lookup object [optional]
- */
-@property(nonatomic) NSObject* voicemailGreetingStandard;
-/* Voicemail transcription type [optional]
- */
-@property(nonatomic) NSString* voicemailTranscription;
-/* Email notifications for voicemails. Can be a single email or an array of emails [optional]
- */
-@property(nonatomic) NSArray<NSString*>* voicemailNotificationsEmails;
-/* SMS notifications for voicemails [optional]
- */
-@property(nonatomic) NSString* voicemailNotificationsSms;
-/* Email notifications for calls. Can be a single email or an array of emails [optional]
- */
-@property(nonatomic) NSArray<NSString*>* callNotificationsEmails;
-/* SMS notifications for calls [optional]
- */
-@property(nonatomic) NSString* callNotificationsSms;
 
 @end

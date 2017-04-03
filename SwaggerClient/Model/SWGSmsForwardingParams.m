@@ -1,6 +1,6 @@
-#import "SWGCreatePhoneNumberParams.h"
+#import "SWGSmsForwardingParams.h"
 
-@implementation SWGCreatePhoneNumberParams
+@implementation SWGSmsForwardingParams
 
 - (instancetype)init {
   self = [super init];
@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"phoneNumber": @"phone_number", @"route": @"route", @"name": @"name", @"blockIncoming": @"block_incoming", @"blockAnonymous": @"block_anonymous", @"callerId": @"caller_id", @"smsForwarding": @"sms_forwarding", @"callNotifications": @"call_notifications" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"type": @"type", @"extension": @"extension", @"application": @"application" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"phoneNumber", @"route", @"name", @"blockIncoming", @"blockAnonymous", @"callerId", @"smsForwarding", @"callNotifications"];
+  NSArray *optionalProperties = @[@"type", @"extension", @"application"];
   return [optionalProperties containsObject:propertyName];
 }
 

@@ -14,6 +14,8 @@
 */
 
 
+#import "SWGCallNotifications.h"
+#import "SWGVoicemail.h"
 
 
 @protocol SWGReplaceExtensionParams
@@ -21,9 +23,12 @@
 
 @interface SWGReplaceExtensionParams : SWGObject
 
-/* Recording lookup object [optional]
+/* Voicemail object [optional]
  */
-@property(nonatomic) NSObject* voicemailGreetingAlternate;
+@property(nonatomic) SWGVoicemail* voicemail;
+/* Call Notifications object [optional]
+ */
+@property(nonatomic) SWGCallNotifications* callNotifications;
 /* Recording lookup object [optional]
  */
 @property(nonatomic) NSObject* nameGreeting;
@@ -45,50 +50,20 @@
 /* Extension type [optional]
  */
 @property(nonatomic) NSString* usageType;
-/* Voicemail password [optional]
- */
-@property(nonatomic) NSNumber* voicemailPassword;
 /* Contact name [optional]
  */
 @property(nonatomic) NSString* fullName;
 /* Enable Call Waiting [optional]
  */
 @property(nonatomic) NSNumber* enableCallWaiting;
-/* Recording lookup object [optional]
- */
-@property(nonatomic) NSObject* voicemailGreetingStandard;
-/* Voicemail greeting type [optional]
- */
-@property(nonatomic) NSString* voicemailGreetingType;
 /* Caller ID [optional]
  */
 @property(nonatomic) NSString* callerId;
 /* Local area code [optional]
  */
 @property(nonatomic) NSNumber* localAreaCode;
-/* Voicemail enabled [optional]
- */
-@property(nonatomic) NSNumber* voicemailEnabled;
-/* Use leave message prompt after voicemail [optional]
- */
-@property(nonatomic) NSNumber* voicemailGreetingEnableLeaveMessagePrompt;
-/* Voicemail transcription type [optional]
- */
-@property(nonatomic) NSString* voicemailTranscription;
-/* Email notifications for voicemails. Can be a single email or an array of emails [optional]
- */
-@property(nonatomic) NSArray<NSString*>* voicemailNotificationsEmails;
-/* SMS notifications for voicemails [optional]
- */
-@property(nonatomic) NSString* voicemailNotificationsSms;
-/* Email notifications for calls. Can be a single email or an array of emails [optional]
- */
-@property(nonatomic) NSArray<NSString*>* callNotificationsEmails;
-/* SMS notifications for calls [optional]
- */
-@property(nonatomic) NSString* callNotificationsSms;
 /* Route object lookup (must belong to this extension) [optional]
  */
-@property(nonatomic) NSArray<NSString*>* route;
+@property(nonatomic) NSString* route;
 
 @end

@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"voicemailGreetingAlternate": @"voicemail[greeting][alternate]", @"nameGreeting": @"name_greeting", @"name": @"name", @"timezone": @"timezone", @"includeInDirectory": @"include_in_directory", @"extension": @"extension", @"enableOutboundCalls": @"enable_outbound_calls", @"usageType": @"usage_type", @"voicemailPassword": @"voicemail[password]", @"fullName": @"full_name", @"enableCallWaiting": @"enable_call_waiting", @"voicemailGreetingStandard": @"voicemail[greeting][standard]", @"voicemailGreetingType": @"voicemail[greeting][type]", @"callerId": @"caller_id", @"localAreaCode": @"local_area_code", @"voicemailEnabled": @"voicemail[enabled]", @"voicemailGreetingEnableLeaveMessagePrompt": @"voicemail[greeting][enable_leave_message_prompt]", @"voicemailTranscription": @"voicemail[transcription]", @"voicemailNotificationsEmails": @"voicemail[notifications][emails]", @"voicemailNotificationsSms": @"voicemail[notifications][sms]", @"callNotificationsEmails": @"call_notifications[emails]", @"callNotificationsSms": @"call_notifications[sms]", @"route": @"route" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"voicemail": @"voicemail", @"callNotifications": @"call_notifications", @"nameGreeting": @"name_greeting", @"name": @"name", @"timezone": @"timezone", @"includeInDirectory": @"include_in_directory", @"extension": @"extension", @"enableOutboundCalls": @"enable_outbound_calls", @"usageType": @"usage_type", @"fullName": @"full_name", @"enableCallWaiting": @"enable_call_waiting", @"callerId": @"caller_id", @"localAreaCode": @"local_area_code", @"route": @"route" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"voicemailGreetingAlternate", @"nameGreeting", @"name", @"timezone", @"includeInDirectory", @"extension", @"enableOutboundCalls", @"usageType", @"voicemailPassword", @"fullName", @"enableCallWaiting", @"voicemailGreetingStandard", @"voicemailGreetingType", @"callerId", @"localAreaCode", @"voicemailEnabled", @"voicemailGreetingEnableLeaveMessagePrompt", @"voicemailTranscription", @"voicemailNotificationsEmails", @"voicemailNotificationsSms", @"callNotificationsEmails", @"callNotificationsSms", @"route"];
+  NSArray *optionalProperties = @[@"voicemail", @"callNotifications", @"nameGreeting", @"name", @"timezone", @"includeInDirectory", @"extension", @"enableOutboundCalls", @"usageType", @"fullName", @"enableCallWaiting", @"callerId", @"localAreaCode", @"route"];
   return [optionalProperties containsObject:propertyName];
 }
 

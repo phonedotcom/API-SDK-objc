@@ -147,6 +147,7 @@ Import the following:
 #import <SwaggerClient/SWGScheduleSummary.h>
 #import <SwaggerClient/SWGSipAuthentication.h>
 #import <SwaggerClient/SWGSmsForwarding.h>
+#import <SwaggerClient/SWGSmsForwardingParams.h>
 #import <SwaggerClient/SWGSmsFull.h>
 #import <SwaggerClient/SWGSortCallLogs.h>
 #import <SwaggerClient/SWGSortId.h>
@@ -407,6 +408,7 @@ Class | Method | HTTP request | Description
  - [SWGScheduleSummary](docs/SWGScheduleSummary.md)
  - [SWGSipAuthentication](docs/SWGSipAuthentication.md)
  - [SWGSmsForwarding](docs/SWGSmsForwarding.md)
+ - [SWGSmsForwardingParams](docs/SWGSmsForwardingParams.md)
  - [SWGSmsFull](docs/SWGSmsFull.md)
  - [SWGSortCallLogs](docs/SWGSortCallLogs.md)
  - [SWGSortId](docs/SWGSortId.md)
