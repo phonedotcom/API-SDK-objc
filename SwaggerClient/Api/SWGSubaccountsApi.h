@@ -26,10 +26,10 @@ extern NSInteger kSWGSubaccountsApiMissingParamErrorCode;
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
 /// Add a subaccount for the authenticated user or client
-/// This service shows the details of an individual Subaccount.
+/// Add a subaccount for the authenticated user or client
 ///
 /// @param accountId Account ID
-/// @param data SMS data
+/// @param data Subaccount data
 /// 
 ///  code:201 message:"Created",
 ///  code:401 message:"Unauthorized access",
@@ -43,7 +43,7 @@ extern NSInteger kSWGSubaccountsApiMissingParamErrorCode;
 
 
 /// Get a list of subaccounts for the authenticated user or client
-/// This service lists the Subaccount of the authenticated client. In most cases, there will not be any.
+/// Get a list of subaccounts for the authenticated user or client
 ///
 /// @param accountId Account ID
 /// @param filtersId ID filter (optional)

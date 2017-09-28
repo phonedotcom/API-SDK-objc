@@ -52,7 +52,7 @@ NSInteger kSWGSchedulesApiMissingParamErrorCode = 234513;
 
 ///
 /// Show details of an individual schedule
-/// This service shows the details of an individual schedule.
+/// Show details of an individual schedule
 ///  @param accountId Account ID 
 ///
 ///  @param scheduleId Schedule ID 
@@ -85,9 +85,6 @@ NSInteger kSWGSchedulesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/schedules/{schedule_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -140,7 +137,7 @@ NSInteger kSWGSchedulesApiMissingParamErrorCode = 234513;
 
 ///
 /// Get a list of schedules for an account
-/// See Intro to Schedules for more info on the properties.
+/// Get a list of schedules for an account
 ///  @param accountId Account ID 
 ///
 ///  @param filtersId ID filter (optional)
@@ -180,9 +177,6 @@ NSInteger kSWGSchedulesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/schedules"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

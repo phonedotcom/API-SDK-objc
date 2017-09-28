@@ -2,7 +2,7 @@
 #import "SWGQueryParamCollection.h"
 #import "SWGApiClient.h"
 #import "SWGCreateGroupParams.h"
-#import "SWGDeleteGroup.h"
+#import "SWGDeleteEntry.h"
 #import "SWGGroupFull.h"
 #import "SWGListGroups.h"
 
@@ -53,13 +53,13 @@ NSInteger kSWGGroupsApiMissingParamErrorCode = 234513;
 #pragma mark - Api Methods
 
 ///
-/// 
-/// See Account Contact Groups for more info on the properties.
+/// Add a new contact group to an account extension.
+/// Add a new contact group to an account extension. See Account Contact Groups for details on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param extensionId Extension ID 
 ///
-///  @param data Group name 
+///  @param data Group data 
 ///
 ///  @returns SWGGroupFull*
 ///
@@ -101,9 +101,6 @@ NSInteger kSWGGroupsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/extensions/{extension_id}/contact-groups"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -156,20 +153,20 @@ NSInteger kSWGGroupsApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Delete an addressbook group
-/// 
+/// Delete a contact group from the address book.
+/// Delete a contact group from the address book. See Account Contact Groups for details on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param extensionId Extension ID 
 ///
 ///  @param groupId Group ID 
 ///
-///  @returns SWGDeleteGroup*
+///  @returns SWGDeleteEntry*
 ///
 -(NSURLSessionTask*) deleteAccountExtensionContactGroupWithAccountId: (NSNumber*) accountId
     extensionId: (NSNumber*) extensionId
     groupId: (NSNumber*) groupId
-    completionHandler: (void (^)(SWGDeleteGroup* output, NSError* error)) handler {
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler {
     // verify the required parameter 'accountId' is set
     if (accountId == nil) {
         NSParameterAssert(accountId);
@@ -204,9 +201,6 @@ NSInteger kSWGGroupsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -252,17 +246,17 @@ NSInteger kSWGGroupsApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SWGDeleteGroup*"
+                              responseType: @"SWGDeleteEntry*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SWGDeleteGroup*)data, error);
+                                    handler((SWGDeleteEntry*)data, error);
                                 }
                             }];
 }
 
 ///
-/// 
-/// See Account Contact Groups for more info on the properties.
+/// Retrieve the information of a contact group.
+/// Retrieve the information of a contact group. See Account Contact Groups for details on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param extensionId Extension ID 
@@ -309,9 +303,6 @@ NSInteger kSWGGroupsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -366,8 +357,8 @@ NSInteger kSWGGroupsApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Show a list of contact groups belonging to an extension
-/// See Account Contact Groups for details on the properties.
+/// Show a list of contact groups belonging to an extension.
+/// Show a list of contact groups belonging to an extension. See Account Contact Groups for details on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param extensionId Extension ID 
@@ -421,9 +412,6 @@ NSInteger kSWGGroupsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/extensions/{extension_id}/contact-groups"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -498,15 +486,15 @@ NSInteger kSWGGroupsApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// 
-/// See Account Contact Groups for more info on the properties.
+/// Update the information of a contact group.
+/// Update the information of a contact group. See Account Contact Groups for details on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param extensionId Extension ID 
 ///
 ///  @param groupId Group ID 
 ///
-///  @param data Group name 
+///  @param data Group data 
 ///
 ///  @returns SWGGroupFull*
 ///
@@ -560,9 +548,6 @@ NSInteger kSWGGroupsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

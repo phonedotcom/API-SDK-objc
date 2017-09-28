@@ -4,11 +4,11 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountExtensionContactGroup**](SWGGroupsApi.md#createaccountextensioncontactgroup) | **POST** /accounts/{account_id}/extensions/{extension_id}/contact-groups | 
-[**deleteAccountExtensionContactGroup**](SWGGroupsApi.md#deleteaccountextensioncontactgroup) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Delete an addressbook group
-[**getAccountExtensionContactGroup**](SWGGroupsApi.md#getaccountextensioncontactgroup) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | 
-[**listAccountExtensionContactGroups**](SWGGroupsApi.md#listaccountextensioncontactgroups) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups | Show a list of contact groups belonging to an extension
-[**replaceAccountExtensionContactGroup**](SWGGroupsApi.md#replaceaccountextensioncontactgroup) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | 
+[**createAccountExtensionContactGroup**](SWGGroupsApi.md#createaccountextensioncontactgroup) | **POST** /accounts/{account_id}/extensions/{extension_id}/contact-groups | Add a new contact group to an account extension.
+[**deleteAccountExtensionContactGroup**](SWGGroupsApi.md#deleteaccountextensioncontactgroup) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Delete a contact group from the address book.
+[**getAccountExtensionContactGroup**](SWGGroupsApi.md#getaccountextensioncontactgroup) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Retrieve the information of a contact group.
+[**listAccountExtensionContactGroups**](SWGGroupsApi.md#listaccountextensioncontactgroups) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups | Show a list of contact groups belonging to an extension.
+[**replaceAccountExtensionContactGroup**](SWGGroupsApi.md#replaceaccountextensioncontactgroup) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Update the information of a contact group.
 
 
 # **createAccountExtensionContactGroup**
@@ -19,9 +19,9 @@ Method | HTTP request | Description
         completionHandler: (void (^)(SWGGroupFull* output, NSError* error)) handler;
 ```
 
+Add a new contact group to an account extension.
 
-
-See Account Contact Groups for more info on the properties.
+Add a new contact group to an account extension. See Account Contact Groups for details on the properties.
 
 ### Example 
 ```objc
@@ -35,11 +35,11 @@ SWGDefaultConfiguration *apiConfig = [SWGDefaultConfiguration sharedConfig];
 
 NSNumber* accountId = @56; // Account ID
 NSNumber* extensionId = @56; // Extension ID
-SWGCreateGroupParams* data = [[SWGCreateGroupParams alloc] init]; // Group name
+SWGCreateGroupParams* data = [[SWGCreateGroupParams alloc] init]; // Group data
 
 SWGGroupsApi*apiInstance = [[SWGGroupsApi alloc] init];
 
-// 
+// Add a new contact group to an account extension.
 [apiInstance createAccountExtensionContactGroupWithAccountId:accountId
               extensionId:extensionId
               data:data
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
  **extensionId** | **NSNumber***| Extension ID | 
- **data** | [**SWGCreateGroupParams***](SWGCreateGroupParams*.md)| Group name | 
+ **data** | [**SWGCreateGroupParams***](SWGCreateGroupParams.md)| Group data | 
 
 ### Return type
 
@@ -81,12 +81,12 @@ Name | Type | Description  | Notes
 -(NSURLSessionTask*) deleteAccountExtensionContactGroupWithAccountId: (NSNumber*) accountId
     extensionId: (NSNumber*) extensionId
     groupId: (NSNumber*) groupId
-        completionHandler: (void (^)(SWGDeleteGroup* output, NSError* error)) handler;
+        completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
 ```
 
-Delete an addressbook group
+Delete a contact group from the address book.
 
-
+Delete a contact group from the address book. See Account Contact Groups for details on the properties.
 
 ### Example 
 ```objc
@@ -104,11 +104,11 @@ NSNumber* groupId = @56; // Group ID
 
 SWGGroupsApi*apiInstance = [[SWGGroupsApi alloc] init];
 
-// Delete an addressbook group
+// Delete a contact group from the address book.
 [apiInstance deleteAccountExtensionContactGroupWithAccountId:accountId
               extensionId:extensionId
               groupId:groupId
-          completionHandler: ^(SWGDeleteGroup* output, NSError* error) {
+          completionHandler: ^(SWGDeleteEntry* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGDeleteGroup***](SWGDeleteGroup.md)
+[**SWGDeleteEntry***](SWGDeleteEntry.md)
 
 ### Authorization
 
@@ -149,9 +149,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGGroupFull* output, NSError* error)) handler;
 ```
 
+Retrieve the information of a contact group.
 
-
-See Account Contact Groups for more info on the properties.
+Retrieve the information of a contact group. See Account Contact Groups for details on the properties.
 
 ### Example 
 ```objc
@@ -169,7 +169,7 @@ NSNumber* groupId = @56; // Group ID
 
 SWGGroupsApi*apiInstance = [[SWGGroupsApi alloc] init];
 
-// 
+// Retrieve the information of a contact group.
 [apiInstance getAccountExtensionContactGroupWithAccountId:accountId
               extensionId:extensionId
               groupId:groupId
@@ -220,9 +220,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGListGroups* output, NSError* error)) handler;
 ```
 
-Show a list of contact groups belonging to an extension
+Show a list of contact groups belonging to an extension.
 
-See Account Contact Groups for details on the properties.
+Show a list of contact groups belonging to an extension. See Account Contact Groups for details on the properties.
 
 ### Example 
 ```objc
@@ -246,7 +246,7 @@ NSString* fields = @"fields_example"; // Field set (optional)
 
 SWGGroupsApi*apiInstance = [[SWGGroupsApi alloc] init];
 
-// Show a list of contact groups belonging to an extension
+// Show a list of contact groups belonging to an extension.
 [apiInstance listAccountExtensionContactGroupsWithAccountId:accountId
               extensionId:extensionId
               filtersId:filtersId
@@ -304,9 +304,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGGroupFull* output, NSError* error)) handler;
 ```
 
+Update the information of a contact group.
 
-
-See Account Contact Groups for more info on the properties.
+Update the information of a contact group. See Account Contact Groups for details on the properties.
 
 ### Example 
 ```objc
@@ -321,11 +321,11 @@ SWGDefaultConfiguration *apiConfig = [SWGDefaultConfiguration sharedConfig];
 NSNumber* accountId = @56; // Account ID
 NSNumber* extensionId = @56; // Extension ID
 NSNumber* groupId = @56; // Group ID
-SWGCreateGroupParams* data = [[SWGCreateGroupParams alloc] init]; // Group name
+SWGCreateGroupParams* data = [[SWGCreateGroupParams alloc] init]; // Group data
 
 SWGGroupsApi*apiInstance = [[SWGGroupsApi alloc] init];
 
-// 
+// Update the information of a contact group.
 [apiInstance replaceAccountExtensionContactGroupWithAccountId:accountId
               extensionId:extensionId
               groupId:groupId
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
  **accountId** | **NSNumber***| Account ID | 
  **extensionId** | **NSNumber***| Extension ID | 
  **groupId** | **NSNumber***| Group ID | 
- **data** | [**SWGCreateGroupParams***](SWGCreateGroupParams*.md)| Group name | 
+ **data** | [**SWGCreateGroupParams***](SWGCreateGroupParams.md)| Group data | 
 
 ### Return type
 

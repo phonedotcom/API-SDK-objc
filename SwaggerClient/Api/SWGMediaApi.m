@@ -2,7 +2,7 @@
 #import "SWGQueryParamCollection.h"
 #import "SWGApiClient.h"
 #import "SWGCreateMediaParams.h"
-#import "SWGDeleteMedia.h"
+#import "SWGDeleteEntry.h"
 #import "SWGListMedia.h"
 #import "SWGMediaFull.h"
 
@@ -80,9 +80,6 @@ NSInteger kSWGMediaApiMissingParamErrorCode = 234513;
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/media/files"];
 
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
-
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
         pathParams[@"account_id"] = accountId;
@@ -158,9 +155,6 @@ NSInteger kSWGMediaApiMissingParamErrorCode = 234513;
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/media/tts"];
 
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
-
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
         pathParams[@"account_id"] = accountId;
@@ -215,11 +209,11 @@ NSInteger kSWGMediaApiMissingParamErrorCode = 234513;
 ///
 ///  @param mediaId Media ID 
 ///
-///  @returns SWGDeleteMedia*
+///  @returns SWGDeleteEntry*
 ///
 -(NSURLSessionTask*) deleteAccountMediaWithAccountId: (NSNumber*) accountId
     mediaId: (NSNumber*) mediaId
-    completionHandler: (void (^)(SWGDeleteMedia* output, NSError* error)) handler {
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler {
     // verify the required parameter 'accountId' is set
     if (accountId == nil) {
         NSParameterAssert(accountId);
@@ -243,9 +237,6 @@ NSInteger kSWGMediaApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/media/{media_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -288,10 +279,10 @@ NSInteger kSWGMediaApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SWGDeleteMedia*"
+                              responseType: @"SWGDeleteEntry*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SWGDeleteMedia*)data, error);
+                                    handler((SWGDeleteEntry*)data, error);
                                 }
                             }];
 }
@@ -331,9 +322,6 @@ NSInteger kSWGMediaApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/media/{media_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -385,8 +373,8 @@ NSInteger kSWGMediaApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Get a list of media recordings for an account
-/// See Account Menus for more info on the properties.
+/// Get a list of media recordings for an account.
+/// Get a list of media recordings for an account. See Account Media for more info on the properties. Note: This API is for users with Account Owner scope access token. Users with Extension User scope token should invoke the Extension level List Media API with the following definition: GET https://api.phone.com/v4/accounts/:account_id/extensions/:extension_id/media
 ///  @param accountId Account ID 
 ///
 ///  @param filtersId ID filter (optional)
@@ -426,9 +414,6 @@ NSInteger kSWGMediaApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/media"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -541,9 +526,6 @@ NSInteger kSWGMediaApiMissingParamErrorCode = 234513;
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/media/files/{media_id}"];
 
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
-
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
         pathParams[@"account_id"] = accountId;
@@ -565,7 +547,7 @@ NSInteger kSWGMediaApiMissingParamErrorCode = 234513;
     NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
 
     // request content type
-    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json"]];
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"multipart/form-data"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"apiKey"];
@@ -598,8 +580,8 @@ NSInteger kSWGMediaApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
-/// See Account Media for more info on the properties.
+/// Update a media object to your account.
+/// Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB. See Account Media for more info on the properties. Note: This API is for users with Account Owner scope access token. Users with Extension User scope token should invoke the Extension level Replace Media API with the following definition: PUT https://api.phone.com/v4/accounts/:account_id/extensions/:extension_id/media/:media_id
 ///  @param accountId Account ID 
 ///
 ///  @param mediaId Media ID 
@@ -635,9 +617,6 @@ NSInteger kSWGMediaApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/media/tts/{media_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

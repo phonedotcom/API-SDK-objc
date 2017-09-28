@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **blockIncoming** | **NSNumber*** | Whether to block incoming calls. Boolean. | [optional] 
 **blockAnonymous** | **NSNumber*** | Whether to block anonymous calls. Boolean. | [optional] 
 **route** | [**SWGRouteSummary***](SWGRouteSummary.md) | The Route assigned to handle incoming calls for this number, if any. Output is a Route Summary Object, or NULL if not set. Input can be a Route Lookup Object or NULL to unset. | [optional] 
-**callerId** | [**SWGCallerIdPhoneNumber***](SWGCallerIdPhoneNumber.md) | Caller ID Object, or NULL | [optional] 
-**smsForwarding** | [**SWGSmsForwarding***](SWGSmsForwarding.md) | SMS Forwarding Object, or NULL | [optional] 
+**callerId** | [**SWGCallerIdPhoneNumber***](SWGCallerIdPhoneNumber.md) |  | [optional] 
+**smsForwarding** | [**SWGSmsForwarding***](SWGSmsForwarding.md) |  | [optional] 
 **callNotifications** | [**SWGCallNotifications***](SWGCallNotifications.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

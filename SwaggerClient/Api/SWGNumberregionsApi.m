@@ -111,9 +111,6 @@ NSInteger kSWGNumberregionsApiMissingParamErrorCode = 234513;
     completionHandler: (void (^)(SWGListPhoneNumbersRegions* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/phone-numbers/available/regions"];
 
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
-
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];

@@ -25,7 +25,7 @@ extern NSInteger kSWGAccountsApiMissingParamErrorCode;
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
 /// Retrieve details of an individual account
-/// This service shows the details of an individual account. See Accounts for more info on the properties.
+/// Retrieve details of an individual account. See Accounts for more info on the properties.
 ///
 /// @param accountId Account ID
 /// 
@@ -38,8 +38,8 @@ extern NSInteger kSWGAccountsApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGAccountFull* output, NSError* error)) handler;
 
 
-/// Get a list of accounts visible to the authenticated user or client
-/// This service lists the accounts accessible to the authenticated client. In most cases, there will only be one such account. See Accounts for more info on the properties.
+/// Get a list of accounts visible to the authenticated user or client.
+/// Get a list of accounts visible to the authenticated user or client. In most cases, there will only be one such account. See Accounts for more info on the properties.
 ///
 /// @param filtersId ID filter (optional)
 /// @param sortId ID sorting (optional)

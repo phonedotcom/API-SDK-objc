@@ -4,7 +4,7 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCallerIds**](SWGCalleridsApi.md#getcallerids) | **GET** /accounts/{account_id}/extensions/{extension_id}/caller-ids | Show the Caller ID options a given extension can use
+[**getCallerIds**](SWGCalleridsApi.md#getcallerids) | **GET** /accounts/{account_id}/extensions/{extension_id}/caller-ids | Show the Caller ID options a given extension can use.
 
 
 # **getCallerIds**
@@ -21,9 +21,9 @@ Method | HTTP request | Description
         completionHandler: (void (^)(SWGListCallerIds* output, NSError* error)) handler;
 ```
 
-Show the Caller ID options a given extension can use
+Show the Caller ID options a given extension can use.
 
-Get Caller ID
+Show the Caller ID options a given extension can use. See Intro to Caller IDs for more on the properties.
 
 ### Example 
 ```objc
@@ -47,7 +47,7 @@ NSString* fields = @"fields_example"; // Field set (optional)
 
 SWGCalleridsApi*apiInstance = [[SWGCalleridsApi alloc] init];
 
-// Show the Caller ID options a given extension can use
+// Show the Caller ID options a given extension can use.
 [apiInstance getCallerIdsWithAccountId:accountId
               extensionId:extensionId
               filtersNumber:filtersNumber

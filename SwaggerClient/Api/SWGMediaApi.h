@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SWGCreateMediaParams.h"
-#import "SWGDeleteMedia.h"
+#import "SWGDeleteEntry.h"
 #import "SWGListMedia.h"
 #import "SWGMediaFull.h"
 #import "SWGApi.h"
@@ -74,10 +74,10 @@ extern NSInteger kSWGMediaApiMissingParamErrorCode;
 ///  code:404 message:"Not Found",
 ///  code:409 message:"Conflict"
 ///
-/// @return SWGDeleteMedia*
+/// @return SWGDeleteEntry*
 -(NSURLSessionTask*) deleteAccountMediaWithAccountId: (NSNumber*) accountId
     mediaId: (NSNumber*) mediaId
-    completionHandler: (void (^)(SWGDeleteMedia* output, NSError* error)) handler;
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
 
 
 /// Show details of an individual media recording (Greeting or Hold Music)
@@ -97,8 +97,8 @@ extern NSInteger kSWGMediaApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGMediaFull* output, NSError* error)) handler;
 
 
-/// Get a list of media recordings for an account
-/// See Account Menus for more info on the properties.
+/// Get a list of media recordings for an account.
+/// Get a list of media recordings for an account. See Account Media for more info on the properties. Note: This API is for users with Account Owner scope access token. Users with Extension User scope token should invoke the Extension level List Media API with the following definition: GET https://api.phone.com/v4/accounts/:account_id/extensions/:extension_id/media
 ///
 /// @param accountId Account ID
 /// @param filtersId ID filter (optional)
@@ -147,8 +147,8 @@ extern NSInteger kSWGMediaApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGMediaFull* output, NSError* error)) handler;
 
 
-/// Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
-/// See Account Media for more info on the properties.
+/// Update a media object to your account.
+/// Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB. See Account Media for more info on the properties. Note: This API is for users with Account Owner scope access token. Users with Extension User scope token should invoke the Extension level Replace Media API with the following definition: PUT https://api.phone.com/v4/accounts/:account_id/extensions/:extension_id/media/:media_id
 ///
 /// @param accountId Account ID
 /// @param mediaId Media ID

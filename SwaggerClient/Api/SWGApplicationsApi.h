@@ -24,8 +24,8 @@ extern NSInteger kSWGApplicationsApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
-/// Show details of an individual application
-/// 
+/// Show details of an individual Application on a given account.
+/// Show details of an individual Application on a given account.
 ///
 /// @param accountId Account ID
 /// @param applicationId Application ID
@@ -41,8 +41,8 @@ extern NSInteger kSWGApplicationsApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGApplicationFull* output, NSError* error)) handler;
 
 
-/// Get a list of applications you have defined
-/// Get a list of an account available applications
+/// This service lists the Applications on a given account
+/// Show details of an individual Application on a given account.
 ///
 /// @param accountId Account ID
 /// @param filtersId ID filter (optional)

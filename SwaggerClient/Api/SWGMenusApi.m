@@ -2,7 +2,7 @@
 #import "SWGQueryParamCollection.h"
 #import "SWGApiClient.h"
 #import "SWGCreateMenuParams.h"
-#import "SWGDeleteMenu.h"
+#import "SWGDeleteEntry.h"
 #import "SWGListMenus.h"
 #import "SWGMenuFull.h"
 #import "SWGReplaceMenuParams.h"
@@ -54,8 +54,8 @@ NSInteger kSWGMenusApiMissingParamErrorCode = 234513;
 #pragma mark - Api Methods
 
 ///
-/// Create an individual menu
-/// This service creates an individual menu. See Account Menus for more info on the properties.
+/// Create an individual menu.
+/// Create an individual menu. See Account Menus for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param data Menu data (optional)
@@ -77,9 +77,6 @@ NSInteger kSWGMenusApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/menus"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -129,17 +126,17 @@ NSInteger kSWGMenusApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Delete an individual menu
-/// See Account Menus for more info on the properties.
+/// Delete an individual menu.
+/// Delete an individual menu. See Account Menus for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param menuId Menu ID 
 ///
-///  @returns SWGDeleteMenu*
+///  @returns SWGDeleteEntry*
 ///
 -(NSURLSessionTask*) deleteAccountMenuWithAccountId: (NSNumber*) accountId
     menuId: (NSNumber*) menuId
-    completionHandler: (void (^)(SWGDeleteMenu* output, NSError* error)) handler {
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler {
     // verify the required parameter 'accountId' is set
     if (accountId == nil) {
         NSParameterAssert(accountId);
@@ -163,9 +160,6 @@ NSInteger kSWGMenusApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/menus/{menu_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -208,17 +202,17 @@ NSInteger kSWGMenusApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SWGDeleteMenu*"
+                              responseType: @"SWGDeleteEntry*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SWGDeleteMenu*)data, error);
+                                    handler((SWGDeleteEntry*)data, error);
                                 }
                             }];
 }
 
 ///
-/// Show details of an individual menu
-/// This service shows the details of an individual Menu.
+/// Show details of an individual menu.
+/// Show details of an individual menu. See Account Menus for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param menuId Menu ID 
@@ -251,9 +245,6 @@ NSInteger kSWGMenusApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/menus/{menu_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -305,8 +296,8 @@ NSInteger kSWGMenusApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Get a list of menus for an account
-/// See Account Menus for more info on the properties.
+/// Get a list of menus for an account.
+/// Get a list of menus for an account. See Account Menus for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param filtersId ID filter (optional)
@@ -346,9 +337,6 @@ NSInteger kSWGMenusApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/menus"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -420,8 +408,8 @@ NSInteger kSWGMenusApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Replace an individual menu
-/// See Account Menus for more info on the properties.
+/// Replace an individual menu.
+/// Replace an individual menu. See Account Menus for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param menuId Menu ID 
@@ -457,9 +445,6 @@ NSInteger kSWGMenusApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/menus/{menu_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

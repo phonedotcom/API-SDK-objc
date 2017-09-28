@@ -6,7 +6,7 @@
   self = [super init];
   if (self) {
     // initialize property's default value, if any
-    self.screening = @0;
+    self.screening = @(NO);
     self.callerId = @"calling_number";
     
   }

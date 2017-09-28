@@ -50,8 +50,8 @@ NSInteger kSWGCalleridsApiMissingParamErrorCode = 234513;
 #pragma mark - Api Methods
 
 ///
-/// Show the Caller ID options a given extension can use
-/// Get Caller ID
+/// Show the Caller ID options a given extension can use.
+/// Show the Caller ID options a given extension can use. See Intro to Caller IDs for more on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param extensionId Extension ID 
@@ -105,9 +105,6 @@ NSInteger kSWGCalleridsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/extensions/{extension_id}/caller-ids"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

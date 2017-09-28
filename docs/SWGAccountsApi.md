@@ -5,7 +5,7 @@ All URIs are relative to *https://api.phone.com/v4*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getAccount**](SWGAccountsApi.md#getaccount) | **GET** /accounts/{account_id} | Retrieve details of an individual account
-[**listAccounts**](SWGAccountsApi.md#listaccounts) | **GET** /accounts | Get a list of accounts visible to the authenticated user or client
+[**listAccounts**](SWGAccountsApi.md#listaccounts) | **GET** /accounts | Get a list of accounts visible to the authenticated user or client.
 
 
 # **getAccount**
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Retrieve details of an individual account
 
-This service shows the details of an individual account. See Accounts for more info on the properties.
+Retrieve details of an individual account. See Accounts for more info on the properties.
 
 ### Example 
 ```objc
@@ -75,9 +75,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGListAccounts* output, NSError* error)) handler;
 ```
 
-Get a list of accounts visible to the authenticated user or client
+Get a list of accounts visible to the authenticated user or client.
 
-This service lists the accounts accessible to the authenticated client. In most cases, there will only be one such account. See Accounts for more info on the properties.
+Get a list of accounts visible to the authenticated user or client. In most cases, there will only be one such account. See Accounts for more info on the properties.
 
 ### Example 
 ```objc
@@ -97,7 +97,7 @@ NSString* fields = @"fields_example"; // Field set (optional)
 
 SWGAccountsApi*apiInstance = [[SWGAccountsApi alloc] init];
 
-// Get a list of accounts visible to the authenticated user or client
+// Get a list of accounts visible to the authenticated user or client.
 [apiInstance listAccountsWithFiltersId:filtersId
               sortId:sortId
               limit:limit

@@ -15,7 +15,7 @@
 
 
 #import "SWGCallNotifications.h"
-#import "SWGVoicemail.h"
+#import "SWGVoicemailInput.h"
 
 
 @protocol SWGCreateExtensionParams
@@ -23,11 +23,9 @@
 
 @interface SWGCreateExtensionParams : SWGObject
 
-/* Voicemail object [optional]
- */
-@property(nonatomic) SWGVoicemail* voicemail;
-/* Call Notifications object [optional]
- */
+
+@property(nonatomic) SWGVoicemailInput* voicemail;
+
 @property(nonatomic) SWGCallNotifications* callNotifications;
 /* Caller ID [optional]
  */
@@ -35,15 +33,12 @@
 /* Extension type [optional]
  */
 @property(nonatomic) NSString* usageType;
-/* Allows call waiting [optional]
- */
-@property(nonatomic) NSNumber* allowsCallWaiting;
 /* Extension number (auto-generated if empty) [optional]
  */
 @property(nonatomic) NSNumber* extension;
 /* Include in dial-by-name directory [optional]
  */
-@property(nonatomic) NSNumber* includeInDirectory;
+@property(nonatomic) NSString* includeInDirectory;
 /* Name (auto-generated if empty) [optional]
  */
 @property(nonatomic) NSString* name;
@@ -58,12 +53,12 @@
 @property(nonatomic) NSObject* nameGreeting;
 /* Local area code [optional]
  */
-@property(nonatomic) NSNumber* localAreaCode;
+@property(nonatomic) NSString* localAreaCode;
 /* Enable outgoing calls [optional]
  */
-@property(nonatomic) NSNumber* enableOutboundCalls;
+@property(nonatomic) NSString* enableOutboundCalls;
 /* Enable Call Waiting [optional]
  */
-@property(nonatomic) NSNumber* enableCallWaiting;
+@property(nonatomic) NSString* enableCallWaiting;
 
 @end

@@ -14,6 +14,9 @@
 */
 
 
+#import "SWGAddressListContacts.h"
+#import "SWGEmail.h"
+#import "SWGPhoneNumberContact.h"
 
 
 @protocol SWGCreateContactParams
@@ -59,13 +62,13 @@
 @property(nonatomic) NSString* jobTitle;
 /* Email Addresses [optional]
  */
-@property(nonatomic) NSArray<NSObject*>* emails;
+@property(nonatomic) NSArray<SWGEmail>* emails;
 /* Phone Numbers [optional]
  */
-@property(nonatomic) NSArray<NSObject*>* phoneNumbers;
+@property(nonatomic) NSArray<SWGPhoneNumberContact>* phoneNumbers;
 /* Addresses [optional]
  */
-@property(nonatomic) NSArray<NSObject*>* addresses;
+@property(nonatomic) NSArray<SWGAddressListContacts>* addresses;
 /* Contact Group [optional]
  */
 @property(nonatomic) NSObject* group;

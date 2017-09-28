@@ -4,11 +4,11 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountMenu**](SWGMenusApi.md#createaccountmenu) | **POST** /accounts/{account_id}/menus | Create an individual menu
-[**deleteAccountMenu**](SWGMenusApi.md#deleteaccountmenu) | **DELETE** /accounts/{account_id}/menus/{menu_id} | Delete an individual menu
-[**getAccountMenu**](SWGMenusApi.md#getaccountmenu) | **GET** /accounts/{account_id}/menus/{menu_id} | Show details of an individual menu
-[**listAccountMenus**](SWGMenusApi.md#listaccountmenus) | **GET** /accounts/{account_id}/menus | Get a list of menus for an account
-[**replaceAccountMenu**](SWGMenusApi.md#replaceaccountmenu) | **PUT** /accounts/{account_id}/menus/{menu_id} | Replace an individual menu
+[**createAccountMenu**](SWGMenusApi.md#createaccountmenu) | **POST** /accounts/{account_id}/menus | Create an individual menu.
+[**deleteAccountMenu**](SWGMenusApi.md#deleteaccountmenu) | **DELETE** /accounts/{account_id}/menus/{menu_id} | Delete an individual menu.
+[**getAccountMenu**](SWGMenusApi.md#getaccountmenu) | **GET** /accounts/{account_id}/menus/{menu_id} | Show details of an individual menu.
+[**listAccountMenus**](SWGMenusApi.md#listaccountmenus) | **GET** /accounts/{account_id}/menus | Get a list of menus for an account.
+[**replaceAccountMenu**](SWGMenusApi.md#replaceaccountmenu) | **PUT** /accounts/{account_id}/menus/{menu_id} | Replace an individual menu.
 
 
 # **createAccountMenu**
@@ -18,9 +18,9 @@ Method | HTTP request | Description
         completionHandler: (void (^)(SWGMenuFull* output, NSError* error)) handler;
 ```
 
-Create an individual menu
+Create an individual menu.
 
-This service creates an individual menu. See Account Menus for more info on the properties.
+Create an individual menu. See Account Menus for more info on the properties.
 
 ### Example 
 ```objc
@@ -37,7 +37,7 @@ SWGCreateMenuParams* data = [[SWGCreateMenuParams alloc] init]; // Menu data (op
 
 SWGMenusApi*apiInstance = [[SWGMenusApi alloc] init];
 
-// Create an individual menu
+// Create an individual menu.
 [apiInstance createAccountMenuWithAccountId:accountId
               data:data
           completionHandler: ^(SWGMenuFull* output, NSError* error) {
@@ -55,7 +55,7 @@ SWGMenusApi*apiInstance = [[SWGMenusApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
- **data** | [**SWGCreateMenuParams***](SWGCreateMenuParams*.md)| Menu data | [optional] 
+ **data** | [**SWGCreateMenuParams***](SWGCreateMenuParams.md)| Menu data | [optional] 
 
 ### Return type
 
@@ -76,12 +76,12 @@ Name | Type | Description  | Notes
 ```objc
 -(NSURLSessionTask*) deleteAccountMenuWithAccountId: (NSNumber*) accountId
     menuId: (NSNumber*) menuId
-        completionHandler: (void (^)(SWGDeleteMenu* output, NSError* error)) handler;
+        completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
 ```
 
-Delete an individual menu
+Delete an individual menu.
 
-See Account Menus for more info on the properties.
+Delete an individual menu. See Account Menus for more info on the properties.
 
 ### Example 
 ```objc
@@ -98,10 +98,10 @@ NSNumber* menuId = @56; // Menu ID
 
 SWGMenusApi*apiInstance = [[SWGMenusApi alloc] init];
 
-// Delete an individual menu
+// Delete an individual menu.
 [apiInstance deleteAccountMenuWithAccountId:accountId
               menuId:menuId
-          completionHandler: ^(SWGDeleteMenu* output, NSError* error) {
+          completionHandler: ^(SWGDeleteEntry* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGDeleteMenu***](SWGDeleteMenu.md)
+[**SWGDeleteEntry***](SWGDeleteEntry.md)
 
 ### Authorization
 
@@ -140,9 +140,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGMenuFull* output, NSError* error)) handler;
 ```
 
-Show details of an individual menu
+Show details of an individual menu.
 
-This service shows the details of an individual Menu.
+Show details of an individual menu. See Account Menus for more info on the properties.
 
 ### Example 
 ```objc
@@ -159,7 +159,7 @@ NSNumber* menuId = @56; // Menu ID
 
 SWGMenusApi*apiInstance = [[SWGMenusApi alloc] init];
 
-// Show details of an individual menu
+// Show details of an individual menu.
 [apiInstance getAccountMenuWithAccountId:accountId
               menuId:menuId
           completionHandler: ^(SWGMenuFull* output, NSError* error) {
@@ -207,9 +207,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGListMenus* output, NSError* error)) handler;
 ```
 
-Get a list of menus for an account
+Get a list of menus for an account.
 
-See Account Menus for more info on the properties.
+Get a list of menus for an account. See Account Menus for more info on the properties.
 
 ### Example 
 ```objc
@@ -232,7 +232,7 @@ NSString* fields = @"fields_example"; // Field set (optional)
 
 SWGMenusApi*apiInstance = [[SWGMenusApi alloc] init];
 
-// Get a list of menus for an account
+// Get a list of menus for an account.
 [apiInstance listAccountMenusWithAccountId:accountId
               filtersId:filtersId
               filtersName:filtersName
@@ -287,9 +287,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGMenuFull* output, NSError* error)) handler;
 ```
 
-Replace an individual menu
+Replace an individual menu.
 
-See Account Menus for more info on the properties.
+Replace an individual menu. See Account Menus for more info on the properties.
 
 ### Example 
 ```objc
@@ -307,7 +307,7 @@ SWGReplaceMenuParams* data = [[SWGReplaceMenuParams alloc] init]; // Menu data (
 
 SWGMenusApi*apiInstance = [[SWGMenusApi alloc] init];
 
-// Replace an individual menu
+// Replace an individual menu.
 [apiInstance replaceAccountMenuWithAccountId:accountId
               menuId:menuId
               data:data
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
  **menuId** | **NSNumber***| Menu ID | 
- **data** | [**SWGReplaceMenuParams***](SWGReplaceMenuParams*.md)| Menu data | [optional] 
+ **data** | [**SWGReplaceMenuParams***](SWGReplaceMenuParams.md)| Menu data | [optional] 
 
 ### Return type
 

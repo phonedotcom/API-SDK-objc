@@ -8,9 +8,9 @@ Method | HTTP request | Description
 [**createAccountMediaTts**](SWGMediaApi.md#createaccountmediatts) | **POST** /accounts/{account_id}/media/tts | Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
 [**deleteAccountMedia**](SWGMediaApi.md#deleteaccountmedia) | **DELETE** /accounts/{account_id}/media/{media_id} | Delete an individual media record
 [**getAccountMedia**](SWGMediaApi.md#getaccountmedia) | **GET** /accounts/{account_id}/media/{media_id} | Show details of an individual media recording (Greeting or Hold Music)
-[**listAccountMedia**](SWGMediaApi.md#listaccountmedia) | **GET** /accounts/{account_id}/media | Get a list of media recordings for an account
+[**listAccountMedia**](SWGMediaApi.md#listaccountmedia) | **GET** /accounts/{account_id}/media | Get a list of media recordings for an account.
 [**replaceAccountMediaFiles**](SWGMediaApi.md#replaceaccountmediafiles) | **PUT** /accounts/{account_id}/media/files/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
-[**replaceAccountMediaTts**](SWGMediaApi.md#replaceaccountmediatts) | **PUT** /accounts/{account_id}/media/tts/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+[**replaceAccountMediaTts**](SWGMediaApi.md#replaceaccountmediatts) | **PUT** /accounts/{account_id}/media/tts/{media_id} | Update a media object to your account.
 
 
 # **createAccountMediaFiles**
@@ -122,7 +122,7 @@ SWGMediaApi*apiInstance = [[SWGMediaApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
- **data** | [**SWGCreateMediaParams***](SWGCreateMediaParams*.md)| Media data | [optional] 
+ **data** | [**SWGCreateMediaParams***](SWGCreateMediaParams.md)| Media data | [optional] 
 
 ### Return type
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSURLSessionTask*) deleteAccountMediaWithAccountId: (NSNumber*) accountId
     mediaId: (NSNumber*) mediaId
-        completionHandler: (void (^)(SWGDeleteMedia* output, NSError* error)) handler;
+        completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
 ```
 
 Delete an individual media record
@@ -168,7 +168,7 @@ SWGMediaApi*apiInstance = [[SWGMediaApi alloc] init];
 // Delete an individual media record
 [apiInstance deleteAccountMediaWithAccountId:accountId
               mediaId:mediaId
-          completionHandler: ^(SWGDeleteMedia* output, NSError* error) {
+          completionHandler: ^(SWGDeleteEntry* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGDeleteMedia***](SWGDeleteMedia.md)
+[**SWGDeleteEntry***](SWGDeleteEntry.md)
 
 ### Authorization
 
@@ -274,9 +274,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGListMedia* output, NSError* error)) handler;
 ```
 
-Get a list of media recordings for an account
+Get a list of media recordings for an account.
 
-See Account Menus for more info on the properties.
+Get a list of media recordings for an account. See Account Media for more info on the properties. Note: This API is for users with Account Owner scope access token. Users with Extension User scope token should invoke the Extension level List Media API with the following definition: GET https://api.phone.com/v4/accounts/:account_id/extensions/:extension_id/media
 
 ### Example 
 ```objc
@@ -299,7 +299,7 @@ NSString* fields = @"fields_example"; // Field set (optional)
 
 SWGMediaApi*apiInstance = [[SWGMediaApi alloc] init];
 
-// Get a list of media recordings for an account
+// Get a list of media recordings for an account.
 [apiInstance listAccountMediaWithAccountId:accountId
               filtersId:filtersId
               filtersName:filtersName
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -423,9 +423,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGMediaFull* output, NSError* error)) handler;
 ```
 
-Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+Update a media object to your account.
 
-See Account Media for more info on the properties.
+Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB. See Account Media for more info on the properties. Note: This API is for users with Account Owner scope access token. Users with Extension User scope token should invoke the Extension level Replace Media API with the following definition: PUT https://api.phone.com/v4/accounts/:account_id/extensions/:extension_id/media/:media_id
 
 ### Example 
 ```objc
@@ -443,7 +443,7 @@ SWGCreateMediaParams* data = [[SWGCreateMediaParams alloc] init]; // Media data 
 
 SWGMediaApi*apiInstance = [[SWGMediaApi alloc] init];
 
-// Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+// Update a media object to your account.
 [apiInstance replaceAccountMediaTtsWithAccountId:accountId
               mediaId:mediaId
               data:data
@@ -463,7 +463,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
  **mediaId** | **NSNumber***| Media ID | 
- **data** | [**SWGCreateMediaParams***](SWGCreateMediaParams*.md)| Media data | [optional] 
+ **data** | [**SWGCreateMediaParams***](SWGCreateMediaParams.md)| Media data | [optional] 
 
 ### Return type
 

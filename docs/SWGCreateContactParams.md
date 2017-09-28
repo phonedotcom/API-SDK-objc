@@ -15,9 +15,9 @@ Name | Type | Description | Notes
 **company** | **NSString*** | Company Name | [optional] 
 **department** | **NSString*** | Department Name | [optional] 
 **jobTitle** | **NSString*** | Job Title | [optional] 
-**emails** | **NSArray&lt;NSObject*&gt;*** | Email Addresses | [optional] 
-**phoneNumbers** | **NSArray&lt;NSObject*&gt;*** | Phone Numbers | [optional] 
-**addresses** | **NSArray&lt;NSObject*&gt;*** | Addresses | [optional] 
+**emails** | [**NSArray&lt;SWGEmail&gt;***](SWGEmail.md) | Email Addresses | [optional] 
+**phoneNumbers** | [**NSArray&lt;SWGPhoneNumberContact&gt;***](SWGPhoneNumberContact.md) | Phone Numbers | [optional] 
+**addresses** | [**NSArray&lt;SWGAddressListContacts&gt;***](SWGAddressListContacts.md) | Addresses | [optional] 
 **group** | **NSObject*** | Contact Group | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

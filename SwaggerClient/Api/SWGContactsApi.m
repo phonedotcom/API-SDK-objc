@@ -3,7 +3,7 @@
 #import "SWGApiClient.h"
 #import "SWGContactFull.h"
 #import "SWGCreateContactParams.h"
-#import "SWGDeleteContact.h"
+#import "SWGDeleteEntry.h"
 #import "SWGListContacts.h"
 
 
@@ -53,8 +53,8 @@ NSInteger kSWGContactsApiMissingParamErrorCode = 234513;
 #pragma mark - Api Methods
 
 ///
-/// Add a new address book contact for an extension
-/// For more on the input fields, see Account Contacts.
+/// Add a new address book contact for an extension.
+/// Add a new address book contact for an extension. See Account Contacts for more info on the fields in each item.
 ///  @param accountId Account ID 
 ///
 ///  @param extensionId Extension ID 
@@ -90,9 +90,6 @@ NSInteger kSWGContactsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/extensions/{extension_id}/contacts"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -145,20 +142,20 @@ NSInteger kSWGContactsApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// 
-/// 
+/// Delete a contact from the address book.
+/// Delete a contact from the address book. See Account Contacts for more info on the fields in each item.
 ///  @param accountId Account ID 
 ///
 ///  @param extensionId Extension ID 
 ///
 ///  @param contactId Contact ID 
 ///
-///  @returns SWGDeleteContact*
+///  @returns SWGDeleteEntry*
 ///
 -(NSURLSessionTask*) deleteAccountExtensionContactWithAccountId: (NSNumber*) accountId
     extensionId: (NSNumber*) extensionId
     contactId: (NSNumber*) contactId
-    completionHandler: (void (^)(SWGDeleteContact* output, NSError* error)) handler {
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler {
     // verify the required parameter 'accountId' is set
     if (accountId == nil) {
         NSParameterAssert(accountId);
@@ -193,9 +190,6 @@ NSInteger kSWGContactsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -241,17 +235,17 @@ NSInteger kSWGContactsApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SWGDeleteContact*"
+                              responseType: @"SWGDeleteEntry*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SWGDeleteContact*)data, error);
+                                    handler((SWGDeleteEntry*)data, error);
                                 }
                             }];
 }
 
 ///
-/// Retrieve the details of an address book contact
-/// For more info on the fields shown, see Account Contacts.
+/// Retrieve the details of an address book contact.
+/// Retrieve the details of an address book contact. See Account Contacts for more info on the fields in each item.
 ///  @param accountId Account ID 
 ///
 ///  @param extensionId Extension ID 
@@ -298,9 +292,6 @@ NSInteger kSWGContactsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -355,8 +346,8 @@ NSInteger kSWGContactsApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Show a list of address book contacts
-/// See Account Contacts for more info on the fields in each item.
+/// Show the Caller ID options a given extension can use.
+/// Show the Caller ID options a given extension can use. See Intro to Caller IDs for more on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param extensionId Extension ID 
@@ -413,9 +404,6 @@ NSInteger kSWGContactsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/extensions/{extension_id}/contacts"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -494,8 +482,8 @@ NSInteger kSWGContactsApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// 
-/// For more on the input fields, see Account Contacts.
+/// Update the info of a contact in the address book.
+/// Update the info of a contact in the address book. See Account Contacts for more info on the fields in each item.
 ///  @param accountId Account ID 
 ///
 ///  @param extensionId Extension ID 
@@ -545,9 +533,6 @@ NSInteger kSWGContactsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

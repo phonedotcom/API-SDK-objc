@@ -4,8 +4,8 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAccountApplication**](SWGApplicationsApi.md#getaccountapplication) | **GET** /accounts/{account_id}/applications/{application_id} | Show details of an individual application
-[**listAccountApplications**](SWGApplicationsApi.md#listaccountapplications) | **GET** /accounts/{account_id}/applications | Get a list of applications you have defined
+[**getAccountApplication**](SWGApplicationsApi.md#getaccountapplication) | **GET** /accounts/{account_id}/applications/{application_id} | Show details of an individual Application on a given account.
+[**listAccountApplications**](SWGApplicationsApi.md#listaccountapplications) | **GET** /accounts/{account_id}/applications | This service lists the Applications on a given account
 
 
 # **getAccountApplication**
@@ -15,9 +15,9 @@ Method | HTTP request | Description
         completionHandler: (void (^)(SWGApplicationFull* output, NSError* error)) handler;
 ```
 
-Show details of an individual application
+Show details of an individual Application on a given account.
 
-
+Show details of an individual Application on a given account.
 
 ### Example 
 ```objc
@@ -34,7 +34,7 @@ NSNumber* applicationId = @56; // Application ID
 
 SWGApplicationsApi*apiInstance = [[SWGApplicationsApi alloc] init];
 
-// Show details of an individual application
+// Show details of an individual Application on a given account.
 [apiInstance getAccountApplicationWithAccountId:accountId
               applicationId:applicationId
           completionHandler: ^(SWGApplicationFull* output, NSError* error) {
@@ -82,9 +82,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGListApplications* output, NSError* error)) handler;
 ```
 
-Get a list of applications you have defined
+This service lists the Applications on a given account
 
-Get a list of an account available applications
+Show details of an individual Application on a given account.
 
 ### Example 
 ```objc
@@ -107,7 +107,7 @@ NSString* fields = @"fields_example"; // Field set (optional)
 
 SWGApplicationsApi*apiInstance = [[SWGApplicationsApi alloc] init];
 
-// Get a list of applications you have defined
+// This service lists the Applications on a given account
 [apiInstance listAccountApplicationsWithAccountId:accountId
               filtersId:filtersId
               filtersName:filtersName

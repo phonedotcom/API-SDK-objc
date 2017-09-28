@@ -52,7 +52,7 @@ NSInteger kSWGAccountsApiMissingParamErrorCode = 234513;
 
 ///
 /// Retrieve details of an individual account
-/// This service shows the details of an individual account. See Accounts for more info on the properties.
+/// Retrieve details of an individual account. See Accounts for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @returns SWGAccountFull*
@@ -71,9 +71,6 @@ NSInteger kSWGAccountsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -122,8 +119,8 @@ NSInteger kSWGAccountsApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Get a list of accounts visible to the authenticated user or client
-/// This service lists the accounts accessible to the authenticated client. In most cases, there will only be one such account. See Accounts for more info on the properties.
+/// Get a list of accounts visible to the authenticated user or client.
+/// Get a list of accounts visible to the authenticated user or client. In most cases, there will only be one such account. See Accounts for more info on the properties.
 ///  @param filtersId ID filter (optional)
 ///
 ///  @param sortId ID sorting (optional)
@@ -143,9 +140,6 @@ NSInteger kSWGAccountsApiMissingParamErrorCode = 234513;
     fields: (NSString*) fields
     completionHandler: (void (^)(SWGListAccounts* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
 

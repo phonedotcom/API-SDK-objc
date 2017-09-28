@@ -52,32 +52,32 @@ Import the following:
 #import <SwaggerClient/SWGCallFull.h>
 #import <SwaggerClient/SWGCallLogFull.h>
 #import <SwaggerClient/SWGCallNotifications.h>
+#import <SwaggerClient/SWGCallbackObject.h>
 #import <SwaggerClient/SWGCallerIdFull.h>
 #import <SwaggerClient/SWGCallerIdPhoneNumber.h>
 #import <SwaggerClient/SWGContactAccount.h>
 #import <SwaggerClient/SWGContactFull.h>
-#import <SwaggerClient/SWGContactSubaccount.h>
+#import <SwaggerClient/SWGContactResponse.h>
 #import <SwaggerClient/SWGContactSummary.h>
 #import <SwaggerClient/SWGCreateCallParams.h>
 #import <SwaggerClient/SWGCreateContactParams.h>
 #import <SwaggerClient/SWGCreateDeviceParams.h>
 #import <SwaggerClient/SWGCreateExtensionParams.h>
 #import <SwaggerClient/SWGCreateGroupParams.h>
+#import <SwaggerClient/SWGCreateListenerParams.h>
 #import <SwaggerClient/SWGCreateMediaParams.h>
 #import <SwaggerClient/SWGCreateMenuParams.h>
+#import <SwaggerClient/SWGCreateOauthParams.h>
+#import <SwaggerClient/SWGCreatePaymentParams.h>
 #import <SwaggerClient/SWGCreatePhoneNumberParams.h>
+#import <SwaggerClient/SWGCreatePricingParams.h>
 #import <SwaggerClient/SWGCreateQueueParams.h>
+#import <SwaggerClient/SWGCreateRedirectUriParams.h>
 #import <SwaggerClient/SWGCreateRouteParams.h>
 #import <SwaggerClient/SWGCreateSmsParams.h>
 #import <SwaggerClient/SWGCreateSubaccountParams.h>
 #import <SwaggerClient/SWGCreateTrunkParams.h>
-#import <SwaggerClient/SWGDeleteContact.h>
-#import <SwaggerClient/SWGDeleteGroup.h>
-#import <SwaggerClient/SWGDeleteMedia.h>
-#import <SwaggerClient/SWGDeleteMenu.h>
-#import <SwaggerClient/SWGDeleteQueue.h>
-#import <SwaggerClient/SWGDeleteRoute.h>
-#import <SwaggerClient/SWGDeleteTrunk.h>
+#import <SwaggerClient/SWGDeleteEntry.h>
 #import <SwaggerClient/SWGDeviceFull.h>
 #import <SwaggerClient/SWGDeviceMembership.h>
 #import <SwaggerClient/SWGDeviceSummary.h>
@@ -95,7 +95,11 @@ Import the following:
 #import <SwaggerClient/SWGFilterListAvailableNumbers.h>
 #import <SwaggerClient/SWGFilterListPhoneNumbersRegions.h>
 #import <SwaggerClient/SWGFilterNameNumberArray.h>
+#import <SwaggerClient/SWGFilterVoicemailArray.h>
+#import <SwaggerClient/SWGFromObject.h>
+#import <SwaggerClient/SWGGetOauthAccessToken.h>
 #import <SwaggerClient/SWGGreeting.h>
+#import <SwaggerClient/SWGGreetingInput.h>
 #import <SwaggerClient/SWGGroupFull.h>
 #import <SwaggerClient/SWGGroupListContacts.h>
 #import <SwaggerClient/SWGGroupSummary.h>
@@ -111,29 +115,47 @@ Import the following:
 #import <SwaggerClient/SWGListExpressServiceCodes.h>
 #import <SwaggerClient/SWGListExtensions.h>
 #import <SwaggerClient/SWGListGroups.h>
+#import <SwaggerClient/SWGListListeners.h>
 #import <SwaggerClient/SWGListMedia.h>
 #import <SwaggerClient/SWGListMenus.h>
+#import <SwaggerClient/SWGListOauthClients.h>
+#import <SwaggerClient/SWGListOauthClientsRedirectUris.h>
+#import <SwaggerClient/SWGListPaymentMethods.h>
 #import <SwaggerClient/SWGListPhoneNumbers.h>
 #import <SwaggerClient/SWGListPhoneNumbersRegions.h>
+#import <SwaggerClient/SWGListPricings.h>
 #import <SwaggerClient/SWGListQueues.h>
 #import <SwaggerClient/SWGListRoutes.h>
 #import <SwaggerClient/SWGListSchedules.h>
 #import <SwaggerClient/SWGListSms.h>
 #import <SwaggerClient/SWGListTrunks.h>
+#import <SwaggerClient/SWGListVoicemail.h>
+#import <SwaggerClient/SWGListenerFull.h>
 #import <SwaggerClient/SWGMediaFull.h>
 #import <SwaggerClient/SWGMediaSummary.h>
 #import <SwaggerClient/SWGMember.h>
 #import <SwaggerClient/SWGMenuFull.h>
 #import <SwaggerClient/SWGMenuSummary.h>
 #import <SwaggerClient/SWGNotification.h>
+#import <SwaggerClient/SWGOauthAccessToken.h>
+#import <SwaggerClient/SWGOauthClientFull.h>
+#import <SwaggerClient/SWGOauthClientRedirectUriFull.h>
 #import <SwaggerClient/SWGOption.h>
+#import <SwaggerClient/SWGPatchPaymentParams.h>
+#import <SwaggerClient/SWGPatchSmsParams.h>
+#import <SwaggerClient/SWGPatchVoicemailParams.h>
+#import <SwaggerClient/SWGPaymentFull.h>
+#import <SwaggerClient/SWGPaymentSummary.h>
 #import <SwaggerClient/SWGPhoneNumberContact.h>
 #import <SwaggerClient/SWGPhoneNumberFull.h>
 #import <SwaggerClient/SWGPhoneNumbersRegionFull.h>
 #import <SwaggerClient/SWGPingResponse.h>
+#import <SwaggerClient/SWGPricingFull.h>
+#import <SwaggerClient/SWGPricingObject.h>
 #import <SwaggerClient/SWGQueueFull.h>
 #import <SwaggerClient/SWGQueueSummary.h>
 #import <SwaggerClient/SWGRecipient.h>
+#import <SwaggerClient/SWGRedirectUriFull.h>
 #import <SwaggerClient/SWGReplaceExtensionParams.h>
 #import <SwaggerClient/SWGReplaceMenuParams.h>
 #import <SwaggerClient/SWGReplacePhoneNumberParams.h>
@@ -145,6 +167,7 @@ Import the following:
 #import <SwaggerClient/SWGRuleSetForwardItem.h>
 #import <SwaggerClient/SWGScheduleFull.h>
 #import <SwaggerClient/SWGScheduleSummary.h>
+#import <SwaggerClient/SWGScopeDetails.h>
 #import <SwaggerClient/SWGSipAuthentication.h>
 #import <SwaggerClient/SWGSmsForwarding.h>
 #import <SwaggerClient/SWGSmsForwardingParams.h>
@@ -162,6 +185,8 @@ Import the following:
 #import <SwaggerClient/SWGTrunkFull.h>
 #import <SwaggerClient/SWGTrunkSummary.h>
 #import <SwaggerClient/SWGVoicemail.h>
+#import <SwaggerClient/SWGVoicemailFull.h>
+#import <SwaggerClient/SWGVoicemailInput.h>
 // load API classes for accessing endpoints
 #import <SwaggerClient/SWGAccountsApi.h>
 #import <SwaggerClient/SWGApplicationsApi.h>
@@ -175,16 +200,23 @@ Import the following:
 #import <SwaggerClient/SWGExpressservicecodesApi.h>
 #import <SwaggerClient/SWGExtensionsApi.h>
 #import <SwaggerClient/SWGGroupsApi.h>
+#import <SwaggerClient/SWGListenersApi.h>
 #import <SwaggerClient/SWGMediaApi.h>
 #import <SwaggerClient/SWGMenusApi.h>
 #import <SwaggerClient/SWGNumberregionsApi.h>
+#import <SwaggerClient/SWGOauthApi.h>
+#import <SwaggerClient/SWGOauthclientsApi.h>
+#import <SwaggerClient/SWGOauthclientsredirecturisApi.h>
+#import <SwaggerClient/SWGPaymentmethodsApi.h>
 #import <SwaggerClient/SWGPhonenumbersApi.h>
 #import <SwaggerClient/SWGQueuesApi.h>
 #import <SwaggerClient/SWGRoutesApi.h>
 #import <SwaggerClient/SWGSchedulesApi.h>
 #import <SwaggerClient/SWGSmsApi.h>
+#import <SwaggerClient/SWGSubaccountpricingApi.h>
 #import <SwaggerClient/SWGSubaccountsApi.h>
 #import <SwaggerClient/SWGTrunksApi.h>
+#import <SwaggerClient/SWGVoicemailApi.h>
 
 ```
 
@@ -230,74 +262,103 @@ All URIs are relative to *https://api.phone.com/v4*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *SWGAccountsApi* | [**getAccount**](docs/SWGAccountsApi.md#getaccount) | **GET** /accounts/{account_id} | Retrieve details of an individual account
-*SWGAccountsApi* | [**listAccounts**](docs/SWGAccountsApi.md#listaccounts) | **GET** /accounts | Get a list of accounts visible to the authenticated user or client
-*SWGApplicationsApi* | [**getAccountApplication**](docs/SWGApplicationsApi.md#getaccountapplication) | **GET** /accounts/{account_id}/applications/{application_id} | Show details of an individual application
-*SWGApplicationsApi* | [**listAccountApplications**](docs/SWGApplicationsApi.md#listaccountapplications) | **GET** /accounts/{account_id}/applications | Get a list of applications you have defined
+*SWGAccountsApi* | [**listAccounts**](docs/SWGAccountsApi.md#listaccounts) | **GET** /accounts | Get a list of accounts visible to the authenticated user or client.
+*SWGApplicationsApi* | [**getAccountApplication**](docs/SWGApplicationsApi.md#getaccountapplication) | **GET** /accounts/{account_id}/applications/{application_id} | Show details of an individual Application on a given account.
+*SWGApplicationsApi* | [**listAccountApplications**](docs/SWGApplicationsApi.md#listaccountapplications) | **GET** /accounts/{account_id}/applications | This service lists the Applications on a given account
 *SWGAvailablenumbersApi* | [**listAvailablePhoneNumbers**](docs/SWGAvailablenumbersApi.md#listavailablephonenumbers) | **GET** /phone-numbers/available | 
-*SWGCalleridsApi* | [**getCallerIds**](docs/SWGCalleridsApi.md#getcallerids) | **GET** /accounts/{account_id}/extensions/{extension_id}/caller-ids | Show the Caller ID options a given extension can use
+*SWGCalleridsApi* | [**getCallerIds**](docs/SWGCalleridsApi.md#getcallerids) | **GET** /accounts/{account_id}/extensions/{extension_id}/caller-ids | Show the Caller ID options a given extension can use.
 *SWGCalllogsApi* | [**getAccountCallLogs**](docs/SWGCalllogsApi.md#getaccountcalllogs) | **GET** /accounts/{account_id}/call-logs/{call_id} | Show details of an individual Call Log entry
 *SWGCalllogsApi* | [**listAccountCallLogs**](docs/SWGCalllogsApi.md#listaccountcalllogs) | **GET** /accounts/{account_id}/call-logs | Get a list of call details associated with your account
 *SWGCallsApi* | [**createAccountCall**](docs/SWGCallsApi.md#createaccountcall) | **POST** /accounts/{account_id}/calls | Make a phone call
-*SWGContactsApi* | [**createAccountExtensionContact**](docs/SWGContactsApi.md#createaccountextensioncontact) | **POST** /accounts/{account_id}/extensions/{extension_id}/contacts | Add a new address book contact for an extension
-*SWGContactsApi* | [**deleteAccountExtensionContact**](docs/SWGContactsApi.md#deleteaccountextensioncontact) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | 
-*SWGContactsApi* | [**getAccountExtensionContact**](docs/SWGContactsApi.md#getaccountextensioncontact) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Retrieve the details of an address book contact
-*SWGContactsApi* | [**listAccountExtensionContacts**](docs/SWGContactsApi.md#listaccountextensioncontacts) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts | Show a list of address book contacts
-*SWGContactsApi* | [**replaceAccountExtensionContact**](docs/SWGContactsApi.md#replaceaccountextensioncontact) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | 
+*SWGContactsApi* | [**createAccountExtensionContact**](docs/SWGContactsApi.md#createaccountextensioncontact) | **POST** /accounts/{account_id}/extensions/{extension_id}/contacts | Add a new address book contact for an extension.
+*SWGContactsApi* | [**deleteAccountExtensionContact**](docs/SWGContactsApi.md#deleteaccountextensioncontact) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Delete a contact from the address book.
+*SWGContactsApi* | [**getAccountExtensionContact**](docs/SWGContactsApi.md#getaccountextensioncontact) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Retrieve the details of an address book contact.
+*SWGContactsApi* | [**listAccountExtensionContacts**](docs/SWGContactsApi.md#listaccountextensioncontacts) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts | Show the Caller ID options a given extension can use.
+*SWGContactsApi* | [**replaceAccountExtensionContact**](docs/SWGContactsApi.md#replaceaccountextensioncontact) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Update the info of a contact in the address book.
 *SWGDefaultApi* | [**ping**](docs/SWGDefaultApi.md#ping) | **GET** /ping | The default API command
-*SWGDevicesApi* | [**createAccountDevice**](docs/SWGDevicesApi.md#createaccountdevice) | **POST** /accounts/{account_id}/devices | Register a generic VoIP device
-*SWGDevicesApi* | [**getAccountDevice**](docs/SWGDevicesApi.md#getaccountdevice) | **GET** /accounts/{account_id}/devices/{device_id} | Show details of an individual VoIP device
-*SWGDevicesApi* | [**listAccountDevices**](docs/SWGDevicesApi.md#listaccountdevices) | **GET** /accounts/{account_id}/devices | Get a list of VoIP devices associated with your account
-*SWGDevicesApi* | [**replaceAccountDevice**](docs/SWGDevicesApi.md#replaceaccountdevice) | **PUT** /accounts/{account_id}/devices/{device_id} | Update the settings for an individual VoIP device
+*SWGDevicesApi* | [**createAccountDevice**](docs/SWGDevicesApi.md#createaccountdevice) | **POST** /accounts/{account_id}/devices | Register a generic VoIP device.
+*SWGDevicesApi* | [**deleteAccountDevice**](docs/SWGDevicesApi.md#deleteaccountdevice) | **DELETE** /accounts/{account_id}/devices/{device_id} | Delete a VoIP device.
+*SWGDevicesApi* | [**getAccountDevice**](docs/SWGDevicesApi.md#getaccountdevice) | **GET** /accounts/{account_id}/devices/{device_id} | Show details of an individual VoIP device.
+*SWGDevicesApi* | [**listAccountDevices**](docs/SWGDevicesApi.md#listaccountdevices) | **GET** /accounts/{account_id}/devices | Get a list of VoIP devices associated with your account.
+*SWGDevicesApi* | [**replaceAccountDevice**](docs/SWGDevicesApi.md#replaceaccountdevice) | **PUT** /accounts/{account_id}/devices/{device_id} | Update the details of an individual VoIP device.
 *SWGExpressservicecodesApi* | [**getAccountExpressSrvCode**](docs/SWGExpressservicecodesApi.md#getaccountexpresssrvcode) | **GET** /accounts/{account_id}/express-service-codes/{code_id} | Show details of an account Express Service Code
-*SWGExpressservicecodesApi* | [**listAccountExpressSrvCodes**](docs/SWGExpressservicecodesApi.md#listaccountexpresssrvcodes) | **GET** /accounts/{account_id}/express-service-codes | Get the Express Service Code associated with your account in list format
-*SWGExtensionsApi* | [**createAccountExtension**](docs/SWGExtensionsApi.md#createaccountextension) | **POST** /accounts/{account_id}/extensions | Create an individual extension
-*SWGExtensionsApi* | [**getAccountExtension**](docs/SWGExtensionsApi.md#getaccountextension) | **GET** /accounts/{account_id}/extensions/{extension_id} | Show details of an individual extension
-*SWGExtensionsApi* | [**listAccountExtensions**](docs/SWGExtensionsApi.md#listaccountextensions) | **GET** /accounts/{account_id}/extensions | Get a list of extensions visible to the authenticated user or client
-*SWGExtensionsApi* | [**replaceAccountExtension**](docs/SWGExtensionsApi.md#replaceaccountextension) | **PUT** /accounts/{account_id}/extensions/{extension_id} | Replace an individual extension
-*SWGGroupsApi* | [**createAccountExtensionContactGroup**](docs/SWGGroupsApi.md#createaccountextensioncontactgroup) | **POST** /accounts/{account_id}/extensions/{extension_id}/contact-groups | 
-*SWGGroupsApi* | [**deleteAccountExtensionContactGroup**](docs/SWGGroupsApi.md#deleteaccountextensioncontactgroup) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Delete an addressbook group
-*SWGGroupsApi* | [**getAccountExtensionContactGroup**](docs/SWGGroupsApi.md#getaccountextensioncontactgroup) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | 
-*SWGGroupsApi* | [**listAccountExtensionContactGroups**](docs/SWGGroupsApi.md#listaccountextensioncontactgroups) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups | Show a list of contact groups belonging to an extension
-*SWGGroupsApi* | [**replaceAccountExtensionContactGroup**](docs/SWGGroupsApi.md#replaceaccountextensioncontactgroup) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | 
+*SWGExpressservicecodesApi* | [**listAccountExpressSrvCodes**](docs/SWGExpressservicecodesApi.md#listaccountexpresssrvcodes) | **GET** /accounts/{account_id}/express-service-codes | Get the Express Service Code associated with your account in list format.
+*SWGExtensionsApi* | [**createAccountExtension**](docs/SWGExtensionsApi.md#createaccountextension) | **POST** /accounts/{account_id}/extensions | Create an individual extension.
+*SWGExtensionsApi* | [**getAccountExtension**](docs/SWGExtensionsApi.md#getaccountextension) | **GET** /accounts/{account_id}/extensions/{extension_id} | Show details of an individual extension.
+*SWGExtensionsApi* | [**listAccountExtensions**](docs/SWGExtensionsApi.md#listaccountextensions) | **GET** /accounts/{account_id}/extensions | Get a list of extensions visible to the authenticated user or client.
+*SWGExtensionsApi* | [**replaceAccountExtension**](docs/SWGExtensionsApi.md#replaceaccountextension) | **PUT** /accounts/{account_id}/extensions/{extension_id} | Replace an individual extension.
+*SWGGroupsApi* | [**createAccountExtensionContactGroup**](docs/SWGGroupsApi.md#createaccountextensioncontactgroup) | **POST** /accounts/{account_id}/extensions/{extension_id}/contact-groups | Add a new contact group to an account extension.
+*SWGGroupsApi* | [**deleteAccountExtensionContactGroup**](docs/SWGGroupsApi.md#deleteaccountextensioncontactgroup) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Delete a contact group from the address book.
+*SWGGroupsApi* | [**getAccountExtensionContactGroup**](docs/SWGGroupsApi.md#getaccountextensioncontactgroup) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Retrieve the information of a contact group.
+*SWGGroupsApi* | [**listAccountExtensionContactGroups**](docs/SWGGroupsApi.md#listaccountextensioncontactgroups) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups | Show a list of contact groups belonging to an extension.
+*SWGGroupsApi* | [**replaceAccountExtensionContactGroup**](docs/SWGGroupsApi.md#replaceaccountextensioncontactgroup) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Update the information of a contact group.
+*SWGListenersApi* | [**createAccountListener**](docs/SWGListenersApi.md#createaccountlistener) | **POST** /accounts/{account_id}/listeners | Add a listener object to your account that can be used to subscribe an event.
+*SWGListenersApi* | [**deleteAccountListener**](docs/SWGListenersApi.md#deleteaccountlistener) | **DELETE** /accounts/{account_id}/listeners/{listener_id} | Delete an individual event listener.
+*SWGListenersApi* | [**getAccountListener**](docs/SWGListenersApi.md#getaccountlistener) | **GET** /accounts/{account_id}/listeners/{listener_id} | Show details of an individual listener.
+*SWGListenersApi* | [**listAccountListeners**](docs/SWGListenersApi.md#listaccountlisteners) | **GET** /accounts/{account_id}/listeners | Get a list of listeners for an account.
+*SWGListenersApi* | [**replaceAccountListener**](docs/SWGListenersApi.md#replaceaccountlistener) | **PUT** /accounts/{account_id}/listeners/{listener_id} | Update the settings of an individual event listener.
 *SWGMediaApi* | [**createAccountMediaFiles**](docs/SWGMediaApi.md#createaccountmediafiles) | **POST** /accounts/{account_id}/media/files | Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
 *SWGMediaApi* | [**createAccountMediaTts**](docs/SWGMediaApi.md#createaccountmediatts) | **POST** /accounts/{account_id}/media/tts | Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
 *SWGMediaApi* | [**deleteAccountMedia**](docs/SWGMediaApi.md#deleteaccountmedia) | **DELETE** /accounts/{account_id}/media/{media_id} | Delete an individual media record
 *SWGMediaApi* | [**getAccountMedia**](docs/SWGMediaApi.md#getaccountmedia) | **GET** /accounts/{account_id}/media/{media_id} | Show details of an individual media recording (Greeting or Hold Music)
-*SWGMediaApi* | [**listAccountMedia**](docs/SWGMediaApi.md#listaccountmedia) | **GET** /accounts/{account_id}/media | Get a list of media recordings for an account
+*SWGMediaApi* | [**listAccountMedia**](docs/SWGMediaApi.md#listaccountmedia) | **GET** /accounts/{account_id}/media | Get a list of media recordings for an account.
 *SWGMediaApi* | [**replaceAccountMediaFiles**](docs/SWGMediaApi.md#replaceaccountmediafiles) | **PUT** /accounts/{account_id}/media/files/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
-*SWGMediaApi* | [**replaceAccountMediaTts**](docs/SWGMediaApi.md#replaceaccountmediatts) | **PUT** /accounts/{account_id}/media/tts/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
-*SWGMenusApi* | [**createAccountMenu**](docs/SWGMenusApi.md#createaccountmenu) | **POST** /accounts/{account_id}/menus | Create an individual menu
-*SWGMenusApi* | [**deleteAccountMenu**](docs/SWGMenusApi.md#deleteaccountmenu) | **DELETE** /accounts/{account_id}/menus/{menu_id} | Delete an individual menu
-*SWGMenusApi* | [**getAccountMenu**](docs/SWGMenusApi.md#getaccountmenu) | **GET** /accounts/{account_id}/menus/{menu_id} | Show details of an individual menu
-*SWGMenusApi* | [**listAccountMenus**](docs/SWGMenusApi.md#listaccountmenus) | **GET** /accounts/{account_id}/menus | Get a list of menus for an account
-*SWGMenusApi* | [**replaceAccountMenu**](docs/SWGMenusApi.md#replaceaccountmenu) | **PUT** /accounts/{account_id}/menus/{menu_id} | Replace an individual menu
+*SWGMediaApi* | [**replaceAccountMediaTts**](docs/SWGMediaApi.md#replaceaccountmediatts) | **PUT** /accounts/{account_id}/media/tts/{media_id} | Update a media object to your account.
+*SWGMenusApi* | [**createAccountMenu**](docs/SWGMenusApi.md#createaccountmenu) | **POST** /accounts/{account_id}/menus | Create an individual menu.
+*SWGMenusApi* | [**deleteAccountMenu**](docs/SWGMenusApi.md#deleteaccountmenu) | **DELETE** /accounts/{account_id}/menus/{menu_id} | Delete an individual menu.
+*SWGMenusApi* | [**getAccountMenu**](docs/SWGMenusApi.md#getaccountmenu) | **GET** /accounts/{account_id}/menus/{menu_id} | Show details of an individual menu.
+*SWGMenusApi* | [**listAccountMenus**](docs/SWGMenusApi.md#listaccountmenus) | **GET** /accounts/{account_id}/menus | Get a list of menus for an account.
+*SWGMenusApi* | [**replaceAccountMenu**](docs/SWGMenusApi.md#replaceaccountmenu) | **PUT** /accounts/{account_id}/menus/{menu_id} | Replace an individual menu.
 *SWGNumberregionsApi* | [**listAvailablePhoneNumberRegions**](docs/SWGNumberregionsApi.md#listavailablephonenumberregions) | **GET** /phone-numbers/available/regions | 
-*SWGPhonenumbersApi* | [**createAccountPhoneNumber**](docs/SWGPhonenumbersApi.md#createaccountphonenumber) | **POST** /accounts/{account_id}/phone-numbers | Add a phone number to an account
-*SWGPhonenumbersApi* | [**getAccountPhoneNumber**](docs/SWGPhonenumbersApi.md#getaccountphonenumber) | **GET** /accounts/{account_id}/phone-numbers/{number_id} | Show details of an individual phone number
-*SWGPhonenumbersApi* | [**listAccountPhoneNumbers**](docs/SWGPhonenumbersApi.md#listaccountphonenumbers) | **GET** /accounts/{account_id}/phone-numbers | Get a list of phone numbers registered to an account
-*SWGPhonenumbersApi* | [**replaceAccountPhoneNumber**](docs/SWGPhonenumbersApi.md#replaceaccountphonenumber) | **PUT** /accounts/{account_id}/phone-numbers/{number_id} | Update the settings for an existing phone number on your account
-*SWGQueuesApi* | [**createAccountQueue**](docs/SWGQueuesApi.md#createaccountqueue) | **POST** /accounts/{account_id}/queues | Create a queue
-*SWGQueuesApi* | [**deleteAccountQueue**](docs/SWGQueuesApi.md#deleteaccountqueue) | **DELETE** /accounts/{account_id}/queues/{queue_id} | Delete a queue
-*SWGQueuesApi* | [**getAccountQueue**](docs/SWGQueuesApi.md#getaccountqueue) | **GET** /accounts/{account_id}/queues/{queue_id} | Show details of an individual queue
-*SWGQueuesApi* | [**listAccountQueues**](docs/SWGQueuesApi.md#listaccountqueues) | **GET** /accounts/{account_id}/queues | Get a list of queues for an account
-*SWGQueuesApi* | [**replaceAccountQueue**](docs/SWGQueuesApi.md#replaceaccountqueue) | **PUT** /accounts/{account_id}/queues/{queue_id} | Replace a queue
-*SWGRoutesApi* | [**createRoute**](docs/SWGRoutesApi.md#createroute) | **POST** /accounts/{account_id}/routes | Add a new address book contact for an extension
-*SWGRoutesApi* | [**deleteAccountRoute**](docs/SWGRoutesApi.md#deleteaccountroute) | **DELETE** /accounts/{account_id}/routes/{route_id} | 
-*SWGRoutesApi* | [**getAccountRoute**](docs/SWGRoutesApi.md#getaccountroute) | **GET** /accounts/{account_id}/routes/{route_id} | Show details of an individual route
-*SWGRoutesApi* | [**listAccountRoutes**](docs/SWGRoutesApi.md#listaccountroutes) | **GET** /accounts/{account_id}/routes | Get a list of routes for an account
-*SWGRoutesApi* | [**replaceAccountRoute**](docs/SWGRoutesApi.md#replaceaccountroute) | **PUT** /accounts/{account_id}/routes/{route_id} | 
+*SWGOauthApi* | [**createOauthAccessToken**](docs/SWGOauthApi.md#createoauthaccesstoken) | **POST** /oauth/access-token | To create an access token via the /oauth/access-token API, an API user may choose any one of the grant types it supports: Authorization Code Grant, Client Credential Grant, Password Credential Grant or Refresh Token Grant.
+*SWGOauthApi* | [**createOauthAuthorization**](docs/SWGOauthApi.md#createoauthauthorization) | **GET** /oauth/authorization | Create Authorization Code or Access Token.
+*SWGOauthApi* | [**getOauthAccessToken**](docs/SWGOauthApi.md#getoauthaccesstoken) | **GET** /oauth/access-token | Retrieve details of an access token, such as scope, expiration and extension ID.
+*SWGOauthclientsApi* | [**deleteAccountOauthClient**](docs/SWGOauthclientsApi.md#deleteaccountoauthclient) | **DELETE** /accounts/{account_id}/oauth/clients/{client_id} | Delete an individual OAuth client.
+*SWGOauthclientsApi* | [**getAccountOauthClient**](docs/SWGOauthclientsApi.md#getaccountoauthclient) | **GET** /accounts/{account_id}/oauth/clients/{client_id} | Show details of an individual OAuth client.
+*SWGOauthclientsApi* | [**listAccountOauthClients**](docs/SWGOauthclientsApi.md#listaccountoauthclients) | **GET** /accounts/{account_id}/oauth/clients | Get a list of OAuth clients for an account.
+*SWGOauthclientsredirecturisApi* | [**createAccountOauthClientsRedirectUri**](docs/SWGOauthclientsredirecturisApi.md#createaccountoauthclientsredirecturi) | **POST** /accounts/{account_id}/oauth/clients/{client_id}/redirect-uris | Create an OAuth Client Redirect URI record.
+*SWGOauthclientsredirecturisApi* | [**deleteAccountOauthClientsRedirectUri**](docs/SWGOauthclientsredirecturisApi.md#deleteaccountoauthclientsredirecturi) | **DELETE** /accounts/{account_id}/oauth/clients/{client_id}/redirect-uris/{uri_id} | Delete an OAuth Client Redirect URI record.
+*SWGOauthclientsredirecturisApi* | [**getAccountOauthClientsRedirectUri**](docs/SWGOauthclientsredirecturisApi.md#getaccountoauthclientsredirecturi) | **GET** /accounts/{account_id}/oauth/clients/{client_id}/redirect-uris/{uri_id} | Get details of an OAuth Client Redirect URI record.
+*SWGOauthclientsredirecturisApi* | [**listAccountOauthClientsRedirectUris**](docs/SWGOauthclientsredirecturisApi.md#listaccountoauthclientsredirecturis) | **GET** /accounts/{account_id}/oauth/clients/{client_id}/redirect-uris | Get a list of OAuth Client Redirect URIs for an account.
+*SWGPaymentmethodsApi* | [**createAccountPaymentMethod**](docs/SWGPaymentmethodsApi.md#createaccountpaymentmethod) | **POST** /accounts/{account_id}/payment-methods | Create an individual payment method.
+*SWGPaymentmethodsApi* | [**deleteAccountPaymentMethod**](docs/SWGPaymentmethodsApi.md#deleteaccountpaymentmethod) | **DELETE** /accounts/{account_id}/payment-methods/{pm_id} | Delete an individual payment method.
+*SWGPaymentmethodsApi* | [**getAccountPaymentMethod**](docs/SWGPaymentmethodsApi.md#getaccountpaymentmethod) | **GET** /accounts/{account_id}/payment-methods/{pm_id} | Show details of an individual payment method.
+*SWGPaymentmethodsApi* | [**listAccountPaymentMethods**](docs/SWGPaymentmethodsApi.md#listaccountpaymentmethods) | **GET** /accounts/{account_id}/payment-methods | Get a list of payment methods for an account.
+*SWGPaymentmethodsApi* | [**patchAccountPaymentMethod**](docs/SWGPaymentmethodsApi.md#patchaccountpaymentmethod) | **PATCH** /accounts/{account_id}/payment-methods/{pm_id} | Replace the status of an individual payment method.
+*SWGPhonenumbersApi* | [**createAccountPhoneNumber**](docs/SWGPhonenumbersApi.md#createaccountphonenumber) | **POST** /accounts/{account_id}/phone-numbers | Add a phone number to an account.
+*SWGPhonenumbersApi* | [**getAccountPhoneNumber**](docs/SWGPhonenumbersApi.md#getaccountphonenumber) | **GET** /accounts/{account_id}/phone-numbers/{number_id} | Show details of an individual phone number.
+*SWGPhonenumbersApi* | [**listAccountPhoneNumbers**](docs/SWGPhonenumbersApi.md#listaccountphonenumbers) | **GET** /accounts/{account_id}/phone-numbers | Get a list of phone numbers registered to an account.
+*SWGPhonenumbersApi* | [**replaceAccountPhoneNumber**](docs/SWGPhonenumbersApi.md#replaceaccountphonenumber) | **PUT** /accounts/{account_id}/phone-numbers/{number_id} | Update the settings for an existing phone number on your account.
+*SWGQueuesApi* | [**createAccountQueue**](docs/SWGQueuesApi.md#createaccountqueue) | **POST** /accounts/{account_id}/queues | Create a queue.
+*SWGQueuesApi* | [**deleteAccountQueue**](docs/SWGQueuesApi.md#deleteaccountqueue) | **DELETE** /accounts/{account_id}/queues/{queue_id} | Delete a queue.
+*SWGQueuesApi* | [**getAccountQueue**](docs/SWGQueuesApi.md#getaccountqueue) | **GET** /accounts/{account_id}/queues/{queue_id} | Show details of an individual queue.
+*SWGQueuesApi* | [**listAccountQueues**](docs/SWGQueuesApi.md#listaccountqueues) | **GET** /accounts/{account_id}/queues | Get a list of queues for an account.
+*SWGQueuesApi* | [**replaceAccountQueue**](docs/SWGQueuesApi.md#replaceaccountqueue) | **PUT** /accounts/{account_id}/queues/{queue_id} | Replace a queue.
+*SWGRoutesApi* | [**createRoute**](docs/SWGRoutesApi.md#createroute) | **POST** /accounts/{account_id}/routes | Add a new route to the account.
+*SWGRoutesApi* | [**deleteAccountRoute**](docs/SWGRoutesApi.md#deleteaccountroute) | **DELETE** /accounts/{account_id}/routes/{route_id} | Delete a route from the account.
+*SWGRoutesApi* | [**getAccountRoute**](docs/SWGRoutesApi.md#getaccountroute) | **GET** /accounts/{account_id}/routes/{route_id} | Show details of an individual route.
+*SWGRoutesApi* | [**listAccountRoutes**](docs/SWGRoutesApi.md#listaccountroutes) | **GET** /accounts/{account_id}/routes | Get a list of routes for an account.
+*SWGRoutesApi* | [**replaceAccountRoute**](docs/SWGRoutesApi.md#replaceaccountroute) | **PUT** /accounts/{account_id}/routes/{route_id} | Update the information of a route.
 *SWGSchedulesApi* | [**getAccountSchedule**](docs/SWGSchedulesApi.md#getaccountschedule) | **GET** /accounts/{account_id}/schedules/{schedule_id} | Show details of an individual schedule
 *SWGSchedulesApi* | [**listAccountSchedules**](docs/SWGSchedulesApi.md#listaccountschedules) | **GET** /accounts/{account_id}/schedules | Get a list of schedules for an account
-*SWGSmsApi* | [**createAccountSms**](docs/SWGSmsApi.md#createaccountsms) | **POST** /accounts/{account_id}/sms | Send a SMS to one or a group of recipients
-*SWGSmsApi* | [**getAccountSms**](docs/SWGSmsApi.md#getaccountsms) | **GET** /accounts/{account_id}/sms/{sms_id} | Show details of an individual SMS
-*SWGSmsApi* | [**listAccountSms**](docs/SWGSmsApi.md#listaccountsms) | **GET** /accounts/{account_id}/sms | Get a list of SMS messages for an account
+*SWGSmsApi* | [**createAccountSms**](docs/SWGSmsApi.md#createaccountsms) | **POST** /accounts/{account_id}/sms | Send a SMS to one or a group of recipients.
+*SWGSmsApi* | [**getAccountSms**](docs/SWGSmsApi.md#getaccountsms) | **GET** /accounts/{account_id}/sms/{sms_id} | This service shows the details of an individual SMS.
+*SWGSmsApi* | [**listAccountSms**](docs/SWGSmsApi.md#listaccountsms) | **GET** /accounts/{account_id}/sms | Get a list of SMS messages for an account.
+*SWGSmsApi* | [**patchAccountSms**](docs/SWGSmsApi.md#patchaccountsms) | **PATCH** /accounts/{account_id}/sms/{sms_id} | Update the is_new parameter in a sms record.
+*SWGSubaccountpricingApi* | [**createAccountSubaccountPricing**](docs/SWGSubaccountpricingApi.md#createaccountsubaccountpricing) | **POST** /accounts/{account_id}/subaccounts/{subaccount_id}/pricing | Add a pricing plan to a subaccount.
+*SWGSubaccountpricingApi* | [**deleteAccountSubaccountPricing**](docs/SWGSubaccountpricingApi.md#deleteaccountsubaccountpricing) | **DELETE** /accounts/{account_id}/subaccounts/{subaccount_id}/pricing/{pricing_id} | Delete a pricing plan from a subaccount.
+*SWGSubaccountpricingApi* | [**getAccountSubaccountPricing**](docs/SWGSubaccountpricingApi.md#getaccountsubaccountpricing) | **GET** /accounts/{account_id}/subaccounts/{subaccount_id}/pricing/{pricing_id} | Get the details of a pricing plan for a subaccount.
+*SWGSubaccountpricingApi* | [**listAccountSubaccountPricing**](docs/SWGSubaccountpricingApi.md#listaccountsubaccountpricing) | **GET** /accounts/{account_id}/subaccounts/{subaccount_id}/pricing | Get a list of pricing plans for a subaccount.
 *SWGSubaccountsApi* | [**createAccountSubaccount**](docs/SWGSubaccountsApi.md#createaccountsubaccount) | **POST** /accounts/{account_id}/subaccounts | Add a subaccount for the authenticated user or client
 *SWGSubaccountsApi* | [**listAccountSubaccounts**](docs/SWGSubaccountsApi.md#listaccountsubaccounts) | **GET** /accounts/{account_id}/subaccounts | Get a list of subaccounts for the authenticated user or client
-*SWGTrunksApi* | [**createAccountTrunk**](docs/SWGTrunksApi.md#createaccounttrunk) | **POST** /accounts/{account_id}/trunks | Add a trunk record with SIP information
-*SWGTrunksApi* | [**deleteAccountTrunk**](docs/SWGTrunksApi.md#deleteaccounttrunk) | **DELETE** /accounts/{account_id}/trunks/{trunk_id} | Delete a trunk from account
-*SWGTrunksApi* | [**getAccountTrunk**](docs/SWGTrunksApi.md#getaccounttrunk) | **GET** /accounts/{account_id}/trunks/{trunk_id} | Show details of an individual trunk
-*SWGTrunksApi* | [**listAccountTrunks**](docs/SWGTrunksApi.md#listaccounttrunks) | **GET** /accounts/{account_id}/trunks | Get a list of trunks for an account
-*SWGTrunksApi* | [**replaceAccountTrunk**](docs/SWGTrunksApi.md#replaceaccounttrunk) | **PUT** /accounts/{account_id}/trunks/{trunk_id} | Replace parameters in a trunk
+*SWGTrunksApi* | [**createAccountTrunk**](docs/SWGTrunksApi.md#createaccounttrunk) | **POST** /accounts/{account_id}/trunks | Add a trunk record with SIP information.
+*SWGTrunksApi* | [**deleteAccountTrunk**](docs/SWGTrunksApi.md#deleteaccounttrunk) | **DELETE** /accounts/{account_id}/trunks/{trunk_id} | Delete a trunk from account.
+*SWGTrunksApi* | [**getAccountTrunk**](docs/SWGTrunksApi.md#getaccounttrunk) | **GET** /accounts/{account_id}/trunks/{trunk_id} | Show details of an individual trunk.
+*SWGTrunksApi* | [**listAccountTrunks**](docs/SWGTrunksApi.md#listaccounttrunks) | **GET** /accounts/{account_id}/trunks | Get a list of trunks for an account.
+*SWGTrunksApi* | [**replaceAccountTrunk**](docs/SWGTrunksApi.md#replaceaccounttrunk) | **PUT** /accounts/{account_id}/trunks/{trunk_id} | Replace parameters in a trunk.
+*SWGVoicemailApi* | [**getAccountVoicemail**](docs/SWGVoicemailApi.md#getaccountvoicemail) | **GET** /accounts/{account_id}/voicemail/{voicemail_id} | This service shows the details of an individual voicemail.
+*SWGVoicemailApi* | [**listAccountVoicemail**](docs/SWGVoicemailApi.md#listaccountvoicemail) | **GET** /accounts/{account_id}/voicemail | Get a list of voicemail messages for an account.
+*SWGVoicemailApi* | [**patchAccountVoicemail**](docs/SWGVoicemailApi.md#patchaccountvoicemail) | **PATCH** /accounts/{account_id}/voicemail/{voicemail_id} | Update the is_new parameter in a voicemail record.
 
 
 ## Documentation For Models
@@ -313,32 +374,32 @@ Class | Method | HTTP request | Description
  - [SWGCallFull](docs/SWGCallFull.md)
  - [SWGCallLogFull](docs/SWGCallLogFull.md)
  - [SWGCallNotifications](docs/SWGCallNotifications.md)
+ - [SWGCallbackObject](docs/SWGCallbackObject.md)
  - [SWGCallerIdFull](docs/SWGCallerIdFull.md)
  - [SWGCallerIdPhoneNumber](docs/SWGCallerIdPhoneNumber.md)
  - [SWGContactAccount](docs/SWGContactAccount.md)
  - [SWGContactFull](docs/SWGContactFull.md)
- - [SWGContactSubaccount](docs/SWGContactSubaccount.md)
+ - [SWGContactResponse](docs/SWGContactResponse.md)
  - [SWGContactSummary](docs/SWGContactSummary.md)
  - [SWGCreateCallParams](docs/SWGCreateCallParams.md)
  - [SWGCreateContactParams](docs/SWGCreateContactParams.md)
  - [SWGCreateDeviceParams](docs/SWGCreateDeviceParams.md)
  - [SWGCreateExtensionParams](docs/SWGCreateExtensionParams.md)
  - [SWGCreateGroupParams](docs/SWGCreateGroupParams.md)
+ - [SWGCreateListenerParams](docs/SWGCreateListenerParams.md)
  - [SWGCreateMediaParams](docs/SWGCreateMediaParams.md)
  - [SWGCreateMenuParams](docs/SWGCreateMenuParams.md)
+ - [SWGCreateOauthParams](docs/SWGCreateOauthParams.md)
+ - [SWGCreatePaymentParams](docs/SWGCreatePaymentParams.md)
  - [SWGCreatePhoneNumberParams](docs/SWGCreatePhoneNumberParams.md)
+ - [SWGCreatePricingParams](docs/SWGCreatePricingParams.md)
  - [SWGCreateQueueParams](docs/SWGCreateQueueParams.md)
+ - [SWGCreateRedirectUriParams](docs/SWGCreateRedirectUriParams.md)
  - [SWGCreateRouteParams](docs/SWGCreateRouteParams.md)
  - [SWGCreateSmsParams](docs/SWGCreateSmsParams.md)
  - [SWGCreateSubaccountParams](docs/SWGCreateSubaccountParams.md)
  - [SWGCreateTrunkParams](docs/SWGCreateTrunkParams.md)
- - [SWGDeleteContact](docs/SWGDeleteContact.md)
- - [SWGDeleteGroup](docs/SWGDeleteGroup.md)
- - [SWGDeleteMedia](docs/SWGDeleteMedia.md)
- - [SWGDeleteMenu](docs/SWGDeleteMenu.md)
- - [SWGDeleteQueue](docs/SWGDeleteQueue.md)
- - [SWGDeleteRoute](docs/SWGDeleteRoute.md)
- - [SWGDeleteTrunk](docs/SWGDeleteTrunk.md)
+ - [SWGDeleteEntry](docs/SWGDeleteEntry.md)
  - [SWGDeviceFull](docs/SWGDeviceFull.md)
  - [SWGDeviceMembership](docs/SWGDeviceMembership.md)
  - [SWGDeviceSummary](docs/SWGDeviceSummary.md)
@@ -356,7 +417,11 @@ Class | Method | HTTP request | Description
  - [SWGFilterListAvailableNumbers](docs/SWGFilterListAvailableNumbers.md)
  - [SWGFilterListPhoneNumbersRegions](docs/SWGFilterListPhoneNumbersRegions.md)
  - [SWGFilterNameNumberArray](docs/SWGFilterNameNumberArray.md)
+ - [SWGFilterVoicemailArray](docs/SWGFilterVoicemailArray.md)
+ - [SWGFromObject](docs/SWGFromObject.md)
+ - [SWGGetOauthAccessToken](docs/SWGGetOauthAccessToken.md)
  - [SWGGreeting](docs/SWGGreeting.md)
+ - [SWGGreetingInput](docs/SWGGreetingInput.md)
  - [SWGGroupFull](docs/SWGGroupFull.md)
  - [SWGGroupListContacts](docs/SWGGroupListContacts.md)
  - [SWGGroupSummary](docs/SWGGroupSummary.md)
@@ -372,29 +437,47 @@ Class | Method | HTTP request | Description
  - [SWGListExpressServiceCodes](docs/SWGListExpressServiceCodes.md)
  - [SWGListExtensions](docs/SWGListExtensions.md)
  - [SWGListGroups](docs/SWGListGroups.md)
+ - [SWGListListeners](docs/SWGListListeners.md)
  - [SWGListMedia](docs/SWGListMedia.md)
  - [SWGListMenus](docs/SWGListMenus.md)
+ - [SWGListOauthClients](docs/SWGListOauthClients.md)
+ - [SWGListOauthClientsRedirectUris](docs/SWGListOauthClientsRedirectUris.md)
+ - [SWGListPaymentMethods](docs/SWGListPaymentMethods.md)
  - [SWGListPhoneNumbers](docs/SWGListPhoneNumbers.md)
  - [SWGListPhoneNumbersRegions](docs/SWGListPhoneNumbersRegions.md)
+ - [SWGListPricings](docs/SWGListPricings.md)
  - [SWGListQueues](docs/SWGListQueues.md)
  - [SWGListRoutes](docs/SWGListRoutes.md)
  - [SWGListSchedules](docs/SWGListSchedules.md)
  - [SWGListSms](docs/SWGListSms.md)
  - [SWGListTrunks](docs/SWGListTrunks.md)
+ - [SWGListVoicemail](docs/SWGListVoicemail.md)
+ - [SWGListenerFull](docs/SWGListenerFull.md)
  - [SWGMediaFull](docs/SWGMediaFull.md)
  - [SWGMediaSummary](docs/SWGMediaSummary.md)
  - [SWGMember](docs/SWGMember.md)
  - [SWGMenuFull](docs/SWGMenuFull.md)
  - [SWGMenuSummary](docs/SWGMenuSummary.md)
  - [SWGNotification](docs/SWGNotification.md)
+ - [SWGOauthAccessToken](docs/SWGOauthAccessToken.md)
+ - [SWGOauthClientFull](docs/SWGOauthClientFull.md)
+ - [SWGOauthClientRedirectUriFull](docs/SWGOauthClientRedirectUriFull.md)
  - [SWGOption](docs/SWGOption.md)
+ - [SWGPatchPaymentParams](docs/SWGPatchPaymentParams.md)
+ - [SWGPatchSmsParams](docs/SWGPatchSmsParams.md)
+ - [SWGPatchVoicemailParams](docs/SWGPatchVoicemailParams.md)
+ - [SWGPaymentFull](docs/SWGPaymentFull.md)
+ - [SWGPaymentSummary](docs/SWGPaymentSummary.md)
  - [SWGPhoneNumberContact](docs/SWGPhoneNumberContact.md)
  - [SWGPhoneNumberFull](docs/SWGPhoneNumberFull.md)
  - [SWGPhoneNumbersRegionFull](docs/SWGPhoneNumbersRegionFull.md)
  - [SWGPingResponse](docs/SWGPingResponse.md)
+ - [SWGPricingFull](docs/SWGPricingFull.md)
+ - [SWGPricingObject](docs/SWGPricingObject.md)
  - [SWGQueueFull](docs/SWGQueueFull.md)
  - [SWGQueueSummary](docs/SWGQueueSummary.md)
  - [SWGRecipient](docs/SWGRecipient.md)
+ - [SWGRedirectUriFull](docs/SWGRedirectUriFull.md)
  - [SWGReplaceExtensionParams](docs/SWGReplaceExtensionParams.md)
  - [SWGReplaceMenuParams](docs/SWGReplaceMenuParams.md)
  - [SWGReplacePhoneNumberParams](docs/SWGReplacePhoneNumberParams.md)
@@ -406,6 +489,7 @@ Class | Method | HTTP request | Description
  - [SWGRuleSetForwardItem](docs/SWGRuleSetForwardItem.md)
  - [SWGScheduleFull](docs/SWGScheduleFull.md)
  - [SWGScheduleSummary](docs/SWGScheduleSummary.md)
+ - [SWGScopeDetails](docs/SWGScopeDetails.md)
  - [SWGSipAuthentication](docs/SWGSipAuthentication.md)
  - [SWGSmsForwarding](docs/SWGSmsForwarding.md)
  - [SWGSmsForwardingParams](docs/SWGSmsForwardingParams.md)
@@ -423,6 +507,8 @@ Class | Method | HTTP request | Description
  - [SWGTrunkFull](docs/SWGTrunkFull.md)
  - [SWGTrunkSummary](docs/SWGTrunkSummary.md)
  - [SWGVoicemail](docs/SWGVoicemail.md)
+ - [SWGVoicemailFull](docs/SWGVoicemailFull.md)
+ - [SWGVoicemailInput](docs/SWGVoicemailInput.md)
 
 
 ## Documentation For Authorization

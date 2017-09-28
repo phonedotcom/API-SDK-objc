@@ -15,7 +15,7 @@
 
 
 #import "SWGCallNotifications.h"
-#import "SWGVoicemail.h"
+#import "SWGVoicemailInput.h"
 
 
 @protocol SWGReplaceExtensionParams
@@ -23,11 +23,9 @@
 
 @interface SWGReplaceExtensionParams : SWGObject
 
-/* Voicemail object [optional]
- */
-@property(nonatomic) SWGVoicemail* voicemail;
-/* Call Notifications object [optional]
- */
+
+@property(nonatomic) SWGVoicemailInput* voicemail;
+
 @property(nonatomic) SWGCallNotifications* callNotifications;
 /* Recording lookup object [optional]
  */
@@ -40,13 +38,13 @@
 @property(nonatomic) NSString* timezone;
 /* Include in dial-by-name directory [optional]
  */
-@property(nonatomic) NSNumber* includeInDirectory;
+@property(nonatomic) NSString* includeInDirectory;
 /* Extension number (required) [optional]
  */
 @property(nonatomic) NSNumber* extension;
 /* Enable outgoing calls [optional]
  */
-@property(nonatomic) NSNumber* enableOutboundCalls;
+@property(nonatomic) NSString* enableOutboundCalls;
 /* Extension type [optional]
  */
 @property(nonatomic) NSString* usageType;
@@ -55,13 +53,13 @@
 @property(nonatomic) NSString* fullName;
 /* Enable Call Waiting [optional]
  */
-@property(nonatomic) NSNumber* enableCallWaiting;
+@property(nonatomic) NSString* enableCallWaiting;
 /* Caller ID [optional]
  */
 @property(nonatomic) NSString* callerId;
 /* Local area code [optional]
  */
-@property(nonatomic) NSNumber* localAreaCode;
+@property(nonatomic) NSString* localAreaCode;
 /* Route object lookup (must belong to this extension) [optional]
  */
 @property(nonatomic) NSString* route;

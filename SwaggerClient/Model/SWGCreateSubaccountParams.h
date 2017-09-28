@@ -14,7 +14,7 @@
 */
 
 
-#import "SWGContactSubaccount.h"
+#import "SWGContactResponse.h"
 
 
 @protocol SWGCreateSubaccountParams
@@ -30,9 +30,9 @@
 @property(nonatomic) NSString* password;
 /* Contact Object. See below for details. [optional]
  */
-@property(nonatomic) SWGContactSubaccount* contact;
+@property(nonatomic) SWGContactResponse* contact;
 /* Contact Object for billing purposes. See below for details. [optional]
  */
-@property(nonatomic) SWGContactSubaccount* billingContact;
+@property(nonatomic) SWGContactResponse* billingContact;
 
 @end

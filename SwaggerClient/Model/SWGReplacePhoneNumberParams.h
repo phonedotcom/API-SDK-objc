@@ -32,21 +32,18 @@
 @property(nonatomic) NSString* name;
 /* Block incoming calls [optional]
  */
-@property(nonatomic) NSNumber* blockIncoming;
+@property(nonatomic) NSString* blockIncoming;
 /* Block anonymous calls [optional]
  */
-@property(nonatomic) NSNumber* blockAnonymous;
-/* Caller ID object [optional]
- */
+@property(nonatomic) NSString* blockAnonymous;
+
 @property(nonatomic) SWGCallerIdPhoneNumber* callerId;
-/* SMS Forwarding Object, or NULL [optional]
- */
+
 @property(nonatomic) SWGSmsForwardingParams* smsForwarding;
 /* Pool lookup object [optional]
  */
 @property(nonatomic) NSObject* poolItem;
-/* Call Notifications object [optional]
- */
+
 @property(nonatomic) SWGCallNotifications* callNotifications;
 
 @end

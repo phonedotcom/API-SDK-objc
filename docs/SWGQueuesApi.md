@@ -4,11 +4,11 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountQueue**](SWGQueuesApi.md#createaccountqueue) | **POST** /accounts/{account_id}/queues | Create a queue
-[**deleteAccountQueue**](SWGQueuesApi.md#deleteaccountqueue) | **DELETE** /accounts/{account_id}/queues/{queue_id} | Delete a queue
-[**getAccountQueue**](SWGQueuesApi.md#getaccountqueue) | **GET** /accounts/{account_id}/queues/{queue_id} | Show details of an individual queue
-[**listAccountQueues**](SWGQueuesApi.md#listaccountqueues) | **GET** /accounts/{account_id}/queues | Get a list of queues for an account
-[**replaceAccountQueue**](SWGQueuesApi.md#replaceaccountqueue) | **PUT** /accounts/{account_id}/queues/{queue_id} | Replace a queue
+[**createAccountQueue**](SWGQueuesApi.md#createaccountqueue) | **POST** /accounts/{account_id}/queues | Create a queue.
+[**deleteAccountQueue**](SWGQueuesApi.md#deleteaccountqueue) | **DELETE** /accounts/{account_id}/queues/{queue_id} | Delete a queue.
+[**getAccountQueue**](SWGQueuesApi.md#getaccountqueue) | **GET** /accounts/{account_id}/queues/{queue_id} | Show details of an individual queue.
+[**listAccountQueues**](SWGQueuesApi.md#listaccountqueues) | **GET** /accounts/{account_id}/queues | Get a list of queues for an account.
+[**replaceAccountQueue**](SWGQueuesApi.md#replaceaccountqueue) | **PUT** /accounts/{account_id}/queues/{queue_id} | Replace a queue.
 
 
 # **createAccountQueue**
@@ -18,9 +18,9 @@ Method | HTTP request | Description
         completionHandler: (void (^)(SWGQueueFull* output, NSError* error)) handler;
 ```
 
-Create a queue
+Create a queue.
 
-For more on the input fields, see Account Queues.
+Create a queue. See Account Queues for more info on the properties.
 
 ### Example 
 ```objc
@@ -37,7 +37,7 @@ SWGCreateQueueParams* data = [[SWGCreateQueueParams alloc] init]; // Queue data 
 
 SWGQueuesApi*apiInstance = [[SWGQueuesApi alloc] init];
 
-// Create a queue
+// Create a queue.
 [apiInstance createAccountQueueWithAccountId:accountId
               data:data
           completionHandler: ^(SWGQueueFull* output, NSError* error) {
@@ -55,7 +55,7 @@ SWGQueuesApi*apiInstance = [[SWGQueuesApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
- **data** | [**SWGCreateQueueParams***](SWGCreateQueueParams*.md)| Queue data | [optional] 
+ **data** | [**SWGCreateQueueParams***](SWGCreateQueueParams.md)| Queue data | [optional] 
 
 ### Return type
 
@@ -76,12 +76,12 @@ Name | Type | Description  | Notes
 ```objc
 -(NSURLSessionTask*) deleteAccountQueueWithAccountId: (NSNumber*) accountId
     queueId: (NSNumber*) queueId
-        completionHandler: (void (^)(SWGDeleteQueue* output, NSError* error)) handler;
+        completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
 ```
 
-Delete a queue
+Delete a queue.
 
-This service a queue from the account. For more information on queue properties, see Account Queues.
+Delete a queue. See Account Queues for more info on the properties.
 
 ### Example 
 ```objc
@@ -98,10 +98,10 @@ NSNumber* queueId = @56; // Queue ID
 
 SWGQueuesApi*apiInstance = [[SWGQueuesApi alloc] init];
 
-// Delete a queue
+// Delete a queue.
 [apiInstance deleteAccountQueueWithAccountId:accountId
               queueId:queueId
-          completionHandler: ^(SWGDeleteQueue* output, NSError* error) {
+          completionHandler: ^(SWGDeleteEntry* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGDeleteQueue***](SWGDeleteQueue.md)
+[**SWGDeleteEntry***](SWGDeleteEntry.md)
 
 ### Authorization
 
@@ -140,9 +140,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGQueueFull* output, NSError* error)) handler;
 ```
 
-Show details of an individual queue
+Show details of an individual queue.
 
-This service shows the details of an individual queue. For more on the input fields, see Account Queues.
+Show details of an individual queue. See Account Queues for more info on the properties.
 
 ### Example 
 ```objc
@@ -159,7 +159,7 @@ NSNumber* queueId = @56; // Queue ID
 
 SWGQueuesApi*apiInstance = [[SWGQueuesApi alloc] init];
 
-// Show details of an individual queue
+// Show details of an individual queue.
 [apiInstance getAccountQueueWithAccountId:accountId
               queueId:queueId
           completionHandler: ^(SWGQueueFull* output, NSError* error) {
@@ -207,9 +207,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGListQueues* output, NSError* error)) handler;
 ```
 
-Get a list of queues for an account
+Get a list of queues for an account.
 
-The List Queues service lists all the queues belong to the account. See Account Queues for more info on the properties.
+Get a list of queues for an account. See Account Queues for more info on the properties.
 
 ### Example 
 ```objc
@@ -232,7 +232,7 @@ NSString* fields = @"fields_example"; // Field set (optional)
 
 SWGQueuesApi*apiInstance = [[SWGQueuesApi alloc] init];
 
-// Get a list of queues for an account
+// Get a list of queues for an account.
 [apiInstance listAccountQueuesWithAccountId:accountId
               filtersId:filtersId
               filtersName:filtersName
@@ -287,9 +287,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGQueueFull* output, NSError* error)) handler;
 ```
 
-Replace a queue
+Replace a queue.
 
-The Replace Queue service replaces the parameters of a queue. For more on the input fields, see Account Queues.
+Replace a queue. See Account Queues for more info on the properties.
 
 ### Example 
 ```objc
@@ -307,7 +307,7 @@ SWGCreateQueueParams* data = [[SWGCreateQueueParams alloc] init]; // Queue data 
 
 SWGQueuesApi*apiInstance = [[SWGQueuesApi alloc] init];
 
-// Replace a queue
+// Replace a queue.
 [apiInstance replaceAccountQueueWithAccountId:accountId
               queueId:queueId
               data:data
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
  **queueId** | **NSNumber***| Queue ID | 
- **data** | [**SWGCreateQueueParams***](SWGCreateQueueParams*.md)| Queue data | [optional] 
+ **data** | [**SWGCreateQueueParams***](SWGCreateQueueParams.md)| Queue data | [optional] 
 
 ### Return type
 

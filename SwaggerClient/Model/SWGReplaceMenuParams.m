@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"name": @"name", @"greeting": @"greeting", @"invalidKeypress": @"invalid_keypress", @"allowExtensionDial": @"allow_extension_dial", @"keypressWaitTime": @"keypress_wait_time", @"timeoutHandler": @"timeout_handler", @"options": @"options" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"name": @"name", @"greeting": @"greeting", @"keypressError": @"keypress_error", @"allowExtensionDial": @"allow_extension_dial", @"keypressWaitTime": @"keypress_wait_time", @"timeoutHandler": @"timeout_handler", @"options": @"options" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"name", @"greeting", @"invalidKeypress", @"allowExtensionDial", @"keypressWaitTime", @"timeoutHandler", @"options"];
+  NSArray *optionalProperties = @[@"name", @"greeting", @"keypressError", @"allowExtensionDial", @"keypressWaitTime", @"timeoutHandler", @"options"];
   return [optionalProperties containsObject:propertyName];
 }
 

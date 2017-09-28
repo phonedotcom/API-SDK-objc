@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SWGCreateRouteParams.h"
-#import "SWGDeleteRoute.h"
+#import "SWGDeleteEntry.h"
 #import "SWGListRoutes.h"
 #import "SWGRouteFull.h"
 #import "SWGApi.h"
@@ -26,8 +26,8 @@ extern NSInteger kSWGRoutesApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
-/// Add a new address book contact for an extension
-/// For more on the input fields, see Intro to Routes.
+/// Add a new route to the account.
+/// Add a new route to the account. See Intro to Routes for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param data Route data (optional)
@@ -43,8 +43,8 @@ extern NSInteger kSWGRoutesApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGRouteFull* output, NSError* error)) handler;
 
 
-/// 
-/// 
+/// Delete a route from the account.
+/// Delete a route from the account. See Intro to Routes for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param routeId Route ID
@@ -55,14 +55,14 @@ extern NSInteger kSWGRoutesApiMissingParamErrorCode;
 ///  code:404 message:"Not Found",
 ///  code:409 message:"Conflict"
 ///
-/// @return SWGDeleteRoute*
+/// @return SWGDeleteEntry*
 -(NSURLSessionTask*) deleteAccountRouteWithAccountId: (NSNumber*) accountId
     routeId: (NSNumber*) routeId
-    completionHandler: (void (^)(SWGDeleteRoute* output, NSError* error)) handler;
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
 
 
-/// Show details of an individual route
-/// This service shows the details of an individual route.
+/// Show details of an individual route.
+/// Show details of an individual route. See Intro to Routes for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param routeId Route ID
@@ -78,8 +78,8 @@ extern NSInteger kSWGRoutesApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGRouteFull* output, NSError* error)) handler;
 
 
-/// Get a list of routes for an account
-/// See Intro to Routes for more info on the properties.
+/// Get a list of routes for an account.
+/// Get a list of routes for an account. See Intro to Routes for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param filtersId ID filter (optional)
@@ -106,8 +106,8 @@ extern NSInteger kSWGRoutesApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGListRoutes* output, NSError* error)) handler;
 
 
-/// 
-/// For more on the input fields, see Intro to Routes.
+/// Update the information of a route.
+/// Update the information of a route. See Intro to Routes for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param routeId Route ID

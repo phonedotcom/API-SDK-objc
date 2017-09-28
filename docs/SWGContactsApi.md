@@ -4,11 +4,11 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountExtensionContact**](SWGContactsApi.md#createaccountextensioncontact) | **POST** /accounts/{account_id}/extensions/{extension_id}/contacts | Add a new address book contact for an extension
-[**deleteAccountExtensionContact**](SWGContactsApi.md#deleteaccountextensioncontact) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | 
-[**getAccountExtensionContact**](SWGContactsApi.md#getaccountextensioncontact) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Retrieve the details of an address book contact
-[**listAccountExtensionContacts**](SWGContactsApi.md#listaccountextensioncontacts) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts | Show a list of address book contacts
-[**replaceAccountExtensionContact**](SWGContactsApi.md#replaceaccountextensioncontact) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | 
+[**createAccountExtensionContact**](SWGContactsApi.md#createaccountextensioncontact) | **POST** /accounts/{account_id}/extensions/{extension_id}/contacts | Add a new address book contact for an extension.
+[**deleteAccountExtensionContact**](SWGContactsApi.md#deleteaccountextensioncontact) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Delete a contact from the address book.
+[**getAccountExtensionContact**](SWGContactsApi.md#getaccountextensioncontact) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Retrieve the details of an address book contact.
+[**listAccountExtensionContacts**](SWGContactsApi.md#listaccountextensioncontacts) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts | Show the Caller ID options a given extension can use.
+[**replaceAccountExtensionContact**](SWGContactsApi.md#replaceaccountextensioncontact) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Update the info of a contact in the address book.
 
 
 # **createAccountExtensionContact**
@@ -19,9 +19,9 @@ Method | HTTP request | Description
         completionHandler: (void (^)(SWGContactFull* output, NSError* error)) handler;
 ```
 
-Add a new address book contact for an extension
+Add a new address book contact for an extension.
 
-For more on the input fields, see Account Contacts.
+Add a new address book contact for an extension. See Account Contacts for more info on the fields in each item.
 
 ### Example 
 ```objc
@@ -39,7 +39,7 @@ SWGCreateContactParams* data = [[SWGCreateContactParams alloc] init]; // Contact
 
 SWGContactsApi*apiInstance = [[SWGContactsApi alloc] init];
 
-// Add a new address book contact for an extension
+// Add a new address book contact for an extension.
 [apiInstance createAccountExtensionContactWithAccountId:accountId
               extensionId:extensionId
               data:data
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
  **extensionId** | **NSNumber***| Extension ID | 
- **data** | [**SWGCreateContactParams***](SWGCreateContactParams*.md)| Contact data | [optional] 
+ **data** | [**SWGCreateContactParams***](SWGCreateContactParams.md)| Contact data | [optional] 
 
 ### Return type
 
@@ -81,12 +81,12 @@ Name | Type | Description  | Notes
 -(NSURLSessionTask*) deleteAccountExtensionContactWithAccountId: (NSNumber*) accountId
     extensionId: (NSNumber*) extensionId
     contactId: (NSNumber*) contactId
-        completionHandler: (void (^)(SWGDeleteContact* output, NSError* error)) handler;
+        completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
 ```
 
+Delete a contact from the address book.
 
-
-
+Delete a contact from the address book. See Account Contacts for more info on the fields in each item.
 
 ### Example 
 ```objc
@@ -104,11 +104,11 @@ NSNumber* contactId = @56; // Contact ID
 
 SWGContactsApi*apiInstance = [[SWGContactsApi alloc] init];
 
-// 
+// Delete a contact from the address book.
 [apiInstance deleteAccountExtensionContactWithAccountId:accountId
               extensionId:extensionId
               contactId:contactId
-          completionHandler: ^(SWGDeleteContact* output, NSError* error) {
+          completionHandler: ^(SWGDeleteEntry* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGDeleteContact***](SWGDeleteContact.md)
+[**SWGDeleteEntry***](SWGDeleteEntry.md)
 
 ### Authorization
 
@@ -149,9 +149,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGContactFull* output, NSError* error)) handler;
 ```
 
-Retrieve the details of an address book contact
+Retrieve the details of an address book contact.
 
-For more info on the fields shown, see Account Contacts.
+Retrieve the details of an address book contact. See Account Contacts for more info on the fields in each item.
 
 ### Example 
 ```objc
@@ -169,7 +169,7 @@ NSNumber* contactId = @56; // Contact ID
 
 SWGContactsApi*apiInstance = [[SWGContactsApi alloc] init];
 
-// Retrieve the details of an address book contact
+// Retrieve the details of an address book contact.
 [apiInstance getAccountExtensionContactWithAccountId:accountId
               extensionId:extensionId
               contactId:contactId
@@ -221,9 +221,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGListContacts* output, NSError* error)) handler;
 ```
 
-Show a list of address book contacts
+Show the Caller ID options a given extension can use.
 
-See Account Contacts for more info on the fields in each item.
+Show the Caller ID options a given extension can use. See Intro to Caller IDs for more on the properties.
 
 ### Example 
 ```objc
@@ -248,7 +248,7 @@ NSString* fields = @"fields_example"; // Field set (optional)
 
 SWGContactsApi*apiInstance = [[SWGContactsApi alloc] init];
 
-// Show a list of address book contacts
+// Show the Caller ID options a given extension can use.
 [apiInstance listAccountExtensionContactsWithAccountId:accountId
               extensionId:extensionId
               filtersId:filtersId
@@ -308,9 +308,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGContactFull* output, NSError* error)) handler;
 ```
 
+Update the info of a contact in the address book.
 
-
-For more on the input fields, see Account Contacts.
+Update the info of a contact in the address book. See Account Contacts for more info on the fields in each item.
 
 ### Example 
 ```objc
@@ -329,7 +329,7 @@ SWGCreateContactParams* data = [[SWGCreateContactParams alloc] init]; // Contact
 
 SWGContactsApi*apiInstance = [[SWGContactsApi alloc] init];
 
-// 
+// Update the info of a contact in the address book.
 [apiInstance replaceAccountExtensionContactWithAccountId:accountId
               extensionId:extensionId
               contactId:contactId
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
  **accountId** | **NSNumber***| Account ID | 
  **extensionId** | **NSNumber***| Extension ID | 
  **contactId** | **NSNumber***| Contact ID | 
- **data** | [**SWGCreateContactParams***](SWGCreateContactParams*.md)| Contact data | [optional] 
+ **data** | [**SWGCreateContactParams***](SWGCreateContactParams.md)| Contact data | [optional] 
 
 ### Return type
 

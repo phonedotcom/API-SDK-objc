@@ -5,7 +5,7 @@ All URIs are relative to *https://api.phone.com/v4*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getAccountExpressSrvCode**](SWGExpressservicecodesApi.md#getaccountexpresssrvcode) | **GET** /accounts/{account_id}/express-service-codes/{code_id} | Show details of an account Express Service Code
-[**listAccountExpressSrvCodes**](SWGExpressservicecodesApi.md#listaccountexpresssrvcodes) | **GET** /accounts/{account_id}/express-service-codes | Get the Express Service Code associated with your account in list format
+[**listAccountExpressSrvCodes**](SWGExpressservicecodesApi.md#listaccountexpresssrvcodes) | **GET** /accounts/{account_id}/express-service-codes | Get the Express Service Code associated with your account in list format.
 
 
 # **getAccountExpressSrvCode**
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGListExpressServiceCodes* output, NSError* error)) handler;
 ```
 
-Get the Express Service Code associated with your account in list format
+Get the Express Service Code associated with your account in list format.
 
-See Express Service Codes for more detail.
+Get the Express Service Code associated with your account in list format. See Express Service Codes for more detail.
 
 ### Example 
 ```objc
@@ -95,7 +95,7 @@ NSArray<NSString*>* filtersId = @[@"filtersId_example"]; // ID filter (optional)
 
 SWGExpressservicecodesApi*apiInstance = [[SWGExpressservicecodesApi alloc] init];
 
-// Get the Express Service Code associated with your account in list format
+// Get the Express Service Code associated with your account in list format.
 [apiInstance listAccountExpressSrvCodesWithAccountId:accountId
               filtersId:filtersId
           completionHandler: ^(SWGListExpressServiceCodes* output, NSError* error) {

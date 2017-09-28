@@ -53,8 +53,8 @@ NSInteger kSWGPhonenumbersApiMissingParamErrorCode = 234513;
 #pragma mark - Api Methods
 
 ///
-/// Add a phone number to an account
-/// See Intro to Account Phone Numbers for more info on the properties to use.
+/// Add a phone number to an account.
+/// Add a phone number to an account. See Account Phone Numbers for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param data Phone Number data (optional)
@@ -76,9 +76,6 @@ NSInteger kSWGPhonenumbersApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/phone-numbers"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -128,8 +125,8 @@ NSInteger kSWGPhonenumbersApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Show details of an individual phone number
-/// See Intro to Account Phone Numbers for more info on the properties.
+/// Show details of an individual phone number.
+/// Show details of an individual phone number. See Account Phone Numbers for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param numberId Number ID 
@@ -162,9 +159,6 @@ NSInteger kSWGPhonenumbersApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/phone-numbers/{number_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -216,8 +210,8 @@ NSInteger kSWGPhonenumbersApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Get a list of phone numbers registered to an account
-/// See Intro to Account Phone Numbers for more info on the properties.
+/// Get a list of phone numbers registered to an account.
+/// Get a list of phone numbers registered to an account. See Account Phone Numbers for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param filtersId ID filter (optional)
@@ -263,9 +257,6 @@ NSInteger kSWGPhonenumbersApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/phone-numbers"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -344,8 +335,8 @@ NSInteger kSWGPhonenumbersApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Update the settings for an existing phone number on your account
-/// See Intro to Account Phone Numbers for more info on the properties.
+/// Update the settings for an existing phone number on your account.
+/// Update the settings for an existing phone number on your account. See Account Phone Numbers for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param numberId Number ID 
@@ -381,9 +372,6 @@ NSInteger kSWGPhonenumbersApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/phone-numbers/{number_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SWGCreateDeviceParams.h"
+#import "SWGDeleteEntry.h"
 #import "SWGDeviceFull.h"
 #import "SWGListDevices.h"
 #import "SWGApi.h"
@@ -25,8 +26,8 @@ extern NSInteger kSWGDevicesApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
-/// Register a generic VoIP device
-/// 
+/// Register a generic VoIP device.
+/// Register a generic VoIP device. See Devices for more detail.
 ///
 /// @param accountId Account ID
 /// @param data Device data (optional)
@@ -42,8 +43,24 @@ extern NSInteger kSWGDevicesApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGDeviceFull* output, NSError* error)) handler;
 
 
-/// Show details of an individual VoIP device
+/// Delete a VoIP device.
+/// Delete a VoIP device. See Devices for more detail.
+///
+/// @param accountId Account ID
+/// @param deviceId Device ID
 /// 
+///  code:200 message:"OK",
+///  code:401 message:"Unauthorized access",
+///  code:403 message:"Forbidden"
+///
+/// @return SWGDeleteEntry*
+-(NSURLSessionTask*) deleteAccountDeviceWithAccountId: (NSNumber*) accountId
+    deviceId: (NSNumber*) deviceId
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
+
+
+/// Show details of an individual VoIP device.
+/// Show details of an individual VoIP device. See Devices for more detail.
 ///
 /// @param accountId Account ID
 /// @param deviceId Device ID
@@ -59,8 +76,8 @@ extern NSInteger kSWGDevicesApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGDeviceFull* output, NSError* error)) handler;
 
 
-/// Get a list of VoIP devices associated with your account
-/// 
+/// Get a list of VoIP devices associated with your account.
+/// Get a list of VoIP devices associated with your account. See Devices for more detail.
 ///
 /// @param accountId Account ID
 /// @param filtersId ID filter (optional)
@@ -87,8 +104,8 @@ extern NSInteger kSWGDevicesApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGListDevices* output, NSError* error)) handler;
 
 
-/// Update the settings for an individual VoIP device
-/// 
+/// Update the details of an individual VoIP device.
+/// Update the details of an individual VoIP device. See Devices for more detail.
 ///
 /// @param accountId Account ID
 /// @param deviceId Device ID

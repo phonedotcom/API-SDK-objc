@@ -25,7 +25,7 @@ extern NSInteger kSWGSchedulesApiMissingParamErrorCode;
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
 /// Show details of an individual schedule
-/// This service shows the details of an individual schedule.
+/// Show details of an individual schedule
 ///
 /// @param accountId Account ID
 /// @param scheduleId Schedule ID
@@ -42,7 +42,7 @@ extern NSInteger kSWGSchedulesApiMissingParamErrorCode;
 
 
 /// Get a list of schedules for an account
-/// See Intro to Schedules for more info on the properties.
+/// Get a list of schedules for an account
 ///
 /// @param accountId Account ID
 /// @param filtersId ID filter (optional)

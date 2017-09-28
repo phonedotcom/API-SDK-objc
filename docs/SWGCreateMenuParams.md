@@ -4,9 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **NSString*** |  | [optional] 
-**mainMessage** | **NSObject*** |  | [optional] 
-**invalidKeypressMessage** | **NSObject*** |  | [optional] 
-**allowExtensionDial** | **NSNumber*** |  | [optional] 
+**greeting** | **NSObject*** |  | [optional] 
+**keypressError** | **NSObject*** |  | [optional] 
+**allowExtensionDial** | **NSString*** |  | [optional] 
 **keypressWaitTime** | **NSNumber*** |  | [optional] 
 **timeoutHandler** | **NSObject*** |  | [optional] 
 **options** | **NSArray&lt;NSObject*&gt;*** |  | [optional] 

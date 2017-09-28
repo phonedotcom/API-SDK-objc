@@ -16,7 +16,11 @@ Name | Type | Description | Notes
 **isMonitored** | **NSString*** | Was call being monitored? | [optional] 
 **callNumber** | **NSString*** | Internal system call reference number | [optional] 
 **finalAction** | **NSString*** | Last action of call flow | [optional] 
-**callRecording** | **NSString*** | URL of call recording if available. Empty string if call recording does not exist | [optional] 
+**voicemailUrl** | **NSString*** | URL of voicemail if available. User may download the audio via this URL. Empty string if voicemail does not exist | [optional] 
+**voicemailCpUrl** | **NSString*** | URL of voicemail if available. User may listen to the audio online via this URL. Empty string if voicemail does not exist | [optional] 
+**voicemailTranscript** | **NSString*** | Transcript of voicemail if enabled and available | [optional] 
+**callRecordingUrl** | **NSString*** | URL of call recording if available. User may download the audio via this URL. Empty string if call recording does not exist | [optional] 
+**callRecordingCpUrl** | **NSString*** | URL of call recording if available. User may listen to the audio online via this URL. Empty string if call recording does not exist | [optional] 
 **details** | [**NSArray&lt;SWGCallDetails&gt;***](SWGCallDetails.md) | A list of call flows from beginning of call to end of call. | [optional] 
 **callerCnam** | **NSString*** | Internal system caller id / name | [optional] 
 

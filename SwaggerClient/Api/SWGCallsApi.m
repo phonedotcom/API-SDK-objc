@@ -52,7 +52,7 @@ NSInteger kSWGCallsApiMissingParamErrorCode = 234513;
 
 ///
 /// Make a phone call
-/// 
+/// Make a phone call. See Calls for more details and how to setup caller id's. Note: This API is for users with Account Owner scope access token. Users with Extension User scope token should invoke the Calls API with the following definition: POST https://api.phone.com/v4/accounts/:account_id/extensions/:extension_id/calls
 ///  @param accountId Account ID 
 ///
 ///  @param data Call data (optional)
@@ -74,9 +74,6 @@ NSInteger kSWGCallsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/calls"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

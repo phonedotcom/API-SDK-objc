@@ -2,7 +2,7 @@
 #import "SWGQueryParamCollection.h"
 #import "SWGApiClient.h"
 #import "SWGCreateQueueParams.h"
-#import "SWGDeleteQueue.h"
+#import "SWGDeleteEntry.h"
 #import "SWGListQueues.h"
 #import "SWGQueueFull.h"
 
@@ -53,8 +53,8 @@ NSInteger kSWGQueuesApiMissingParamErrorCode = 234513;
 #pragma mark - Api Methods
 
 ///
-/// Create a queue
-/// For more on the input fields, see Account Queues.
+/// Create a queue.
+/// Create a queue. See Account Queues for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param data Queue data (optional)
@@ -76,9 +76,6 @@ NSInteger kSWGQueuesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/queues"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -128,17 +125,17 @@ NSInteger kSWGQueuesApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Delete a queue
-/// This service a queue from the account. For more information on queue properties, see Account Queues.
+/// Delete a queue.
+/// Delete a queue. See Account Queues for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param queueId Queue ID 
 ///
-///  @returns SWGDeleteQueue*
+///  @returns SWGDeleteEntry*
 ///
 -(NSURLSessionTask*) deleteAccountQueueWithAccountId: (NSNumber*) accountId
     queueId: (NSNumber*) queueId
-    completionHandler: (void (^)(SWGDeleteQueue* output, NSError* error)) handler {
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler {
     // verify the required parameter 'accountId' is set
     if (accountId == nil) {
         NSParameterAssert(accountId);
@@ -162,9 +159,6 @@ NSInteger kSWGQueuesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/queues/{queue_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -207,17 +201,17 @@ NSInteger kSWGQueuesApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SWGDeleteQueue*"
+                              responseType: @"SWGDeleteEntry*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SWGDeleteQueue*)data, error);
+                                    handler((SWGDeleteEntry*)data, error);
                                 }
                             }];
 }
 
 ///
-/// Show details of an individual queue
-/// This service shows the details of an individual queue. For more on the input fields, see Account Queues.
+/// Show details of an individual queue.
+/// Show details of an individual queue. See Account Queues for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param queueId Queue ID 
@@ -250,9 +244,6 @@ NSInteger kSWGQueuesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/queues/{queue_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -304,8 +295,8 @@ NSInteger kSWGQueuesApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Get a list of queues for an account
-/// The List Queues service lists all the queues belong to the account. See Account Queues for more info on the properties.
+/// Get a list of queues for an account.
+/// Get a list of queues for an account. See Account Queues for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param filtersId ID filter (optional)
@@ -345,9 +336,6 @@ NSInteger kSWGQueuesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/queues"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -419,8 +407,8 @@ NSInteger kSWGQueuesApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Replace a queue
-/// The Replace Queue service replaces the parameters of a queue. For more on the input fields, see Account Queues.
+/// Replace a queue.
+/// Replace a queue. See Account Queues for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param queueId Queue ID 
@@ -456,9 +444,6 @@ NSInteger kSWGQueuesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/queues/{queue_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

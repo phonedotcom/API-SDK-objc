@@ -51,8 +51,8 @@ NSInteger kSWGApplicationsApiMissingParamErrorCode = 234513;
 #pragma mark - Api Methods
 
 ///
-/// Show details of an individual application
-/// 
+/// Show details of an individual Application on a given account.
+/// Show details of an individual Application on a given account.
 ///  @param accountId Account ID 
 ///
 ///  @param applicationId Application ID 
@@ -85,9 +85,6 @@ NSInteger kSWGApplicationsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/applications/{application_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -139,8 +136,8 @@ NSInteger kSWGApplicationsApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Get a list of applications you have defined
-/// Get a list of an account available applications
+/// This service lists the Applications on a given account
+/// Show details of an individual Application on a given account.
 ///  @param accountId Account ID 
 ///
 ///  @param filtersId ID filter (optional)
@@ -180,9 +177,6 @@ NSInteger kSWGApplicationsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/applications"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

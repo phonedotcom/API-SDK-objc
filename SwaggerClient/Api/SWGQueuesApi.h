@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SWGCreateQueueParams.h"
-#import "SWGDeleteQueue.h"
+#import "SWGDeleteEntry.h"
 #import "SWGListQueues.h"
 #import "SWGQueueFull.h"
 #import "SWGApi.h"
@@ -26,8 +26,8 @@ extern NSInteger kSWGQueuesApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
-/// Create a queue
-/// For more on the input fields, see Account Queues.
+/// Create a queue.
+/// Create a queue. See Account Queues for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param data Queue data (optional)
@@ -43,8 +43,8 @@ extern NSInteger kSWGQueuesApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGQueueFull* output, NSError* error)) handler;
 
 
-/// Delete a queue
-/// This service a queue from the account. For more information on queue properties, see Account Queues.
+/// Delete a queue.
+/// Delete a queue. See Account Queues for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param queueId Queue ID
@@ -55,14 +55,14 @@ extern NSInteger kSWGQueuesApiMissingParamErrorCode;
 ///  code:404 message:"Not Found",
 ///  code:409 message:"Conflict"
 ///
-/// @return SWGDeleteQueue*
+/// @return SWGDeleteEntry*
 -(NSURLSessionTask*) deleteAccountQueueWithAccountId: (NSNumber*) accountId
     queueId: (NSNumber*) queueId
-    completionHandler: (void (^)(SWGDeleteQueue* output, NSError* error)) handler;
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
 
 
-/// Show details of an individual queue
-/// This service shows the details of an individual queue. For more on the input fields, see Account Queues.
+/// Show details of an individual queue.
+/// Show details of an individual queue. See Account Queues for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param queueId Queue ID
@@ -78,8 +78,8 @@ extern NSInteger kSWGQueuesApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGQueueFull* output, NSError* error)) handler;
 
 
-/// Get a list of queues for an account
-/// The List Queues service lists all the queues belong to the account. See Account Queues for more info on the properties.
+/// Get a list of queues for an account.
+/// Get a list of queues for an account. See Account Queues for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param filtersId ID filter (optional)
@@ -106,8 +106,8 @@ extern NSInteger kSWGQueuesApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGListQueues* output, NSError* error)) handler;
 
 
-/// Replace a queue
-/// The Replace Queue service replaces the parameters of a queue. For more on the input fields, see Account Queues.
+/// Replace a queue.
+/// Replace a queue. See Account Queues for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param queueId Queue ID

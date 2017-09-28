@@ -4,10 +4,11 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountDevice**](SWGDevicesApi.md#createaccountdevice) | **POST** /accounts/{account_id}/devices | Register a generic VoIP device
-[**getAccountDevice**](SWGDevicesApi.md#getaccountdevice) | **GET** /accounts/{account_id}/devices/{device_id} | Show details of an individual VoIP device
-[**listAccountDevices**](SWGDevicesApi.md#listaccountdevices) | **GET** /accounts/{account_id}/devices | Get a list of VoIP devices associated with your account
-[**replaceAccountDevice**](SWGDevicesApi.md#replaceaccountdevice) | **PUT** /accounts/{account_id}/devices/{device_id} | Update the settings for an individual VoIP device
+[**createAccountDevice**](SWGDevicesApi.md#createaccountdevice) | **POST** /accounts/{account_id}/devices | Register a generic VoIP device.
+[**deleteAccountDevice**](SWGDevicesApi.md#deleteaccountdevice) | **DELETE** /accounts/{account_id}/devices/{device_id} | Delete a VoIP device.
+[**getAccountDevice**](SWGDevicesApi.md#getaccountdevice) | **GET** /accounts/{account_id}/devices/{device_id} | Show details of an individual VoIP device.
+[**listAccountDevices**](SWGDevicesApi.md#listaccountdevices) | **GET** /accounts/{account_id}/devices | Get a list of VoIP devices associated with your account.
+[**replaceAccountDevice**](SWGDevicesApi.md#replaceaccountdevice) | **PUT** /accounts/{account_id}/devices/{device_id} | Update the details of an individual VoIP device.
 
 
 # **createAccountDevice**
@@ -17,9 +18,9 @@ Method | HTTP request | Description
         completionHandler: (void (^)(SWGDeviceFull* output, NSError* error)) handler;
 ```
 
-Register a generic VoIP device
+Register a generic VoIP device.
 
-
+Register a generic VoIP device. See Devices for more detail.
 
 ### Example 
 ```objc
@@ -36,7 +37,7 @@ SWGCreateDeviceParams* data = [[SWGCreateDeviceParams alloc] init]; // Device da
 
 SWGDevicesApi*apiInstance = [[SWGDevicesApi alloc] init];
 
-// Register a generic VoIP device
+// Register a generic VoIP device.
 [apiInstance createAccountDeviceWithAccountId:accountId
               data:data
           completionHandler: ^(SWGDeviceFull* output, NSError* error) {
@@ -54,11 +55,72 @@ SWGDevicesApi*apiInstance = [[SWGDevicesApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
- **data** | [**SWGCreateDeviceParams***](SWGCreateDeviceParams*.md)| Device data | [optional] 
+ **data** | [**SWGCreateDeviceParams***](SWGCreateDeviceParams.md)| Device data | [optional] 
 
 ### Return type
 
 [**SWGDeviceFull***](SWGDeviceFull.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteAccountDevice**
+```objc
+-(NSURLSessionTask*) deleteAccountDeviceWithAccountId: (NSNumber*) accountId
+    deviceId: (NSNumber*) deviceId
+        completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
+```
+
+Delete a VoIP device.
+
+Delete a VoIP device. See Devices for more detail.
+
+### Example 
+```objc
+SWGDefaultConfiguration *apiConfig = [SWGDefaultConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: apiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"Authorization"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
+
+
+NSNumber* accountId = @56; // Account ID
+NSNumber* deviceId = @56; // Device ID
+
+SWGDevicesApi*apiInstance = [[SWGDevicesApi alloc] init];
+
+// Delete a VoIP device.
+[apiInstance deleteAccountDeviceWithAccountId:accountId
+              deviceId:deviceId
+          completionHandler: ^(SWGDeleteEntry* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling SWGDevicesApi->deleteAccountDevice: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **NSNumber***| Account ID | 
+ **deviceId** | **NSNumber***| Device ID | 
+
+### Return type
+
+[**SWGDeleteEntry***](SWGDeleteEntry.md)
 
 ### Authorization
 
@@ -78,9 +140,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGDeviceFull* output, NSError* error)) handler;
 ```
 
-Show details of an individual VoIP device
+Show details of an individual VoIP device.
 
-
+Show details of an individual VoIP device. See Devices for more detail.
 
 ### Example 
 ```objc
@@ -97,7 +159,7 @@ NSNumber* deviceId = @56; // Device ID
 
 SWGDevicesApi*apiInstance = [[SWGDevicesApi alloc] init];
 
-// Show details of an individual VoIP device
+// Show details of an individual VoIP device.
 [apiInstance getAccountDeviceWithAccountId:accountId
               deviceId:deviceId
           completionHandler: ^(SWGDeviceFull* output, NSError* error) {
@@ -145,9 +207,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGListDevices* output, NSError* error)) handler;
 ```
 
-Get a list of VoIP devices associated with your account
+Get a list of VoIP devices associated with your account.
 
-
+Get a list of VoIP devices associated with your account. See Devices for more detail.
 
 ### Example 
 ```objc
@@ -170,7 +232,7 @@ NSString* fields = @"fields_example"; // Field set (optional)
 
 SWGDevicesApi*apiInstance = [[SWGDevicesApi alloc] init];
 
-// Get a list of VoIP devices associated with your account
+// Get a list of VoIP devices associated with your account.
 [apiInstance listAccountDevicesWithAccountId:accountId
               filtersId:filtersId
               filtersName:filtersName
@@ -225,9 +287,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGDeviceFull* output, NSError* error)) handler;
 ```
 
-Update the settings for an individual VoIP device
+Update the details of an individual VoIP device.
 
-
+Update the details of an individual VoIP device. See Devices for more detail.
 
 ### Example 
 ```objc
@@ -245,7 +307,7 @@ SWGCreateDeviceParams* data = [[SWGCreateDeviceParams alloc] init]; // Device da
 
 SWGDevicesApi*apiInstance = [[SWGDevicesApi alloc] init];
 
-// Update the settings for an individual VoIP device
+// Update the details of an individual VoIP device.
 [apiInstance replaceAccountDeviceWithAccountId:accountId
               deviceId:deviceId
               data:data
@@ -265,7 +327,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
  **deviceId** | **NSNumber***| Device ID | 
- **data** | [**SWGCreateDeviceParams***](SWGCreateDeviceParams*.md)| Device data | [optional] 
+ **data** | [**SWGCreateDeviceParams***](SWGCreateDeviceParams.md)| Device data | [optional] 
 
 ### Return type
 

@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SWGCreateGroupParams.h"
-#import "SWGDeleteGroup.h"
+#import "SWGDeleteEntry.h"
 #import "SWGGroupFull.h"
 #import "SWGListGroups.h"
 #import "SWGApi.h"
@@ -26,12 +26,12 @@ extern NSInteger kSWGGroupsApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
-/// 
-/// See Account Contact Groups for more info on the properties.
+/// Add a new contact group to an account extension.
+/// Add a new contact group to an account extension. See Account Contact Groups for details on the properties.
 ///
 /// @param accountId Account ID
 /// @param extensionId Extension ID
-/// @param data Group name
+/// @param data Group data
 /// 
 ///  code:201 message:"Created",
 ///  code:401 message:"Unauthorized access",
@@ -45,8 +45,8 @@ extern NSInteger kSWGGroupsApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGGroupFull* output, NSError* error)) handler;
 
 
-/// Delete an addressbook group
-/// 
+/// Delete a contact group from the address book.
+/// Delete a contact group from the address book. See Account Contact Groups for details on the properties.
 ///
 /// @param accountId Account ID
 /// @param extensionId Extension ID
@@ -56,15 +56,15 @@ extern NSInteger kSWGGroupsApiMissingParamErrorCode;
 ///  code:401 message:"Unauthorized access",
 ///  code:403 message:"Forbidden"
 ///
-/// @return SWGDeleteGroup*
+/// @return SWGDeleteEntry*
 -(NSURLSessionTask*) deleteAccountExtensionContactGroupWithAccountId: (NSNumber*) accountId
     extensionId: (NSNumber*) extensionId
     groupId: (NSNumber*) groupId
-    completionHandler: (void (^)(SWGDeleteGroup* output, NSError* error)) handler;
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
 
 
-/// 
-/// See Account Contact Groups for more info on the properties.
+/// Retrieve the information of a contact group.
+/// Retrieve the information of a contact group. See Account Contact Groups for details on the properties.
 ///
 /// @param accountId Account ID
 /// @param extensionId Extension ID
@@ -82,8 +82,8 @@ extern NSInteger kSWGGroupsApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGGroupFull* output, NSError* error)) handler;
 
 
-/// Show a list of contact groups belonging to an extension
-/// See Account Contact Groups for details on the properties.
+/// Show a list of contact groups belonging to an extension.
+/// Show a list of contact groups belonging to an extension. See Account Contact Groups for details on the properties.
 ///
 /// @param accountId Account ID
 /// @param extensionId Extension ID
@@ -112,13 +112,13 @@ extern NSInteger kSWGGroupsApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGListGroups* output, NSError* error)) handler;
 
 
-/// 
-/// See Account Contact Groups for more info on the properties.
+/// Update the information of a contact group.
+/// Update the information of a contact group. See Account Contact Groups for details on the properties.
 ///
 /// @param accountId Account ID
 /// @param extensionId Extension ID
 /// @param groupId Group ID
-/// @param data Group name
+/// @param data Group data
 /// 
 ///  code:200 message:"OK",
 ///  code:401 message:"Unauthorized access",

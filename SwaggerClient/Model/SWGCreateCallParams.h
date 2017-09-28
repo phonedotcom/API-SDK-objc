@@ -32,7 +32,7 @@
 @property(nonatomic) NSString* callerCallerId;
 /* Flag to set caller ID to private [optional]
  */
-@property(nonatomic) NSNumber* callerPrivate;
+@property(nonatomic) NSString* callerPrivate;
 /* Callee phone number in E.164 format [optional]
  */
 @property(nonatomic) NSString* calleePhoneNumber;
@@ -44,6 +44,6 @@
 @property(nonatomic) NSString* calleeCallerId;
 /* Flag to set callee ID to private [optional]
  */
-@property(nonatomic) NSNumber* calleePrivate;
+@property(nonatomic) NSString* calleePrivate;
 
 @end

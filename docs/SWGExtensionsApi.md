@@ -4,10 +4,10 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountExtension**](SWGExtensionsApi.md#createaccountextension) | **POST** /accounts/{account_id}/extensions | Create an individual extension
-[**getAccountExtension**](SWGExtensionsApi.md#getaccountextension) | **GET** /accounts/{account_id}/extensions/{extension_id} | Show details of an individual extension
-[**listAccountExtensions**](SWGExtensionsApi.md#listaccountextensions) | **GET** /accounts/{account_id}/extensions | Get a list of extensions visible to the authenticated user or client
-[**replaceAccountExtension**](SWGExtensionsApi.md#replaceaccountextension) | **PUT** /accounts/{account_id}/extensions/{extension_id} | Replace an individual extension
+[**createAccountExtension**](SWGExtensionsApi.md#createaccountextension) | **POST** /accounts/{account_id}/extensions | Create an individual extension.
+[**getAccountExtension**](SWGExtensionsApi.md#getaccountextension) | **GET** /accounts/{account_id}/extensions/{extension_id} | Show details of an individual extension.
+[**listAccountExtensions**](SWGExtensionsApi.md#listaccountextensions) | **GET** /accounts/{account_id}/extensions | Get a list of extensions visible to the authenticated user or client.
+[**replaceAccountExtension**](SWGExtensionsApi.md#replaceaccountextension) | **PUT** /accounts/{account_id}/extensions/{extension_id} | Replace an individual extension.
 
 
 # **createAccountExtension**
@@ -17,9 +17,9 @@ Method | HTTP request | Description
         completionHandler: (void (^)(SWGExtensionFull* output, NSError* error)) handler;
 ```
 
-Create an individual extension
+Create an individual extension.
 
-This service shows how to create a virtual extension.
+Create an individual extension. See extension for more details.
 
 ### Example 
 ```objc
@@ -36,7 +36,7 @@ SWGCreateExtensionParams* data = [[SWGCreateExtensionParams alloc] init]; // Acc
 
 SWGExtensionsApi*apiInstance = [[SWGExtensionsApi alloc] init];
 
-// Create an individual extension
+// Create an individual extension.
 [apiInstance createAccountExtensionWithAccountId:accountId
               data:data
           completionHandler: ^(SWGExtensionFull* output, NSError* error) {
@@ -54,7 +54,7 @@ SWGExtensionsApi*apiInstance = [[SWGExtensionsApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
- **data** | [**SWGCreateExtensionParams***](SWGCreateExtensionParams*.md)| Account Extensions Data | [optional] 
+ **data** | [**SWGCreateExtensionParams***](SWGCreateExtensionParams.md)| Account Extensions Data | [optional] 
 
 ### Return type
 
@@ -78,9 +78,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGExtensionFull* output, NSError* error)) handler;
 ```
 
-Show details of an individual extension
+Show details of an individual extension.
 
-This service shows the details of an individual Extension.
+Show details of an individual extension. See extension for more details.
 
 ### Example 
 ```objc
@@ -97,7 +97,7 @@ NSNumber* extensionId = @56; // Extension ID
 
 SWGExtensionsApi*apiInstance = [[SWGExtensionsApi alloc] init];
 
-// Show details of an individual extension
+// Show details of an individual extension.
 [apiInstance getAccountExtensionWithAccountId:accountId
               extensionId:extensionId
           completionHandler: ^(SWGExtensionFull* output, NSError* error) {
@@ -147,9 +147,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGListExtensions* output, NSError* error)) handler;
 ```
 
-Get a list of extensions visible to the authenticated user or client
+Get a list of extensions visible to the authenticated user or client.
 
-This service lists the visible extensions on a given account.
+Get a list of extensions visible to the authenticated user or client. See extension for more details.
 
 ### Example 
 ```objc
@@ -174,7 +174,7 @@ NSString* fields = @"fields_example"; // Field set (optional)
 
 SWGExtensionsApi*apiInstance = [[SWGExtensionsApi alloc] init];
 
-// Get a list of extensions visible to the authenticated user or client
+// Get a list of extensions visible to the authenticated user or client.
 [apiInstance listAccountExtensionsWithAccountId:accountId
               filtersId:filtersId
               filtersExtension:filtersExtension
@@ -233,9 +233,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGExtensionFull* output, NSError* error)) handler;
 ```
 
-Replace an individual extension
+Replace an individual extension.
 
-This service shows how to update an individual extension.
+Replace an individual extension. See extension for more details.
 
 ### Example 
 ```objc
@@ -253,7 +253,7 @@ SWGReplaceExtensionParams* data = [[SWGReplaceExtensionParams alloc] init]; // A
 
 SWGExtensionsApi*apiInstance = [[SWGExtensionsApi alloc] init];
 
-// Replace an individual extension
+// Replace an individual extension.
 [apiInstance replaceAccountExtensionWithAccountId:accountId
               extensionId:extensionId
               data:data
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
  **extensionId** | **NSNumber***| Extension ID | 
- **data** | [**SWGReplaceExtensionParams***](SWGReplaceExtensionParams*.md)| Account Extensions Data | [optional] 
+ **data** | [**SWGReplaceExtensionParams***](SWGReplaceExtensionParams.md)| Account Extensions Data | [optional] 
 
 ### Return type
 

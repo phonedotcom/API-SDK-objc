@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "SWGCreateSmsParams.h"
 #import "SWGListSms.h"
+#import "SWGPatchSmsParams.h"
 #import "SWGSmsFull.h"
 #import "SWGApi.h"
 
@@ -25,8 +26,8 @@ extern NSInteger kSWGSmsApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
-/// Send a SMS to one or a group of recipients
-/// For more on the input fields, see Intro to SMS.
+/// Send a SMS to one or a group of recipients.
+/// Send a SMS to one or a group of recipients. For details on the input fields, see Intro to SMS. Note: This API is for users with Account Owner scope access token. Users with Extension User scope token should invoke the Extension level Create SMS API with the following definition: POST https://api.phone.com/v4/accounts/:account_id/extensions/:extension_id/sms
 ///
 /// @param accountId Account ID
 /// @param data SMS data
@@ -43,8 +44,8 @@ extern NSInteger kSWGSmsApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGSmsFull* output, NSError* error)) handler;
 
 
-/// Show details of an individual SMS
-/// This service shows the details of an individual sms. See Intro to SMS for more info on the properties.
+/// This service shows the details of an individual SMS.
+/// This service shows the details of an individual SMS. See Intro to SMS for more info on the properties. Note: This API is for users with Account Owner scope access token. Users with Extension User scope token should invoke the Extension level Get SMS API with the following definition: GET https://api.phone.com/v4/accounts/:account_id/extensions/:extension_id/sms/:sms_id
 ///
 /// @param accountId Account ID
 /// @param smsId SMS ID
@@ -60,13 +61,16 @@ extern NSInteger kSWGSmsApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGSmsFull* output, NSError* error)) handler;
 
 
-/// Get a list of SMS messages for an account
-/// See Intro to SMS for more info on the properties.
+/// Get a list of SMS messages for an account.
+/// Get a list of SMS messages for an account. See Intro to SMS for more info on the properties. Note: This API is for users with Account Owner scope access token. Users with Extension User scope token should invoke the Extension level List SMS API with the following definition: GET https://api.phone.com/v4/accounts/:account_id/extensions/:extension_id/sms
 ///
 /// @param accountId Account ID
 /// @param filtersId ID filter (optional)
-/// @param filtersDirection Direction filter (optional)
 /// @param filtersFrom Caller ID filter (optional)
+/// @param filtersTo Callee ID filter, the E.164 phone number to send the SMS TO. Note you must encode the + as %2B (optional)
+/// @param filtersDirection Direction filter (optional)
+/// @param filtersExtension Extension filter (optional)
+/// @param filtersCreatedAt Date string representing the UTC time that sms was created (optional)
 /// @param sortId ID sorting (optional)
 /// @param sortCreatedAt Sort by created time of message (optional)
 /// @param limit Max results (optional)
@@ -80,14 +84,36 @@ extern NSInteger kSWGSmsApiMissingParamErrorCode;
 /// @return SWGListSms*
 -(NSURLSessionTask*) listAccountSmsWithAccountId: (NSNumber*) accountId
     filtersId: (NSArray<NSString*>*) filtersId
-    filtersDirection: (NSString*) filtersDirection
     filtersFrom: (NSString*) filtersFrom
+    filtersTo: (NSString*) filtersTo
+    filtersDirection: (NSString*) filtersDirection
+    filtersExtension: (NSArray<NSString*>*) filtersExtension
+    filtersCreatedAt: (NSString*) filtersCreatedAt
     sortId: (NSString*) sortId
     sortCreatedAt: (NSString*) sortCreatedAt
     limit: (NSNumber*) limit
     offset: (NSNumber*) offset
     fields: (NSString*) fields
     completionHandler: (void (^)(SWGListSms* output, NSError* error)) handler;
+
+
+/// Update the is_new parameter in a sms record.
+/// Update the is_new parameter in a sms record. See Account SMS for more info on the properties. Note: This API is for users with Account Owner scope access token. Users with Extension User scope token should invoke the Extension level Patch SMS API with the following definition: PATCH https://api.phone.com/v4/accounts/:account_id/extensions/:extension_id/sms/:sms_id
+///
+/// @param accountId Account ID
+/// @param smsId SMS ID
+/// @param data Sms data (optional)
+/// 
+///  code:200 message:"",
+///  code:401 message:"Unauthorized access",
+///  code:403 message:"Forbidden",
+///  code:404 message:"Not Found"
+///
+/// @return SWGSmsFull*
+-(NSURLSessionTask*) patchAccountSmsWithAccountId: (NSNumber*) accountId
+    smsId: (NSString*) smsId
+    data: (SWGPatchSmsParams*) data
+    completionHandler: (void (^)(SWGSmsFull* output, NSError* error)) handler;
 
 
 

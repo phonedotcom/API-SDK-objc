@@ -43,11 +43,9 @@
 /* The Route assigned to handle incoming calls for this number, if any. Output is a Route Summary Object, or NULL if not set. Input can be a Route Lookup Object or NULL to unset. [optional]
  */
 @property(nonatomic) SWGRouteSummary* route;
-/* Caller ID Object, or NULL [optional]
- */
+
 @property(nonatomic) SWGCallerIdPhoneNumber* callerId;
-/* SMS Forwarding Object, or NULL [optional]
- */
+
 @property(nonatomic) SWGSmsForwarding* smsForwarding;
 
 @property(nonatomic) SWGCallNotifications* callNotifications;

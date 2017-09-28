@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SWGCreateMenuParams.h"
-#import "SWGDeleteMenu.h"
+#import "SWGDeleteEntry.h"
 #import "SWGListMenus.h"
 #import "SWGMenuFull.h"
 #import "SWGReplaceMenuParams.h"
@@ -27,8 +27,8 @@ extern NSInteger kSWGMenusApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
-/// Create an individual menu
-/// This service creates an individual menu. See Account Menus for more info on the properties.
+/// Create an individual menu.
+/// Create an individual menu. See Account Menus for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param data Menu data (optional)
@@ -44,8 +44,8 @@ extern NSInteger kSWGMenusApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGMenuFull* output, NSError* error)) handler;
 
 
-/// Delete an individual menu
-/// See Account Menus for more info on the properties.
+/// Delete an individual menu.
+/// Delete an individual menu. See Account Menus for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param menuId Menu ID
@@ -56,14 +56,14 @@ extern NSInteger kSWGMenusApiMissingParamErrorCode;
 ///  code:404 message:"Not Found",
 ///  code:409 message:"Conflict"
 ///
-/// @return SWGDeleteMenu*
+/// @return SWGDeleteEntry*
 -(NSURLSessionTask*) deleteAccountMenuWithAccountId: (NSNumber*) accountId
     menuId: (NSNumber*) menuId
-    completionHandler: (void (^)(SWGDeleteMenu* output, NSError* error)) handler;
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
 
 
-/// Show details of an individual menu
-/// This service shows the details of an individual Menu.
+/// Show details of an individual menu.
+/// Show details of an individual menu. See Account Menus for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param menuId Menu ID
@@ -79,8 +79,8 @@ extern NSInteger kSWGMenusApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGMenuFull* output, NSError* error)) handler;
 
 
-/// Get a list of menus for an account
-/// See Account Menus for more info on the properties.
+/// Get a list of menus for an account.
+/// Get a list of menus for an account. See Account Menus for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param filtersId ID filter (optional)
@@ -107,8 +107,8 @@ extern NSInteger kSWGMenusApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGListMenus* output, NSError* error)) handler;
 
 
-/// Replace an individual menu
-/// See Account Menus for more info on the properties.
+/// Replace an individual menu.
+/// Replace an individual menu. See Account Menus for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param menuId Menu ID

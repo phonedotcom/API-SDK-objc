@@ -53,10 +53,10 @@ NSInteger kSWGSubaccountsApiMissingParamErrorCode = 234513;
 
 ///
 /// Add a subaccount for the authenticated user or client
-/// This service shows the details of an individual Subaccount.
+/// Add a subaccount for the authenticated user or client
 ///  @param accountId Account ID 
 ///
-///  @param data SMS data 
+///  @param data Subaccount data 
 ///
 ///  @returns SWGAccountFull*
 ///
@@ -86,9 +86,6 @@ NSInteger kSWGSubaccountsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/subaccounts"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -139,7 +136,7 @@ NSInteger kSWGSubaccountsApiMissingParamErrorCode = 234513;
 
 ///
 /// Get a list of subaccounts for the authenticated user or client
-/// This service lists the Subaccount of the authenticated client. In most cases, there will not be any.
+/// Get a list of subaccounts for the authenticated user or client
 ///  @param accountId Account ID 
 ///
 ///  @param filtersId ID filter (optional)
@@ -173,9 +170,6 @@ NSInteger kSWGSubaccountsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/subaccounts"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

@@ -22,26 +22,29 @@
 
 @interface SWGSmsFull : SWGObject
 
-/* Unique SMS ID. Read-only. 
+/* Unique SMS ID. Read-only. [optional]
  */
 @property(nonatomic) NSString* _id;
-/* Caller ID number to display on the incoming/outgoing SMS message. For an outgoing message, it must be a phone number associated with your Phone.com account. 
+/* Caller ID number to display on the incoming/outgoing SMS message. For an outgoing message, it must be a phone number associated with your Phone.com account. [optional]
  */
 @property(nonatomic) NSString* from;
-/* An array of SMS recipients. 
+/* An array of SMS recipients. [optional]
  */
 @property(nonatomic) NSArray<SWGRecipient>* to;
-/* Direction of SMS. 'in' for Incoming messages, 'out' for Outgoing messages. 
+/* Direction of SMS. 'in' for Incoming messages, 'out' for Outgoing messages. [optional]
  */
 @property(nonatomic) NSString* direction;
-/* Unix time stamp representing the UTC time that the object was created in the Phone.com API system. 
+/* Unix time stamp representing the UTC time that the object was created in the Phone.com API system. [optional]
  */
 @property(nonatomic) NSNumber* createdEpoch;
-/* Date string representing the UTC time that the object was created in the Phone.com API system. 
+/* Date string representing the UTC time that the object was created in the Phone.com API system. [optional]
  */
 @property(nonatomic) NSDate* createdAt;
-/* Body of the SMS text 
+/* Body of the SMS text [optional]
  */
 @property(nonatomic) NSString* text;
+/* True when SMS is new; False when SMS has been read. [optional]
+ */
+@property(nonatomic) NSNumber* isNew;
 
 @end

@@ -4,11 +4,11 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createRoute**](SWGRoutesApi.md#createroute) | **POST** /accounts/{account_id}/routes | Add a new address book contact for an extension
-[**deleteAccountRoute**](SWGRoutesApi.md#deleteaccountroute) | **DELETE** /accounts/{account_id}/routes/{route_id} | 
-[**getAccountRoute**](SWGRoutesApi.md#getaccountroute) | **GET** /accounts/{account_id}/routes/{route_id} | Show details of an individual route
-[**listAccountRoutes**](SWGRoutesApi.md#listaccountroutes) | **GET** /accounts/{account_id}/routes | Get a list of routes for an account
-[**replaceAccountRoute**](SWGRoutesApi.md#replaceaccountroute) | **PUT** /accounts/{account_id}/routes/{route_id} | 
+[**createRoute**](SWGRoutesApi.md#createroute) | **POST** /accounts/{account_id}/routes | Add a new route to the account.
+[**deleteAccountRoute**](SWGRoutesApi.md#deleteaccountroute) | **DELETE** /accounts/{account_id}/routes/{route_id} | Delete a route from the account.
+[**getAccountRoute**](SWGRoutesApi.md#getaccountroute) | **GET** /accounts/{account_id}/routes/{route_id} | Show details of an individual route.
+[**listAccountRoutes**](SWGRoutesApi.md#listaccountroutes) | **GET** /accounts/{account_id}/routes | Get a list of routes for an account.
+[**replaceAccountRoute**](SWGRoutesApi.md#replaceaccountroute) | **PUT** /accounts/{account_id}/routes/{route_id} | Update the information of a route.
 
 
 # **createRoute**
@@ -18,9 +18,9 @@ Method | HTTP request | Description
         completionHandler: (void (^)(SWGRouteFull* output, NSError* error)) handler;
 ```
 
-Add a new address book contact for an extension
+Add a new route to the account.
 
-For more on the input fields, see Intro to Routes.
+Add a new route to the account. See Intro to Routes for more info on the properties.
 
 ### Example 
 ```objc
@@ -37,7 +37,7 @@ SWGCreateRouteParams* data = [[SWGCreateRouteParams alloc] init]; // Route data 
 
 SWGRoutesApi*apiInstance = [[SWGRoutesApi alloc] init];
 
-// Add a new address book contact for an extension
+// Add a new route to the account.
 [apiInstance createRouteWithAccountId:accountId
               data:data
           completionHandler: ^(SWGRouteFull* output, NSError* error) {
@@ -55,7 +55,7 @@ SWGRoutesApi*apiInstance = [[SWGRoutesApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
- **data** | [**SWGCreateRouteParams***](SWGCreateRouteParams*.md)| Route data | [optional] 
+ **data** | [**SWGCreateRouteParams***](SWGCreateRouteParams.md)| Route data | [optional] 
 
 ### Return type
 
@@ -76,12 +76,12 @@ Name | Type | Description  | Notes
 ```objc
 -(NSURLSessionTask*) deleteAccountRouteWithAccountId: (NSNumber*) accountId
     routeId: (NSNumber*) routeId
-        completionHandler: (void (^)(SWGDeleteRoute* output, NSError* error)) handler;
+        completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
 ```
 
+Delete a route from the account.
 
-
-
+Delete a route from the account. See Intro to Routes for more info on the properties.
 
 ### Example 
 ```objc
@@ -98,10 +98,10 @@ NSNumber* routeId = @56; // Route ID
 
 SWGRoutesApi*apiInstance = [[SWGRoutesApi alloc] init];
 
-// 
+// Delete a route from the account.
 [apiInstance deleteAccountRouteWithAccountId:accountId
               routeId:routeId
-          completionHandler: ^(SWGDeleteRoute* output, NSError* error) {
+          completionHandler: ^(SWGDeleteEntry* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGDeleteRoute***](SWGDeleteRoute.md)
+[**SWGDeleteEntry***](SWGDeleteEntry.md)
 
 ### Authorization
 
@@ -140,9 +140,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGRouteFull* output, NSError* error)) handler;
 ```
 
-Show details of an individual route
+Show details of an individual route.
 
-This service shows the details of an individual route.
+Show details of an individual route. See Intro to Routes for more info on the properties.
 
 ### Example 
 ```objc
@@ -159,7 +159,7 @@ NSNumber* routeId = @56; // Route ID
 
 SWGRoutesApi*apiInstance = [[SWGRoutesApi alloc] init];
 
-// Show details of an individual route
+// Show details of an individual route.
 [apiInstance getAccountRouteWithAccountId:accountId
               routeId:routeId
           completionHandler: ^(SWGRouteFull* output, NSError* error) {
@@ -207,9 +207,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGListRoutes* output, NSError* error)) handler;
 ```
 
-Get a list of routes for an account
+Get a list of routes for an account.
 
-See Intro to Routes for more info on the properties.
+Get a list of routes for an account. See Intro to Routes for more info on the properties.
 
 ### Example 
 ```objc
@@ -232,7 +232,7 @@ NSString* fields = @"fields_example"; // Field set (optional)
 
 SWGRoutesApi*apiInstance = [[SWGRoutesApi alloc] init];
 
-// Get a list of routes for an account
+// Get a list of routes for an account.
 [apiInstance listAccountRoutesWithAccountId:accountId
               filtersId:filtersId
               filtersName:filtersName
@@ -287,9 +287,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGRouteFull* output, NSError* error)) handler;
 ```
 
+Update the information of a route.
 
-
-For more on the input fields, see Intro to Routes.
+Update the information of a route. See Intro to Routes for more info on the properties.
 
 ### Example 
 ```objc
@@ -307,7 +307,7 @@ SWGCreateRouteParams* data = [[SWGCreateRouteParams alloc] init]; // Route data 
 
 SWGRoutesApi*apiInstance = [[SWGRoutesApi alloc] init];
 
-// 
+// Update the information of a route.
 [apiInstance replaceAccountRouteWithAccountId:accountId
               routeId:routeId
               data:data
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
  **routeId** | **NSNumber***| Route ID | 
- **data** | [**SWGCreateRouteParams***](SWGCreateRouteParams*.md)| Route data | [optional] 
+ **data** | [**SWGCreateRouteParams***](SWGCreateRouteParams.md)| Route data | [optional] 
 
 ### Return type
 

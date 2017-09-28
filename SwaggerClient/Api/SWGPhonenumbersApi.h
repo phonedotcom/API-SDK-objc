@@ -26,8 +26,8 @@ extern NSInteger kSWGPhonenumbersApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
-/// Add a phone number to an account
-/// See Intro to Account Phone Numbers for more info on the properties to use.
+/// Add a phone number to an account.
+/// Add a phone number to an account. See Account Phone Numbers for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param data Phone Number data (optional)
@@ -43,8 +43,8 @@ extern NSInteger kSWGPhonenumbersApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGPhoneNumberFull* output, NSError* error)) handler;
 
 
-/// Show details of an individual phone number
-/// See Intro to Account Phone Numbers for more info on the properties.
+/// Show details of an individual phone number.
+/// Show details of an individual phone number. See Account Phone Numbers for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param numberId Number ID
@@ -60,8 +60,8 @@ extern NSInteger kSWGPhonenumbersApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGPhoneNumberFull* output, NSError* error)) handler;
 
 
-/// Get a list of phone numbers registered to an account
-/// See Intro to Account Phone Numbers for more info on the properties.
+/// Get a list of phone numbers registered to an account.
+/// Get a list of phone numbers registered to an account. See Account Phone Numbers for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param filtersId ID filter (optional)
@@ -92,8 +92,8 @@ extern NSInteger kSWGPhonenumbersApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGListPhoneNumbers* output, NSError* error)) handler;
 
 
-/// Update the settings for an existing phone number on your account
-/// See Intro to Account Phone Numbers for more info on the properties.
+/// Update the settings for an existing phone number on your account.
+/// Update the settings for an existing phone number on your account. See Account Phone Numbers for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param numberId Number ID

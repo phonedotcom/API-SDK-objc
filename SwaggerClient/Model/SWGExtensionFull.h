@@ -35,6 +35,9 @@
 /* Extension number that callers may dial. On POST, leaving this empty will result in an auto-generated value. On PUT, this field is required. [optional]
  */
 @property(nonatomic) NSNumber* extension;
+/* API Account ID. Optional, object may return the voip_id. [optional]
+ */
+@property(nonatomic) NSNumber* voipId;
 /* Full name of the individual or department to which this extension is assigned [optional]
  */
 @property(nonatomic) NSString* fullName;
@@ -66,8 +69,7 @@
 @property(nonatomic) NSNumber* enableOutboundCalls;
 
 @property(nonatomic) SWGVoicemail* voicemail;
-/* Call Notifications Object. See below for details. [optional]
- */
+
 @property(nonatomic) SWGNotification* callNotifications;
 /* Route which will handle incoming voice and fax calls. Only valid on PUT requests, not POST. Output is a Route Summary Object if the route is named, otherwise the Full Route Object will be shown. Input must be a Route Lookup Object pointing to a named route. Route must belong to this extension already. [optional]
  */

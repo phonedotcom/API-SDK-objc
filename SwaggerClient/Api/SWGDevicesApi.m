@@ -2,6 +2,7 @@
 #import "SWGQueryParamCollection.h"
 #import "SWGApiClient.h"
 #import "SWGCreateDeviceParams.h"
+#import "SWGDeleteEntry.h"
 #import "SWGDeviceFull.h"
 #import "SWGListDevices.h"
 
@@ -52,8 +53,8 @@ NSInteger kSWGDevicesApiMissingParamErrorCode = 234513;
 #pragma mark - Api Methods
 
 ///
-/// Register a generic VoIP device
-/// 
+/// Register a generic VoIP device.
+/// Register a generic VoIP device. See Devices for more detail.
 ///  @param accountId Account ID 
 ///
 ///  @param data Device data (optional)
@@ -75,9 +76,6 @@ NSInteger kSWGDevicesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/devices"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -127,8 +125,93 @@ NSInteger kSWGDevicesApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Show details of an individual VoIP device
-/// 
+/// Delete a VoIP device.
+/// Delete a VoIP device. See Devices for more detail.
+///  @param accountId Account ID 
+///
+///  @param deviceId Device ID 
+///
+///  @returns SWGDeleteEntry*
+///
+-(NSURLSessionTask*) deleteAccountDeviceWithAccountId: (NSNumber*) accountId
+    deviceId: (NSNumber*) deviceId
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler {
+    // verify the required parameter 'accountId' is set
+    if (accountId == nil) {
+        NSParameterAssert(accountId);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"accountId"] };
+            NSError* error = [NSError errorWithDomain:kSWGDevicesApiErrorDomain code:kSWGDevicesApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    // verify the required parameter 'deviceId' is set
+    if (deviceId == nil) {
+        NSParameterAssert(deviceId);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"deviceId"] };
+            NSError* error = [NSError errorWithDomain:kSWGDevicesApiErrorDomain code:kSWGDevicesApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/devices/{device_id}"];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (accountId != nil) {
+        pathParams[@"account_id"] = accountId;
+    }
+    if (deviceId != nil) {
+        pathParams[@"device_id"] = deviceId;
+    }
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"apiKey"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"DELETE"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"SWGDeleteEntry*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((SWGDeleteEntry*)data, error);
+                                }
+                            }];
+}
+
+///
+/// Show details of an individual VoIP device.
+/// Show details of an individual VoIP device. See Devices for more detail.
 ///  @param accountId Account ID 
 ///
 ///  @param deviceId Device ID 
@@ -161,9 +244,6 @@ NSInteger kSWGDevicesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/devices/{device_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -215,8 +295,8 @@ NSInteger kSWGDevicesApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Get a list of VoIP devices associated with your account
-/// 
+/// Get a list of VoIP devices associated with your account.
+/// Get a list of VoIP devices associated with your account. See Devices for more detail.
 ///  @param accountId Account ID 
 ///
 ///  @param filtersId ID filter (optional)
@@ -256,9 +336,6 @@ NSInteger kSWGDevicesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/devices"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -330,8 +407,8 @@ NSInteger kSWGDevicesApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Update the settings for an individual VoIP device
-/// 
+/// Update the details of an individual VoIP device.
+/// Update the details of an individual VoIP device. See Devices for more detail.
 ///  @param accountId Account ID 
 ///
 ///  @param deviceId Device ID 
@@ -367,9 +444,6 @@ NSInteger kSWGDevicesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/devices/{device_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

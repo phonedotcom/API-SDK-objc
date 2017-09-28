@@ -2,7 +2,7 @@
 #import "SWGQueryParamCollection.h"
 #import "SWGApiClient.h"
 #import "SWGCreateTrunkParams.h"
-#import "SWGDeleteTrunk.h"
+#import "SWGDeleteEntry.h"
 #import "SWGListTrunks.h"
 #import "SWGTrunkFull.h"
 
@@ -53,8 +53,8 @@ NSInteger kSWGTrunksApiMissingParamErrorCode = 234513;
 #pragma mark - Api Methods
 
 ///
-/// Add a trunk record with SIP information
-/// For more on the input fields, see Account Trunks.
+/// Add a trunk record with SIP information.
+/// Add a trunk record with SIP information. See Account Trunks for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param data Trunk data 
@@ -87,9 +87,6 @@ NSInteger kSWGTrunksApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/trunks"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -139,17 +136,17 @@ NSInteger kSWGTrunksApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Delete a trunk from account
-/// This service deletes a trunk from the account. For more on the properties of trunks, see Account Trunks.
+/// Delete a trunk from account.
+/// Delete a trunk from account. See Account Trunks for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param trunkId Trunk ID 
 ///
-///  @returns SWGDeleteTrunk*
+///  @returns SWGDeleteEntry*
 ///
 -(NSURLSessionTask*) deleteAccountTrunkWithAccountId: (NSNumber*) accountId
     trunkId: (NSNumber*) trunkId
-    completionHandler: (void (^)(SWGDeleteTrunk* output, NSError* error)) handler {
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler {
     // verify the required parameter 'accountId' is set
     if (accountId == nil) {
         NSParameterAssert(accountId);
@@ -173,9 +170,6 @@ NSInteger kSWGTrunksApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/trunks/{trunk_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -218,17 +212,17 @@ NSInteger kSWGTrunksApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SWGDeleteTrunk*"
+                              responseType: @"SWGDeleteEntry*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SWGDeleteTrunk*)data, error);
+                                    handler((SWGDeleteEntry*)data, error);
                                 }
                             }];
 }
 
 ///
-/// Show details of an individual trunk
-/// This service shows the details of an individual Trunk.
+/// Show details of an individual trunk.
+/// Show details of an individual trunk. See Account Trunks for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param trunkId Trunk ID 
@@ -261,9 +255,6 @@ NSInteger kSWGTrunksApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/trunks/{trunk_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -315,8 +306,8 @@ NSInteger kSWGTrunksApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Get a list of trunks for an account
-/// See Account Trunks for more info on the properties.
+/// Get a list of trunks for an account.
+/// Get a list of trunks for an account. See Account Trunks for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param filtersId ID filter (optional)
@@ -356,9 +347,6 @@ NSInteger kSWGTrunksApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/trunks"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -430,8 +418,8 @@ NSInteger kSWGTrunksApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Replace parameters in a trunk
-/// For more on the input fields, see Account Trunks.
+/// Replace parameters in a trunk.
+/// Replace parameters in a trunk. See Account Trunks for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param trunkId Trunk ID 
@@ -478,9 +466,6 @@ NSInteger kSWGTrunksApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/trunks/{trunk_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

@@ -53,8 +53,8 @@ NSInteger kSWGExtensionsApiMissingParamErrorCode = 234513;
 #pragma mark - Api Methods
 
 ///
-/// Create an individual extension
-/// This service shows how to create a virtual extension.
+/// Create an individual extension.
+/// Create an individual extension. See extension for more details.
 ///  @param accountId Account ID 
 ///
 ///  @param data Account Extensions Data (optional)
@@ -76,9 +76,6 @@ NSInteger kSWGExtensionsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/extensions"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -128,8 +125,8 @@ NSInteger kSWGExtensionsApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Show details of an individual extension
-/// This service shows the details of an individual Extension.
+/// Show details of an individual extension.
+/// Show details of an individual extension. See extension for more details.
 ///  @param accountId Account ID 
 ///
 ///  @param extensionId Extension ID 
@@ -162,9 +159,6 @@ NSInteger kSWGExtensionsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/extensions/{extension_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -216,8 +210,8 @@ NSInteger kSWGExtensionsApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Get a list of extensions visible to the authenticated user or client
-/// This service lists the visible extensions on a given account.
+/// Get a list of extensions visible to the authenticated user or client.
+/// Get a list of extensions visible to the authenticated user or client. See extension for more details.
 ///  @param accountId Account ID 
 ///
 ///  @param filtersId ID filter (optional)
@@ -263,9 +257,6 @@ NSInteger kSWGExtensionsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/extensions"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -344,8 +335,8 @@ NSInteger kSWGExtensionsApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Replace an individual extension
-/// This service shows how to update an individual extension.
+/// Replace an individual extension.
+/// Replace an individual extension. See extension for more details.
 ///  @param accountId Account ID 
 ///
 ///  @param extensionId Extension ID 
@@ -381,9 +372,6 @@ NSInteger kSWGExtensionsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/extensions/{extension_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

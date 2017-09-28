@@ -33,7 +33,7 @@
 /* Boolean. Determines whether a caller can enter an extension number to bypass the menu. [optional]
  */
 @property(nonatomic) NSNumber* allowExtensionDial;
-/* Boolean. Determines whether a caller can enter an extension number to bypass the menu. [optional]
+/* Number of seconds to wait for the caller to choose a menu option. Must be between 1 and 5 seconds. [optional]
  */
 @property(nonatomic) NSNumber* keypressWaitTime;
 /* Greeting that is played when a caller enters a menu. Output is a Media Summary Object. Input must be a Media Lookup Object. Must refer to a media recording that has is_hold_music set to FALSE. [optional]

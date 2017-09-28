@@ -24,11 +24,11 @@
 
 @property(nonatomic) NSString* name;
 
-@property(nonatomic) NSObject* mainMessage;
+@property(nonatomic) NSObject* greeting;
 
-@property(nonatomic) NSObject* invalidKeypressMessage;
+@property(nonatomic) NSObject* keypressError;
 
-@property(nonatomic) NSNumber* allowExtensionDial;
+@property(nonatomic) NSString* allowExtensionDial;
 
 @property(nonatomic) NSNumber* keypressWaitTime;
 

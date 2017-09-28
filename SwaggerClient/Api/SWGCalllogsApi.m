@@ -52,7 +52,7 @@ NSInteger kSWGCalllogsApiMissingParamErrorCode = 234513;
 
 ///
 /// Show details of an individual Call Log entry
-/// See Call Logs for more detail.
+/// Show details of an individual Call Log entry. See Call Logs for more detail.
 ///  @param accountId Account ID 
 ///
 ///  @param callId Call ID 
@@ -85,9 +85,6 @@ NSInteger kSWGCalllogsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/call-logs/{call_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -140,7 +137,7 @@ NSInteger kSWGCalllogsApiMissingParamErrorCode = 234513;
 
 ///
 /// Get a list of call details associated with your account
-/// See Call Logs for more detail.
+/// Get a list of call details associated with your account. See Call Logs for more detail.
 ///  @param accountId Account ID 
 ///
 ///  @param filtersId ID filter (optional)
@@ -198,9 +195,6 @@ NSInteger kSWGCalllogsApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/call-logs"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

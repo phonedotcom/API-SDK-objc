@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Add a subaccount for the authenticated user or client
 
-This service shows the details of an individual Subaccount.
+Add a subaccount for the authenticated user or client
 
 ### Example 
 ```objc
@@ -30,7 +30,7 @@ SWGDefaultConfiguration *apiConfig = [SWGDefaultConfiguration sharedConfig];
 
 
 NSNumber* accountId = @56; // Account ID
-SWGCreateSubaccountParams* data = [[SWGCreateSubaccountParams alloc] init]; // SMS data
+SWGCreateSubaccountParams* data = [[SWGCreateSubaccountParams alloc] init]; // Subaccount data
 
 SWGSubaccountsApi*apiInstance = [[SWGSubaccountsApi alloc] init];
 
@@ -52,7 +52,7 @@ SWGSubaccountsApi*apiInstance = [[SWGSubaccountsApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
- **data** | [**SWGCreateSubaccountParams***](SWGCreateSubaccountParams*.md)| SMS data | 
+ **data** | [**SWGCreateSubaccountParams***](SWGCreateSubaccountParams.md)| Subaccount data | 
 
 ### Return type
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 Get a list of subaccounts for the authenticated user or client
 
-This service lists the Subaccount of the authenticated client. In most cases, there will not be any.
+Get a list of subaccounts for the authenticated user or client
 
 ### Example 
 ```objc

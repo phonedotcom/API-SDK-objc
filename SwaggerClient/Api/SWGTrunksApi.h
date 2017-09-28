@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SWGCreateTrunkParams.h"
-#import "SWGDeleteTrunk.h"
+#import "SWGDeleteEntry.h"
 #import "SWGListTrunks.h"
 #import "SWGTrunkFull.h"
 #import "SWGApi.h"
@@ -26,8 +26,8 @@ extern NSInteger kSWGTrunksApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
-/// Add a trunk record with SIP information
-/// For more on the input fields, see Account Trunks.
+/// Add a trunk record with SIP information.
+/// Add a trunk record with SIP information. See Account Trunks for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param data Trunk data
@@ -43,8 +43,8 @@ extern NSInteger kSWGTrunksApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGTrunkFull* output, NSError* error)) handler;
 
 
-/// Delete a trunk from account
-/// This service deletes a trunk from the account. For more on the properties of trunks, see Account Trunks.
+/// Delete a trunk from account.
+/// Delete a trunk from account. See Account Trunks for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param trunkId Trunk ID
@@ -55,14 +55,14 @@ extern NSInteger kSWGTrunksApiMissingParamErrorCode;
 ///  code:404 message:"Not Found",
 ///  code:409 message:"Conflict"
 ///
-/// @return SWGDeleteTrunk*
+/// @return SWGDeleteEntry*
 -(NSURLSessionTask*) deleteAccountTrunkWithAccountId: (NSNumber*) accountId
     trunkId: (NSNumber*) trunkId
-    completionHandler: (void (^)(SWGDeleteTrunk* output, NSError* error)) handler;
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
 
 
-/// Show details of an individual trunk
-/// This service shows the details of an individual Trunk.
+/// Show details of an individual trunk.
+/// Show details of an individual trunk. See Account Trunks for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param trunkId Trunk ID
@@ -78,8 +78,8 @@ extern NSInteger kSWGTrunksApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGTrunkFull* output, NSError* error)) handler;
 
 
-/// Get a list of trunks for an account
-/// See Account Trunks for more info on the properties.
+/// Get a list of trunks for an account.
+/// Get a list of trunks for an account. See Account Trunks for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param filtersId ID filter (optional)
@@ -106,8 +106,8 @@ extern NSInteger kSWGTrunksApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGListTrunks* output, NSError* error)) handler;
 
 
-/// Replace parameters in a trunk
-/// For more on the input fields, see Account Trunks.
+/// Replace parameters in a trunk.
+/// Replace parameters in a trunk. See Account Trunks for more info on the properties.
 ///
 /// @param accountId Account ID
 /// @param trunkId Trunk ID

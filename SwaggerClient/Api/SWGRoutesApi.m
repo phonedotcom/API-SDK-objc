@@ -2,7 +2,7 @@
 #import "SWGQueryParamCollection.h"
 #import "SWGApiClient.h"
 #import "SWGCreateRouteParams.h"
-#import "SWGDeleteRoute.h"
+#import "SWGDeleteEntry.h"
 #import "SWGListRoutes.h"
 #import "SWGRouteFull.h"
 
@@ -53,8 +53,8 @@ NSInteger kSWGRoutesApiMissingParamErrorCode = 234513;
 #pragma mark - Api Methods
 
 ///
-/// Add a new address book contact for an extension
-/// For more on the input fields, see Intro to Routes.
+/// Add a new route to the account.
+/// Add a new route to the account. See Intro to Routes for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param data Route data (optional)
@@ -76,9 +76,6 @@ NSInteger kSWGRoutesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/routes"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -128,17 +125,17 @@ NSInteger kSWGRoutesApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// 
-/// 
+/// Delete a route from the account.
+/// Delete a route from the account. See Intro to Routes for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param routeId Route ID 
 ///
-///  @returns SWGDeleteRoute*
+///  @returns SWGDeleteEntry*
 ///
 -(NSURLSessionTask*) deleteAccountRouteWithAccountId: (NSNumber*) accountId
     routeId: (NSNumber*) routeId
-    completionHandler: (void (^)(SWGDeleteRoute* output, NSError* error)) handler {
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler {
     // verify the required parameter 'accountId' is set
     if (accountId == nil) {
         NSParameterAssert(accountId);
@@ -162,9 +159,6 @@ NSInteger kSWGRoutesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/routes/{route_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -207,17 +201,17 @@ NSInteger kSWGRoutesApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SWGDeleteRoute*"
+                              responseType: @"SWGDeleteEntry*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SWGDeleteRoute*)data, error);
+                                    handler((SWGDeleteEntry*)data, error);
                                 }
                             }];
 }
 
 ///
-/// Show details of an individual route
-/// This service shows the details of an individual route.
+/// Show details of an individual route.
+/// Show details of an individual route. See Intro to Routes for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param routeId Route ID 
@@ -250,9 +244,6 @@ NSInteger kSWGRoutesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/routes/{route_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -304,8 +295,8 @@ NSInteger kSWGRoutesApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Get a list of routes for an account
-/// See Intro to Routes for more info on the properties.
+/// Get a list of routes for an account.
+/// Get a list of routes for an account. See Intro to Routes for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param filtersId ID filter (optional)
@@ -345,9 +336,6 @@ NSInteger kSWGRoutesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/routes"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {
@@ -419,8 +407,8 @@ NSInteger kSWGRoutesApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// 
-/// For more on the input fields, see Intro to Routes.
+/// Update the information of a route.
+/// Update the information of a route. See Intro to Routes for more info on the properties.
 ///  @param accountId Account ID 
 ///
 ///  @param routeId Route ID 
@@ -456,9 +444,6 @@ NSInteger kSWGRoutesApiMissingParamErrorCode = 234513;
     }
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/accounts/{account_id}/routes/{route_id}"];
-
-    // remove format in URL if needed
-    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (accountId != nil) {

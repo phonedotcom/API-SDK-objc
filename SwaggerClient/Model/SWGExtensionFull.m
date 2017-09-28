@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_id": @"id", @"name": @"name", @"extension": @"extension", @"fullName": @"full_name", @"usageType": @"usage_type", @"deviceMembership": @"device_membership", @"timezone": @"timezone", @"nameGreeting": @"name_greeting", @"includeInDirectory": @"include_in_directory", @"callerId": @"caller_id", @"localAreaCode": @"local_area_code", @"enableCallWaiting": @"enable_call_waiting", @"enableOutboundCalls": @"enable_outbound_calls", @"voicemail": @"voicemail", @"callNotifications": @"call_notifications", @"route": @"route" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_id": @"id", @"name": @"name", @"extension": @"extension", @"voipId": @"voip_id", @"fullName": @"full_name", @"usageType": @"usage_type", @"deviceMembership": @"device_membership", @"timezone": @"timezone", @"nameGreeting": @"name_greeting", @"includeInDirectory": @"include_in_directory", @"callerId": @"caller_id", @"localAreaCode": @"local_area_code", @"enableCallWaiting": @"enable_call_waiting", @"enableOutboundCalls": @"enable_outbound_calls", @"voicemail": @"voicemail", @"callNotifications": @"call_notifications", @"route": @"route" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"_id", @"name", @"extension", @"fullName", @"usageType", @"deviceMembership", @"timezone", @"nameGreeting", @"includeInDirectory", @"callerId", @"localAreaCode", @"enableCallWaiting", @"enableOutboundCalls", @"voicemail", @"callNotifications", @"route"];
+  NSArray *optionalProperties = @[@"_id", @"name", @"extension", @"voipId", @"fullName", @"usageType", @"deviceMembership", @"timezone", @"nameGreeting", @"includeInDirectory", @"callerId", @"localAreaCode", @"enableCallWaiting", @"enableOutboundCalls", @"voicemail", @"callNotifications", @"route"];
   return [optionalProperties containsObject:propertyName];
 }
 

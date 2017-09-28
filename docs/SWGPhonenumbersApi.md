@@ -4,10 +4,10 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountPhoneNumber**](SWGPhonenumbersApi.md#createaccountphonenumber) | **POST** /accounts/{account_id}/phone-numbers | Add a phone number to an account
-[**getAccountPhoneNumber**](SWGPhonenumbersApi.md#getaccountphonenumber) | **GET** /accounts/{account_id}/phone-numbers/{number_id} | Show details of an individual phone number
-[**listAccountPhoneNumbers**](SWGPhonenumbersApi.md#listaccountphonenumbers) | **GET** /accounts/{account_id}/phone-numbers | Get a list of phone numbers registered to an account
-[**replaceAccountPhoneNumber**](SWGPhonenumbersApi.md#replaceaccountphonenumber) | **PUT** /accounts/{account_id}/phone-numbers/{number_id} | Update the settings for an existing phone number on your account
+[**createAccountPhoneNumber**](SWGPhonenumbersApi.md#createaccountphonenumber) | **POST** /accounts/{account_id}/phone-numbers | Add a phone number to an account.
+[**getAccountPhoneNumber**](SWGPhonenumbersApi.md#getaccountphonenumber) | **GET** /accounts/{account_id}/phone-numbers/{number_id} | Show details of an individual phone number.
+[**listAccountPhoneNumbers**](SWGPhonenumbersApi.md#listaccountphonenumbers) | **GET** /accounts/{account_id}/phone-numbers | Get a list of phone numbers registered to an account.
+[**replaceAccountPhoneNumber**](SWGPhonenumbersApi.md#replaceaccountphonenumber) | **PUT** /accounts/{account_id}/phone-numbers/{number_id} | Update the settings for an existing phone number on your account.
 
 
 # **createAccountPhoneNumber**
@@ -17,9 +17,9 @@ Method | HTTP request | Description
         completionHandler: (void (^)(SWGPhoneNumberFull* output, NSError* error)) handler;
 ```
 
-Add a phone number to an account
+Add a phone number to an account.
 
-See Intro to Account Phone Numbers for more info on the properties to use.
+Add a phone number to an account. See Account Phone Numbers for more info on the properties.
 
 ### Example 
 ```objc
@@ -36,7 +36,7 @@ SWGCreatePhoneNumberParams* data = [[SWGCreatePhoneNumberParams alloc] init]; //
 
 SWGPhonenumbersApi*apiInstance = [[SWGPhonenumbersApi alloc] init];
 
-// Add a phone number to an account
+// Add a phone number to an account.
 [apiInstance createAccountPhoneNumberWithAccountId:accountId
               data:data
           completionHandler: ^(SWGPhoneNumberFull* output, NSError* error) {
@@ -54,7 +54,7 @@ SWGPhonenumbersApi*apiInstance = [[SWGPhonenumbersApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
- **data** | [**SWGCreatePhoneNumberParams***](SWGCreatePhoneNumberParams*.md)| Phone Number data | [optional] 
+ **data** | [**SWGCreatePhoneNumberParams***](SWGCreatePhoneNumberParams.md)| Phone Number data | [optional] 
 
 ### Return type
 
@@ -78,9 +78,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGPhoneNumberFull* output, NSError* error)) handler;
 ```
 
-Show details of an individual phone number
+Show details of an individual phone number.
 
-See Intro to Account Phone Numbers for more info on the properties.
+Show details of an individual phone number. See Account Phone Numbers for more info on the properties.
 
 ### Example 
 ```objc
@@ -97,7 +97,7 @@ NSNumber* numberId = @56; // Number ID
 
 SWGPhonenumbersApi*apiInstance = [[SWGPhonenumbersApi alloc] init];
 
-// Show details of an individual phone number
+// Show details of an individual phone number.
 [apiInstance getAccountPhoneNumberWithAccountId:accountId
               numberId:numberId
           completionHandler: ^(SWGPhoneNumberFull* output, NSError* error) {
@@ -147,9 +147,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGListPhoneNumbers* output, NSError* error)) handler;
 ```
 
-Get a list of phone numbers registered to an account
+Get a list of phone numbers registered to an account.
 
-See Intro to Account Phone Numbers for more info on the properties.
+Get a list of phone numbers registered to an account. See Account Phone Numbers for more info on the properties.
 
 ### Example 
 ```objc
@@ -174,7 +174,7 @@ NSString* fields = @"fields_example"; // Field set (optional)
 
 SWGPhonenumbersApi*apiInstance = [[SWGPhonenumbersApi alloc] init];
 
-// Get a list of phone numbers registered to an account
+// Get a list of phone numbers registered to an account.
 [apiInstance listAccountPhoneNumbersWithAccountId:accountId
               filtersId:filtersId
               filtersName:filtersName
@@ -233,9 +233,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGPhoneNumberFull* output, NSError* error)) handler;
 ```
 
-Update the settings for an existing phone number on your account
+Update the settings for an existing phone number on your account.
 
-See Intro to Account Phone Numbers for more info on the properties.
+Update the settings for an existing phone number on your account. See Account Phone Numbers for more info on the properties.
 
 ### Example 
 ```objc
@@ -253,7 +253,7 @@ SWGReplacePhoneNumberParams* data = [[SWGReplacePhoneNumberParams alloc] init]; 
 
 SWGPhonenumbersApi*apiInstance = [[SWGPhonenumbersApi alloc] init];
 
-// Update the settings for an existing phone number on your account
+// Update the settings for an existing phone number on your account.
 [apiInstance replaceAccountPhoneNumberWithAccountId:accountId
               numberId:numberId
               data:data
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
  **numberId** | **NSNumber***| Number ID | 
- **data** | [**SWGReplacePhoneNumberParams***](SWGReplacePhoneNumberParams*.md)| Phone Number data | [optional] 
+ **data** | [**SWGReplacePhoneNumberParams***](SWGReplacePhoneNumberParams.md)| Phone Number data | [optional] 
 
 ### Return type
 

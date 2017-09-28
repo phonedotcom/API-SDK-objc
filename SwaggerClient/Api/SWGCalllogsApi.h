@@ -25,7 +25,7 @@ extern NSInteger kSWGCalllogsApiMissingParamErrorCode;
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
 /// Show details of an individual Call Log entry
-/// See Call Logs for more detail.
+/// Show details of an individual Call Log entry. See Call Logs for more detail.
 ///
 /// @param accountId Account ID
 /// @param callId Call ID
@@ -42,7 +42,7 @@ extern NSInteger kSWGCalllogsApiMissingParamErrorCode;
 
 
 /// Get a list of call details associated with your account
-/// See Call Logs for more detail.
+/// Get a list of call details associated with your account. See Call Logs for more detail.
 ///
 /// @param accountId Account ID
 /// @param filtersId ID filter (optional)

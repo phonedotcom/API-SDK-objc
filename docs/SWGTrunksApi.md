@@ -4,11 +4,11 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountTrunk**](SWGTrunksApi.md#createaccounttrunk) | **POST** /accounts/{account_id}/trunks | Add a trunk record with SIP information
-[**deleteAccountTrunk**](SWGTrunksApi.md#deleteaccounttrunk) | **DELETE** /accounts/{account_id}/trunks/{trunk_id} | Delete a trunk from account
-[**getAccountTrunk**](SWGTrunksApi.md#getaccounttrunk) | **GET** /accounts/{account_id}/trunks/{trunk_id} | Show details of an individual trunk
-[**listAccountTrunks**](SWGTrunksApi.md#listaccounttrunks) | **GET** /accounts/{account_id}/trunks | Get a list of trunks for an account
-[**replaceAccountTrunk**](SWGTrunksApi.md#replaceaccounttrunk) | **PUT** /accounts/{account_id}/trunks/{trunk_id} | Replace parameters in a trunk
+[**createAccountTrunk**](SWGTrunksApi.md#createaccounttrunk) | **POST** /accounts/{account_id}/trunks | Add a trunk record with SIP information.
+[**deleteAccountTrunk**](SWGTrunksApi.md#deleteaccounttrunk) | **DELETE** /accounts/{account_id}/trunks/{trunk_id} | Delete a trunk from account.
+[**getAccountTrunk**](SWGTrunksApi.md#getaccounttrunk) | **GET** /accounts/{account_id}/trunks/{trunk_id} | Show details of an individual trunk.
+[**listAccountTrunks**](SWGTrunksApi.md#listaccounttrunks) | **GET** /accounts/{account_id}/trunks | Get a list of trunks for an account.
+[**replaceAccountTrunk**](SWGTrunksApi.md#replaceaccounttrunk) | **PUT** /accounts/{account_id}/trunks/{trunk_id} | Replace parameters in a trunk.
 
 
 # **createAccountTrunk**
@@ -18,9 +18,9 @@ Method | HTTP request | Description
         completionHandler: (void (^)(SWGTrunkFull* output, NSError* error)) handler;
 ```
 
-Add a trunk record with SIP information
+Add a trunk record with SIP information.
 
-For more on the input fields, see Account Trunks.
+Add a trunk record with SIP information. See Account Trunks for more info on the properties.
 
 ### Example 
 ```objc
@@ -37,7 +37,7 @@ SWGCreateTrunkParams* data = [[SWGCreateTrunkParams alloc] init]; // Trunk data
 
 SWGTrunksApi*apiInstance = [[SWGTrunksApi alloc] init];
 
-// Add a trunk record with SIP information
+// Add a trunk record with SIP information.
 [apiInstance createAccountTrunkWithAccountId:accountId
               data:data
           completionHandler: ^(SWGTrunkFull* output, NSError* error) {
@@ -55,7 +55,7 @@ SWGTrunksApi*apiInstance = [[SWGTrunksApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
- **data** | [**SWGCreateTrunkParams***](SWGCreateTrunkParams*.md)| Trunk data | 
+ **data** | [**SWGCreateTrunkParams***](SWGCreateTrunkParams.md)| Trunk data | 
 
 ### Return type
 
@@ -76,12 +76,12 @@ Name | Type | Description  | Notes
 ```objc
 -(NSURLSessionTask*) deleteAccountTrunkWithAccountId: (NSNumber*) accountId
     trunkId: (NSNumber*) trunkId
-        completionHandler: (void (^)(SWGDeleteTrunk* output, NSError* error)) handler;
+        completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
 ```
 
-Delete a trunk from account
+Delete a trunk from account.
 
-This service deletes a trunk from the account. For more on the properties of trunks, see Account Trunks.
+Delete a trunk from account. See Account Trunks for more info on the properties.
 
 ### Example 
 ```objc
@@ -98,10 +98,10 @@ NSNumber* trunkId = @56; // Trunk ID
 
 SWGTrunksApi*apiInstance = [[SWGTrunksApi alloc] init];
 
-// Delete a trunk from account
+// Delete a trunk from account.
 [apiInstance deleteAccountTrunkWithAccountId:accountId
               trunkId:trunkId
-          completionHandler: ^(SWGDeleteTrunk* output, NSError* error) {
+          completionHandler: ^(SWGDeleteEntry* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGDeleteTrunk***](SWGDeleteTrunk.md)
+[**SWGDeleteEntry***](SWGDeleteEntry.md)
 
 ### Authorization
 
@@ -140,9 +140,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGTrunkFull* output, NSError* error)) handler;
 ```
 
-Show details of an individual trunk
+Show details of an individual trunk.
 
-This service shows the details of an individual Trunk.
+Show details of an individual trunk. See Account Trunks for more info on the properties.
 
 ### Example 
 ```objc
@@ -159,7 +159,7 @@ NSNumber* trunkId = @56; // Trunk ID
 
 SWGTrunksApi*apiInstance = [[SWGTrunksApi alloc] init];
 
-// Show details of an individual trunk
+// Show details of an individual trunk.
 [apiInstance getAccountTrunkWithAccountId:accountId
               trunkId:trunkId
           completionHandler: ^(SWGTrunkFull* output, NSError* error) {
@@ -207,9 +207,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGListTrunks* output, NSError* error)) handler;
 ```
 
-Get a list of trunks for an account
+Get a list of trunks for an account.
 
-See Account Trunks for more info on the properties.
+Get a list of trunks for an account. See Account Trunks for more info on the properties.
 
 ### Example 
 ```objc
@@ -232,7 +232,7 @@ NSString* fields = @"fields_example"; // Field set (optional)
 
 SWGTrunksApi*apiInstance = [[SWGTrunksApi alloc] init];
 
-// Get a list of trunks for an account
+// Get a list of trunks for an account.
 [apiInstance listAccountTrunksWithAccountId:accountId
               filtersId:filtersId
               filtersName:filtersName
@@ -287,9 +287,9 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(SWGTrunkFull* output, NSError* error)) handler;
 ```
 
-Replace parameters in a trunk
+Replace parameters in a trunk.
 
-For more on the input fields, see Account Trunks.
+Replace parameters in a trunk. See Account Trunks for more info on the properties.
 
 ### Example 
 ```objc
@@ -307,7 +307,7 @@ SWGCreateTrunkParams* data = [[SWGCreateTrunkParams alloc] init]; // Trunk data
 
 SWGTrunksApi*apiInstance = [[SWGTrunksApi alloc] init];
 
-// Replace parameters in a trunk
+// Replace parameters in a trunk.
 [apiInstance replaceAccountTrunkWithAccountId:accountId
               trunkId:trunkId
               data:data
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **NSNumber***| Account ID | 
  **trunkId** | **NSNumber***| Trunk ID | 
- **data** | [**SWGCreateTrunkParams***](SWGCreateTrunkParams*.md)| Trunk data | 
+ **data** | [**SWGCreateTrunkParams***](SWGCreateTrunkParams.md)| Trunk data | 
 
 ### Return type
 

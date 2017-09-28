@@ -41,8 +41,8 @@ extern NSInteger kSWGExpressservicecodesApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGExpressServiceCodeFull* output, NSError* error)) handler;
 
 
-/// Get the Express Service Code associated with your account in list format
-/// See Express Service Codes for more detail.
+/// Get the Express Service Code associated with your account in list format.
+/// Get the Express Service Code associated with your account in list format. See Express Service Codes for more detail.
 ///
 /// @param accountId Account ID
 /// @param filtersId ID filter (optional)

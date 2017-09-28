@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "SWGContactFull.h"
 #import "SWGCreateContactParams.h"
-#import "SWGDeleteContact.h"
+#import "SWGDeleteEntry.h"
 #import "SWGListContacts.h"
 #import "SWGApi.h"
 
@@ -26,8 +26,8 @@ extern NSInteger kSWGContactsApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
-/// Add a new address book contact for an extension
-/// For more on the input fields, see Account Contacts.
+/// Add a new address book contact for an extension.
+/// Add a new address book contact for an extension. See Account Contacts for more info on the fields in each item.
 ///
 /// @param accountId Account ID
 /// @param extensionId Extension ID
@@ -45,8 +45,8 @@ extern NSInteger kSWGContactsApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGContactFull* output, NSError* error)) handler;
 
 
-/// 
-/// 
+/// Delete a contact from the address book.
+/// Delete a contact from the address book. See Account Contacts for more info on the fields in each item.
 ///
 /// @param accountId Account ID
 /// @param extensionId Extension ID
@@ -56,15 +56,15 @@ extern NSInteger kSWGContactsApiMissingParamErrorCode;
 ///  code:401 message:"Unauthorized access",
 ///  code:403 message:"Forbidden"
 ///
-/// @return SWGDeleteContact*
+/// @return SWGDeleteEntry*
 -(NSURLSessionTask*) deleteAccountExtensionContactWithAccountId: (NSNumber*) accountId
     extensionId: (NSNumber*) extensionId
     contactId: (NSNumber*) contactId
-    completionHandler: (void (^)(SWGDeleteContact* output, NSError* error)) handler;
+    completionHandler: (void (^)(SWGDeleteEntry* output, NSError* error)) handler;
 
 
-/// Retrieve the details of an address book contact
-/// For more info on the fields shown, see Account Contacts.
+/// Retrieve the details of an address book contact.
+/// Retrieve the details of an address book contact. See Account Contacts for more info on the fields in each item.
 ///
 /// @param accountId Account ID
 /// @param extensionId Extension ID
@@ -82,8 +82,8 @@ extern NSInteger kSWGContactsApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGContactFull* output, NSError* error)) handler;
 
 
-/// Show a list of address book contacts
-/// See Account Contacts for more info on the fields in each item.
+/// Show the Caller ID options a given extension can use.
+/// Show the Caller ID options a given extension can use. See Intro to Caller IDs for more on the properties.
 ///
 /// @param accountId Account ID
 /// @param extensionId Extension ID
@@ -114,8 +114,8 @@ extern NSInteger kSWGContactsApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGListContacts* output, NSError* error)) handler;
 
 
-/// 
-/// For more on the input fields, see Account Contacts.
+/// Update the info of a contact in the address book.
+/// Update the info of a contact in the address book. See Account Contacts for more info on the fields in each item.
 ///
 /// @param accountId Account ID
 /// @param extensionId Extension ID

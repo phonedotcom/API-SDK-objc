@@ -29,6 +29,6 @@
 @property(nonatomic) NSString* expressServiceCode;
 /* UNIX time stamp representing the UTC time that the Express Service Code expires. Please note that every time this service is executed, the expire_date is set to now + 24 hours. [optional]
  */
-@property(nonatomic) NSNumber* expireDate;
+@property(nonatomic) NSArray<NSNumber*>* expireDate;
 
 @end

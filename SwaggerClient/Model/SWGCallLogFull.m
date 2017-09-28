@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_id": @"id", @"uuid": @"uuid", @"extension": @"extension", @"callerId": @"caller_id", @"calledNumber": @"called_number", @"startTime": @"start_time", @"createdAt": @"created_at", @"direction": @"direction", @"type": @"type", @"callDuration": @"call_duration", @"isMonitored": @"is_monitored", @"callNumber": @"call_number", @"finalAction": @"final_action", @"callRecording": @"call_recording", @"details": @"details", @"callerCnam": @"caller_cnam" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_id": @"id", @"uuid": @"uuid", @"extension": @"extension", @"callerId": @"caller_id", @"calledNumber": @"called_number", @"startTime": @"start_time", @"createdAt": @"created_at", @"direction": @"direction", @"type": @"type", @"callDuration": @"call_duration", @"isMonitored": @"is_monitored", @"callNumber": @"call_number", @"finalAction": @"final_action", @"voicemailUrl": @"voicemail_url", @"voicemailCpUrl": @"voicemail_cp_url", @"voicemailTranscript": @"voicemail_transcript", @"callRecordingUrl": @"call_recording_url", @"callRecordingCpUrl": @"call_recording_cp_url", @"details": @"details", @"callerCnam": @"caller_cnam" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"_id", @"uuid", @"extension", @"callerId", @"calledNumber", @"startTime", @"createdAt", @"direction", @"type", @"callDuration", @"isMonitored", @"callNumber", @"finalAction", @"callRecording", @"details", @"callerCnam"];
+  NSArray *optionalProperties = @[@"_id", @"uuid", @"extension", @"callerId", @"calledNumber", @"startTime", @"createdAt", @"direction", @"type", @"callDuration", @"isMonitored", @"callNumber", @"finalAction", @"voicemailUrl", @"voicemailCpUrl", @"voicemailTranscript", @"callRecordingUrl", @"callRecordingCpUrl", @"details", @"callerCnam"];
   return [optionalProperties containsObject:propertyName];
 }
 

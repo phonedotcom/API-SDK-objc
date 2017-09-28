@@ -62,9 +62,21 @@
 /* Last action of call flow [optional]
  */
 @property(nonatomic) NSString* finalAction;
-/* URL of call recording if available. Empty string if call recording does not exist [optional]
+/* URL of voicemail if available. User may download the audio via this URL. Empty string if voicemail does not exist [optional]
  */
-@property(nonatomic) NSString* callRecording;
+@property(nonatomic) NSString* voicemailUrl;
+/* URL of voicemail if available. User may listen to the audio online via this URL. Empty string if voicemail does not exist [optional]
+ */
+@property(nonatomic) NSString* voicemailCpUrl;
+/* Transcript of voicemail if enabled and available [optional]
+ */
+@property(nonatomic) NSString* voicemailTranscript;
+/* URL of call recording if available. User may download the audio via this URL. Empty string if call recording does not exist [optional]
+ */
+@property(nonatomic) NSString* callRecordingUrl;
+/* URL of call recording if available. User may listen to the audio online via this URL. Empty string if call recording does not exist [optional]
+ */
+@property(nonatomic) NSString* callRecordingCpUrl;
 /* A list of call flows from beginning of call to end of call. [optional]
  */
 @property(nonatomic) NSArray<SWGCallDetails>* details;

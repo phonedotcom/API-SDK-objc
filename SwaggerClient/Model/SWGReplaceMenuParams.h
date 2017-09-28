@@ -26,9 +26,9 @@
 
 @property(nonatomic) NSObject* greeting;
 
-@property(nonatomic) NSObject* invalidKeypress;
+@property(nonatomic) NSObject* keypressError;
 
-@property(nonatomic) NSNumber* allowExtensionDial;
+@property(nonatomic) NSString* allowExtensionDial;
 
 @property(nonatomic) NSNumber* keypressWaitTime;
 
